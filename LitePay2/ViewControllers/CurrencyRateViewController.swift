@@ -14,6 +14,9 @@ class CurrencyRateViewController : UIViewController {
 
 extension CurrencyRateViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /* TODO
+         * aanpassen (afhankelijk van hoeveel currencies er binnen komen .count()
+         */
         return 20
     }
     
