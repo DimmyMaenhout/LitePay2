@@ -13,4 +13,7 @@ import AVFoundation
 class QRCodeScannerViewController : UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var QRCodeScannerImageView : UIImageView!
+    @IBOutlet weak var headerInfoLbl: UILabel!
+    @IBOutlet weak var infoIcon: UIImageView!
+    @IBOutlet weak var explanationLbl: UILabel!
 }

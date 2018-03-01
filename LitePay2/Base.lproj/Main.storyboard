@@ -275,15 +275,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rHc-0I-4K8"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Gpr-Cf-Xwf">
+                        <barButtonItem key="backBarButtonItem" title="Betalen" id="JbW-aM-lfo"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="QRCodeScannerImageView" destination="Hjp-UK-XA9" id="ZTd-sk-OMz"/>
+                        <outlet property="explanationLbl" destination="PEF-QB-WyX" id="Wdh-fz-5Ti"/>
+                        <outlet property="headerInfoLbl" destination="woM-hY-Qev" id="gT2-Mf-VAj"/>
+                        <outlet property="infoIcon" destination="KCx-hQ-8pi" id="Cm7-6t-mLK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztG-BZ-lnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4031" y="-1352"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="lle-JS-qMK">
             <objects>
                 <viewController id="7RM-99-vlT" customClass="HomeViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
@@ -291,15 +297,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smH-HI-DBF">
-                                <rect key="frame" x="145" y="358" width="84" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smH-HI-DBF">
+                                <rect key="frame" x="145" y="367" width="84" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Ontvangen"/>
                                 <connections>
                                     <segue destination="Ncn-Pg-Wbh" kind="show" id="Wxh-ZK-gvx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbX-Q0-6mN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbX-Q0-6mN">
                                 <rect key="frame" x="145" y="294" width="84" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Betalen"/>
@@ -314,12 +320,13 @@
                             <constraint firstItem="smH-HI-DBF" firstAttribute="centerX" secondItem="sgZ-rL-rJg" secondAttribute="centerX" id="7RZ-74-tKV"/>
                             <constraint firstItem="smH-HI-DBF" firstAttribute="top" secondItem="dbX-Q0-6mN" secondAttribute="bottom" constant="40" id="KBZ-5M-i7c"/>
                             <constraint firstItem="smH-HI-DBF" firstAttribute="width" secondItem="dbX-Q0-6mN" secondAttribute="width" id="L3f-JX-ei0"/>
+                            <constraint firstItem="dbX-Q0-6mN" firstAttribute="top" secondItem="sgZ-rL-rJg" secondAttribute="top" constant="230" id="Z3g-QD-8mb"/>
                             <constraint firstItem="dbX-Q0-6mN" firstAttribute="centerX" secondItem="sgZ-rL-rJg" secondAttribute="centerX" id="gpT-LY-4tZ"/>
                             <constraint firstItem="dbX-Q0-6mN" firstAttribute="centerX" secondItem="pee-UY-Jes" secondAttribute="centerX" id="nD6-dL-Frv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sgZ-rL-rJg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sCT-UN-0t6"/>
+                    <navigationItem key="navigationItem" title="Home" id="JaU-gr-qX4"/>
                     <connections>
                         <outlet property="payBtn" destination="dbX-Q0-6mN" id="mJI-te-bPs"/>
                         <outlet property="receiveBtn" destination="smH-HI-DBF" id="nDK-pX-tw6"/>
@@ -337,45 +344,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hcb-0t-ST9">
-                                <rect key="frame" x="47" y="427" width="280" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€ 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
+                                <rect key="frame" x="68" y="416" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Litecoin_logo" translatesAutoresizingMaskIntoConstraints="NO" id="oZt-cX-zwI">
-                                <rect key="frame" x="74.5" y="61" width="225" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Litecoin_logo" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-9h-Dt4">
+                                <rect key="frame" x="74" y="89" width="225" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfu-CE-Ski">
-                                <rect key="frame" x="131" y="516" width="112" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-tX-zGh">
+                                <rect key="frame" x="131" y="486" width="113" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Scan QR-code"/>
                                 <connections>
-                                    <segue destination="YLZ-6o-gEj" kind="show" id="Lf1-rW-mSA"/>
+                                    <segue destination="YLZ-6o-gEj" kind="show" id="Eiz-Mz-bdc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iC-F3-eVj">
-                                <rect key="frame" x="47" y="353" width="280" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
+                                <rect key="frame" x="68" y="349" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oZt-cX-zwI" firstAttribute="centerX" secondItem="7ts-u2-tFp" secondAttribute="centerX" id="mfz-cD-gtN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Hti-vK-nPm"/>
                     </view>
-                    <connections>
-                        <outlet property="LtcIcon" destination="oZt-cX-zwI" id="wk8-3v-q2f"/>
-                        <outlet property="LtcTxtField" destination="9iC-F3-eVj" id="Zhu-Rw-eIs"/>
-                        <outlet property="ScanQRBtn" destination="Nfu-CE-Ski" id="aYV-F2-awl"/>
-                        <outlet property="euroTxtField" destination="Hcb-0t-ST9" id="lXO-yb-dPB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36o-tI-iyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
