@@ -1,0 +1,922 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		008FF2DE7CD6AC5FDB0451D5F9275EC7 /* digicert-ev.der in Resources */ = {isa = PBXBuildFile; fileRef = D8ED7DCDB64D4FF77CF7E9390CDCEE84 /* digicert-ev.der */; };
+		01DC5A4183AFE298709E5D35CD3EAFED /* CoinbaseRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DDF5EF7FF841C74249E2AD1D56E148F /* CoinbaseRefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02D69F45AC38332BB157A61973B4D1C5 /* CoinbaseRecurringPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = E268A0AFEE1F1E7CEA5D7870D5432EE9 /* CoinbaseRecurringPayment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07163E9B409E0A82423A8BA3B39FE971 /* CoinbaseTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0076DAC900DF7CFBEAB363FFFFDA5204 /* CoinbaseTransfer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		111574B7CAD1E25222DF74D03982E330 /* CoinbasePrice.m in Sources */ = {isa = PBXBuildFile; fileRef = FF686ACFD481FD325C7B6F188CA9E0FC /* CoinbasePrice.m */; };
+		119165E9E493DE05E89EA69E4CC14E9C /* CoinbaseToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 376D515803365D32653D0D2C740FF6E1 /* CoinbaseToken.m */; };
+		16AA905B9C6937FA2D3A2DF16D0283CB /* Pods-LitePay2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC932E354FA811F6FE82820246D7383A /* Pods-LitePay2-dummy.m */; };
+		181EDCD3955FA1B189393E752AE76D90 /* CoinbaseApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = FAACDA6097BF552D455EC7B393123537 /* CoinbaseApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		191DB0893CA486C0675FDEC97D3AE381 /* CoinbaseAccountChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C53A729F2BED884A10E474FF9B97834 /* CoinbaseAccountChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB4298EB957BFCF74A70A5F5D18F73D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		20A4329B318217AC58FEDB9D602861F1 /* CoinbaseAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E794E55C7C74CC23238A48151A708C /* CoinbaseAddress.m */; };
+		221349543308819D1C8749E3A0FA7C41 /* CoinbaseDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9346D8DF644DD89F6D7CBDD0A993E4A1 /* CoinbaseDefines.m */; };
+		22B41DE463482BF10B1129927A369A2F /* CoinbaseCurrency.h in Headers */ = {isa = PBXBuildFile; fileRef = 485030EAD003B3A3CC0B9CA874DE50F6 /* CoinbaseCurrency.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		235C9D1AED52C227E257393598EFD5A8 /* CoinbaseAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 2702FF5D15A26AF4C85B2182EEB79C14 /* CoinbaseAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FD15258F677644F46DCE80DA3110C8E /* CoinbaseBalance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BAA565AA7A18B4D24941010E15D618F /* CoinbaseBalance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3314CBA809E8D1F61775487A8F8AA7D6 /* CoinbaseAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = E274687DABECC6A6ECF27584077195B0 /* CoinbaseAuthorization.m */; };
+		3370167AB757CFD485E26C3B713D22BE /* CoinbasePaymentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC101FC969BFDD2A80C397BB2AC701 /* CoinbasePaymentMethod.m */; };
+		365D75FFE4FD64CEDC54AF2C2DA8AC6A /* CoinbaseTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = F90F8052A5691C2F0C5896593D007786 /* CoinbaseTransaction.m */; };
+		377C67E0CC662332D952A7CC6F21223B /* CoinbasePagingHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B47B21993EC3B30E4E8E0193EA822BBB /* CoinbasePagingHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37D82FBF421537DEE0B8D1710D8C4557 /* CoinbaseReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 004C3FC9F21AA36B75E33B9D0B9B77E9 /* CoinbaseReport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38962B26B52D077E933C81C38E356B51 /* CoinbaseOAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 3228E24349A6BA99A4AAC8E8B8892A50 /* CoinbaseOAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F428454C310619F95DC9192685E3FC1 /* CoinbaseBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFFB0496A7FF747932F2B10699AD3A /* CoinbaseBalance.m */; };
+		440B31EBE68C0F2E103C1B96B9FDBB48 /* CoinbaseUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A917EDBCCCBA3C54444A56BE347413C /* CoinbaseUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4481A400DF490DDE921EF7A06141E400 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		4DE84AE2F0BE3FE6191A117B9797625B /* CoinbaseToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 59454E8B2AC328CECE80512A4CA0C47B /* CoinbaseToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E5BF7A06E3799FD85E0FFE69A9EC64F /* Coinbase.h in Headers */ = {isa = PBXBuildFile; fileRef = A8CDB654333D3802CCDFF11F7FD1A317 /* Coinbase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F9031E7E7E9534081077B5F157273DA /* CoinbasePagingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BB0BD858804941F14F6458B4987A9A /* CoinbasePagingHelper.m */; };
+		500193B9A3564CF8900361E794ACC025 /* CoinbaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28E949D4BCBEDE6D521A30B3C457F1 /* CoinbaseButton.m */; };
+		50F1D6F9793248FD2F793CAF0F07FD74 /* CoinbaseCertificatePinning.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CEC40034F44A090FB86D6A2522E353 /* CoinbaseCertificatePinning.m */; };
+		514D8893A8A597B59B5179306BDEC331 /* verisign.der in Resources */ = {isa = PBXBuildFile; fileRef = 44D029D1CA3F12761FD7E8EE37F72EE4 /* verisign.der */; };
+		55B1AC7E4E3D05B21E8F5FC0980F8262 /* CoinbaseApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C42909E1FEA3E1B5646D02D6B63792A4 /* CoinbaseApplication.m */; };
+		59E432F591C01EFAD77A010BA7ADD205 /* CoinbaseTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BE39024BBEB8FB41C7F6F540CA25D /* CoinbaseTransfer.m */; };
+		5E55F65C3EE448523F9326EF23E83E4A /* coinbase-official-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC57FDE10DA136E7DD0D0532026FAAF /* coinbase-official-dummy.m */; };
+		6595C505FC5FC7A05CE84956B8647342 /* CoinbaseAuthorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 095D96AA1C97EBA5FE91CBB3B1F0ACB3 /* CoinbaseAuthorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68110B60C63813116EDA2CC718891FCB /* digicert.der in Resources */ = {isa = PBXBuildFile; fileRef = CD78B8E3C027F22DBB1EF37497081CB2 /* digicert.der */; };
+		6A82C69D157FEC47CDF6BBC267D980A6 /* CoinbaseRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CD029AE088B1C5C7394A8ECB88643F /* CoinbaseRefund.m */; };
+		6BD7BD091641ECA43AC781E162FAF756 /* CoinbaseCertificatePinning.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BBAD242031A47442DF19F78C586BF12 /* CoinbaseCertificatePinning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7963EE3AD70581F5653E66F5F40356F6 /* CoinbaseAccountChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F40EB3CCE2BA53FFA78FA910711CBA3 /* CoinbaseAccountChange.m */; };
+		7ACD1EC1AD290AED530D4C19CFDCBE84 /* CoinbaseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = E78CE573DC919111DF02B48563F25534 /* CoinbaseButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FE3642A8F2CDBABCA485AC5DB19EEC2 /* CoinbaseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48544B02F7B338557C9C9B74A97DC65D /* CoinbaseOrder.m */; };
+		8250CF52A5B3C411BEF463E2DBA172F2 /* coinbase-official-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DDF83A00E9E9F6622AA659B2CB42ED9 /* coinbase-official-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84628A70F9B97C9E4BD20B114AE15B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		896B0235EAA6FAC5B1AE44BAF477735F /* CoinbasePaymentMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = B151E072319301C13727601B5F944B33 /* CoinbasePaymentMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BE3CAAA893E5FDA43749B7BCBFC6241 /* CoinbaseCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB5937F918A91C016C03EF8B98AB178 /* CoinbaseCurrency.m */; };
+		8D1B27C559B0E4E793ABEC8203C7818C /* CoinbaseTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D438BBC2D2CADD48C7E7E3D10AF393 /* CoinbaseTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97CFFD9C5F537D09791838F84689A94B /* CoinbaseAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD30FBFC4D92A05C4E11300B39BB5A8 /* CoinbaseAccount.m */; };
+		A48194E7D23F7C9262C8C7999B17DE30 /* CoinbaseUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41710795EA3B754E00791341D9C1682C /* CoinbaseUser.m */; };
+		A68487DB951E13166BBB56959406013E /* CoinbaseContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 51C1DB1BD3D0A1C63FD28294201AAC47 /* CoinbaseContact.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1FB0B724E0BA8889220EEE4B0D97CC4 /* CoinbaseContact.m in Sources */ = {isa = PBXBuildFile; fileRef = B27AFB5F3164DF67BB09212D9020DE3B /* CoinbaseContact.m */; };
+		B40C8F8E2762C5F3E234729617E917E3 /* Pods-LitePay2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 739034D3E827452F75D6C5C046B5D459 /* Pods-LitePay2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6FBB43047573D7D83DDDA4B29DB67BF /* CoinbaseReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 405DEC4F9B0C1E02321B68514951EAB5 /* CoinbaseReport.m */; };
+		B717BF2FFE9359E77DFEEC0F098AFABD /* CoinbaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F224CD65D2F2518C61B18C3773AAC /* CoinbaseObject.m */; };
+		BAF1F51D449FF92B413BCF2C9BD3ACE6 /* CoinbaseDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DCF8F50C0D1D16A20D46F2A4DF89533 /* CoinbaseDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC33412F8EDB097EEE16B3BFD330A2A /* CoinbasePrice.h in Headers */ = {isa = PBXBuildFile; fileRef = 58CEF2E4BD28943A59446769A41A055C /* CoinbasePrice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFECB0393E5D5BCB0FCB603C6A8E0BBA /* CoinbaseObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 0830000C03D4C46208F98C1EC84DB49A /* CoinbaseObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06066DE4F19C90285C037DD74CC9081 /* CoinbaseAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8BB2B77E48D378FA1C66DD17A5D047 /* CoinbaseAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C44AA5C48F5CB382E2091029EEFC24FE /* CoinbaseInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = A13E9B0141574EB30E0E01EB8D8EE8B0 /* CoinbaseInternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7F88974B4175728A5A447F40300967D /* CoinbaseOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B83A9DE6F4855552843C6FF7B91FC58 /* CoinbaseOAuth.m */; };
+		DDC5DE3BF3ABA29C6DE457F2FF304FF1 /* CoinbaseOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9168B78B1E9F2B43E26C82333F555B85 /* CoinbaseOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1BEB7D0A08A2E96F75C10279C596F15 /* Coinbase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE1F6ABCAA1A3CE9E3941159ECF7AA4 /* Coinbase.m */; };
+		E6295C8F15B8F04B5503AD145239A595 /* CBCertificates.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6615FA5453DD7CA058FDF94EAF474304 /* CBCertificates.bundle */; };
+		F7D0F0090DE25349C7D0635DE0C507EB /* CoinbaseRecurringPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CE5F8F94E718EF0DF846EF48F2E4A7 /* CoinbaseRecurringPayment.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A68223BF436B75BCAA690267617A5970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1468F9B82158E3980A58D97749B41BFB;
+			remoteInfo = "coinbase-official-CBCertificates";
+		};
+		FAACFEBB8F55ED743CBDD903E24A6F5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08D33982608988966225C37BF4F467DF;
+			remoteInfo = "coinbase-official";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		004C3FC9F21AA36B75E33B9D0B9B77E9 /* CoinbaseReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseReport.h; path = Pod/Classes/Client/CoinbaseReport.h; sourceTree = "<group>"; };
+		0076DAC900DF7CFBEAB363FFFFDA5204 /* CoinbaseTransfer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseTransfer.h; path = Pod/Classes/Client/CoinbaseTransfer.h; sourceTree = "<group>"; };
+		01A8F0250F960268EA6ABF2D7BD179AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0830000C03D4C46208F98C1EC84DB49A /* CoinbaseObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseObject.h; path = Pod/Classes/Client/CoinbaseObject.h; sourceTree = "<group>"; };
+		095D96AA1C97EBA5FE91CBB3B1F0ACB3 /* CoinbaseAuthorization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAuthorization.h; path = Pod/Classes/Client/CoinbaseAuthorization.h; sourceTree = "<group>"; };
+		0FE1F6ABCAA1A3CE9E3941159ECF7AA4 /* Coinbase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Coinbase.m; path = Pod/Classes/Client/Coinbase.m; sourceTree = "<group>"; };
+		15D438BBC2D2CADD48C7E7E3D10AF393 /* CoinbaseTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseTransaction.h; path = Pod/Classes/Client/CoinbaseTransaction.h; sourceTree = "<group>"; };
+		1DCF8F50C0D1D16A20D46F2A4DF89533 /* CoinbaseDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseDefines.h; path = Pod/Classes/CoinbaseDefines.h; sourceTree = "<group>"; };
+		1E310349F7988768EF67FF72C793A39B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F28E949D4BCBEDE6D521A30B3C457F1 /* CoinbaseButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseButton.m; path = Pod/Classes/Client/CoinbaseButton.m; sourceTree = "<group>"; };
+		2702FF5D15A26AF4C85B2182EEB79C14 /* CoinbaseAccount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAccount.h; path = Pod/Classes/Client/CoinbaseAccount.h; sourceTree = "<group>"; };
+		2F40EB3CCE2BA53FFA78FA910711CBA3 /* CoinbaseAccountChange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseAccountChange.m; path = Pod/Classes/Client/CoinbaseAccountChange.m; sourceTree = "<group>"; };
+		3107E711F6F59902BA9D75DB47CD293A /* coinbase-official.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "coinbase-official.xcconfig"; sourceTree = "<group>"; };
+		3228E24349A6BA99A4AAC8E8B8892A50 /* CoinbaseOAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseOAuth.h; path = Pod/Classes/OAuth/CoinbaseOAuth.h; sourceTree = "<group>"; };
+		33F04A75EBDB5319BF344B059256262C /* coinbase_official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = coinbase_official.framework; path = "coinbase-official.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		376D515803365D32653D0D2C740FF6E1 /* CoinbaseToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseToken.m; path = Pod/Classes/Client/CoinbaseToken.m; sourceTree = "<group>"; };
+		3C53A729F2BED884A10E474FF9B97834 /* CoinbaseAccountChange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAccountChange.h; path = Pod/Classes/Client/CoinbaseAccountChange.h; sourceTree = "<group>"; };
+		3CEFFB0496A7FF747932F2B10699AD3A /* CoinbaseBalance.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseBalance.m; path = Pod/Classes/Client/CoinbaseBalance.m; sourceTree = "<group>"; };
+		3F01AA539C6420CB836EF8D58BBBF525 /* Pods-LitePay2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2.debug.xcconfig"; sourceTree = "<group>"; };
+		405DEC4F9B0C1E02321B68514951EAB5 /* CoinbaseReport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseReport.m; path = Pod/Classes/Client/CoinbaseReport.m; sourceTree = "<group>"; };
+		40E794E55C7C74CC23238A48151A708C /* CoinbaseAddress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseAddress.m; path = Pod/Classes/Client/CoinbaseAddress.m; sourceTree = "<group>"; };
+		41710795EA3B754E00791341D9C1682C /* CoinbaseUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseUser.m; path = Pod/Classes/Client/CoinbaseUser.m; sourceTree = "<group>"; };
+		44D029D1CA3F12761FD7E8EE37F72EE4 /* verisign.der */ = {isa = PBXFileReference; includeInIndex = 1; name = verisign.der; path = Pod/Assets/Certificates/verisign.der; sourceTree = "<group>"; };
+		485030EAD003B3A3CC0B9CA874DE50F6 /* CoinbaseCurrency.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseCurrency.h; path = Pod/Classes/Client/CoinbaseCurrency.h; sourceTree = "<group>"; };
+		48544B02F7B338557C9C9B74A97DC65D /* CoinbaseOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseOrder.m; path = Pod/Classes/Client/CoinbaseOrder.m; sourceTree = "<group>"; };
+		4A95E5D1F2090D9CA1357AFC28D1E070 /* Pods-LitePay2-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2-resources.sh"; sourceTree = "<group>"; };
+		4B83A9DE6F4855552843C6FF7B91FC58 /* CoinbaseOAuth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseOAuth.m; path = Pod/Classes/OAuth/CoinbaseOAuth.m; sourceTree = "<group>"; };
+		4BAA565AA7A18B4D24941010E15D618F /* CoinbaseBalance.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseBalance.h; path = Pod/Classes/Client/CoinbaseBalance.h; sourceTree = "<group>"; };
+		4BBAD242031A47442DF19F78C586BF12 /* CoinbaseCertificatePinning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseCertificatePinning.h; path = Pod/Classes/Client/CoinbaseCertificatePinning.h; sourceTree = "<group>"; };
+		51C1DB1BD3D0A1C63FD28294201AAC47 /* CoinbaseContact.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseContact.h; path = Pod/Classes/Client/CoinbaseContact.h; sourceTree = "<group>"; };
+		55BC101FC969BFDD2A80C397BB2AC701 /* CoinbasePaymentMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbasePaymentMethod.m; path = Pod/Classes/Client/CoinbasePaymentMethod.m; sourceTree = "<group>"; };
+		58CEF2E4BD28943A59446769A41A055C /* CoinbasePrice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbasePrice.h; path = Pod/Classes/Client/CoinbasePrice.h; sourceTree = "<group>"; };
+		59454E8B2AC328CECE80512A4CA0C47B /* CoinbaseToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseToken.h; path = Pod/Classes/Client/CoinbaseToken.h; sourceTree = "<group>"; };
+		625A8191F92CBC3D58D391D48AC8D5CA /* Pods-LitePay2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LitePay2.modulemap"; sourceTree = "<group>"; };
+		6615FA5453DD7CA058FDF94EAF474304 /* CBCertificates.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CBCertificates.bundle; path = "coinbase-official-CBCertificates.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CC57FDE10DA136E7DD0D0532026FAAF /* coinbase-official-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "coinbase-official-dummy.m"; sourceTree = "<group>"; };
+		739034D3E827452F75D6C5C046B5D459 /* Pods-LitePay2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LitePay2-umbrella.h"; sourceTree = "<group>"; };
+		73A8412C61B9376998B992869FB5ABA7 /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LitePay2.framework; path = "Pods-LitePay2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A917EDBCCCBA3C54444A56BE347413C /* CoinbaseUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseUser.h; path = Pod/Classes/Client/CoinbaseUser.h; sourceTree = "<group>"; };
+		7C9F224CD65D2F2518C61B18C3773AAC /* CoinbaseObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseObject.m; path = Pod/Classes/Client/CoinbaseObject.m; sourceTree = "<group>"; };
+		7DDF5EF7FF841C74249E2AD1D56E148F /* CoinbaseRefund.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseRefund.h; path = Pod/Classes/Client/CoinbaseRefund.h; sourceTree = "<group>"; };
+		7DDF83A00E9E9F6622AA659B2CB42ED9 /* coinbase-official-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "coinbase-official-umbrella.h"; sourceTree = "<group>"; };
+		8EB5937F918A91C016C03EF8B98AB178 /* CoinbaseCurrency.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseCurrency.m; path = Pod/Classes/Client/CoinbaseCurrency.m; sourceTree = "<group>"; };
+		9168B78B1E9F2B43E26C82333F555B85 /* CoinbaseOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseOrder.h; path = Pod/Classes/Client/CoinbaseOrder.h; sourceTree = "<group>"; };
+		9346D8DF644DD89F6D7CBDD0A993E4A1 /* CoinbaseDefines.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseDefines.m; path = Pod/Classes/CoinbaseDefines.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9496DCB69A20CF37DB131F4D3B4C6CF2 /* Pods-LitePay2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LitePay2-acknowledgements.markdown"; sourceTree = "<group>"; };
+		98CE5F8F94E718EF0DF846EF48F2E4A7 /* CoinbaseRecurringPayment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseRecurringPayment.m; path = Pod/Classes/Client/CoinbaseRecurringPayment.m; sourceTree = "<group>"; };
+		9AD30FBFC4D92A05C4E11300B39BB5A8 /* CoinbaseAccount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseAccount.m; path = Pod/Classes/Client/CoinbaseAccount.m; sourceTree = "<group>"; };
+		A0CD029AE088B1C5C7394A8ECB88643F /* CoinbaseRefund.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseRefund.m; path = Pod/Classes/Client/CoinbaseRefund.m; sourceTree = "<group>"; };
+		A13E9B0141574EB30E0E01EB8D8EE8B0 /* CoinbaseInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseInternal.h; path = Pod/Classes/Client/CoinbaseInternal.h; sourceTree = "<group>"; };
+		A1CA16538CE2CBD14C9E9CCA6A566550 /* ResourceBundle-CBCertificates-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CBCertificates-Info.plist"; sourceTree = "<group>"; };
+		A8CDB654333D3802CCDFF11F7FD1A317 /* Coinbase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Coinbase.h; path = Pod/Classes/Client/Coinbase.h; sourceTree = "<group>"; };
+		B151E072319301C13727601B5F944B33 /* CoinbasePaymentMethod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbasePaymentMethod.h; path = Pod/Classes/Client/CoinbasePaymentMethod.h; sourceTree = "<group>"; };
+		B27AFB5F3164DF67BB09212D9020DE3B /* CoinbaseContact.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseContact.m; path = Pod/Classes/Client/CoinbaseContact.m; sourceTree = "<group>"; };
+		B47B21993EC3B30E4E8E0193EA822BBB /* CoinbasePagingHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbasePagingHelper.h; path = Pod/Classes/Client/CoinbasePagingHelper.h; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B81FC6B889481E770FB16D7EA3C47016 /* Pods-LitePay2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2-frameworks.sh"; sourceTree = "<group>"; };
+		C0CEC40034F44A090FB86D6A2522E353 /* CoinbaseCertificatePinning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseCertificatePinning.m; path = Pod/Classes/Client/CoinbaseCertificatePinning.m; sourceTree = "<group>"; };
+		C42909E1FEA3E1B5646D02D6B63792A4 /* CoinbaseApplication.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseApplication.m; path = Pod/Classes/Client/CoinbaseApplication.m; sourceTree = "<group>"; };
+		CD78B8E3C027F22DBB1EF37497081CB2 /* digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; name = digicert.der; path = Pod/Assets/Certificates/digicert.der; sourceTree = "<group>"; };
+		D2EBEAB801B97DFA6AE8C18FCDEAA9FF /* Pods-LitePay2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LitePay2-acknowledgements.plist"; sourceTree = "<group>"; };
+		D50BE39024BBEB8FB41C7F6F540CA25D /* CoinbaseTransfer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseTransfer.m; path = Pod/Classes/Client/CoinbaseTransfer.m; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D8ED7DCDB64D4FF77CF7E9390CDCEE84 /* digicert-ev.der */ = {isa = PBXFileReference; includeInIndex = 1; name = "digicert-ev.der"; path = "Pod/Assets/Certificates/digicert-ev.der"; sourceTree = "<group>"; };
+		DC932E354FA811F6FE82820246D7383A /* Pods-LitePay2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LitePay2-dummy.m"; sourceTree = "<group>"; };
+		DE689701B09FEC00B6BF369C1617BDF5 /* coinbase-official.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "coinbase-official.modulemap"; sourceTree = "<group>"; };
+		E268A0AFEE1F1E7CEA5D7870D5432EE9 /* CoinbaseRecurringPayment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseRecurringPayment.h; path = Pod/Classes/Client/CoinbaseRecurringPayment.h; sourceTree = "<group>"; };
+		E274687DABECC6A6ECF27584077195B0 /* CoinbaseAuthorization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseAuthorization.m; path = Pod/Classes/Client/CoinbaseAuthorization.m; sourceTree = "<group>"; };
+		E5DE1F62EB7BEF54E42C344CEE88F419 /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
+		E78CE573DC919111DF02B48563F25534 /* CoinbaseButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseButton.h; path = Pod/Classes/Client/CoinbaseButton.h; sourceTree = "<group>"; };
+		EA8BB2B77E48D378FA1C66DD17A5D047 /* CoinbaseAddress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAddress.h; path = Pod/Classes/Client/CoinbaseAddress.h; sourceTree = "<group>"; };
+		F0BB0BD858804941F14F6458B4987A9A /* CoinbasePagingHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbasePagingHelper.m; path = Pod/Classes/Client/CoinbasePagingHelper.m; sourceTree = "<group>"; };
+		F90F8052A5691C2F0C5896593D007786 /* CoinbaseTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseTransaction.m; path = Pod/Classes/Client/CoinbaseTransaction.m; sourceTree = "<group>"; };
+		FAACDA6097BF552D455EC7B393123537 /* CoinbaseApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseApplication.h; path = Pod/Classes/Client/CoinbaseApplication.h; sourceTree = "<group>"; };
+		FF686ACFD481FD325C7B6F188CA9E0FC /* CoinbasePrice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbasePrice.m; path = Pod/Classes/Client/CoinbasePrice.m; sourceTree = "<group>"; };
+		FF93B787BB8F3C44844CA15D52BC6A06 /* coinbase-official-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "coinbase-official-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		308234A50F214A5857095D92E6BDF8C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84628A70F9B97C9E4BD20B114AE15B68 /* Foundation.framework in Frameworks */,
+				4481A400DF490DDE921EF7A06141E400 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF3FDEA4C44EA2AD323AF515EE8E30C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA5D25AFC3A3AEB942A4B1C8BF5A1E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB4298EB957BFCF74A70A5F5D18F73D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22C68E0F3E7828A96D2FBF089C7348B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6615FA5453DD7CA058FDF94EAF474304 /* CBCertificates.bundle */,
+				33F04A75EBDB5319BF344B059256262C /* coinbase_official.framework */,
+				73A8412C61B9376998B992869FB5ABA7 /* Pods_LitePay2.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33D40936B07E3DFC4CB2ADC5FE92E206 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C58DD9DE23626BD3F1CD32F264B8EC0B /* Pods-LitePay2 */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				B8B34FACEE16B1E599B88601C1B2C267 /* Pods */,
+				22C68E0F3E7828A96D2FBF089C7348B8 /* Products */,
+				33D40936B07E3DFC4CB2ADC5FE92E206 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8F2C18508AD538182EFD824C1D42BB53 /* coinbase-official */ = {
+			isa = PBXGroup;
+			children = (
+				A8D83CF498860144A6218BFB3AD830D3 /* client */,
+				EF322A0CAF1C716D5010729EAD03ECAC /* core */,
+				9C728A5EBAAE58DFE15E6AE2DEED7F44 /* OAuth */,
+				F31B48E4B89CDDB3072929B76F34A8F9 /* Resources */,
+				C9E83A7DA3C91EB8E5E5303B7EBF7486 /* Support Files */,
+			);
+			name = "coinbase-official";
+			path = "coinbase-official";
+			sourceTree = "<group>";
+		};
+		9C728A5EBAAE58DFE15E6AE2DEED7F44 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				3228E24349A6BA99A4AAC8E8B8892A50 /* CoinbaseOAuth.h */,
+				4B83A9DE6F4855552843C6FF7B91FC58 /* CoinbaseOAuth.m */,
+			);
+			name = OAuth;
+			sourceTree = "<group>";
+		};
+		A8D83CF498860144A6218BFB3AD830D3 /* client */ = {
+			isa = PBXGroup;
+			children = (
+				A8CDB654333D3802CCDFF11F7FD1A317 /* Coinbase.h */,
+				0FE1F6ABCAA1A3CE9E3941159ECF7AA4 /* Coinbase.m */,
+				2702FF5D15A26AF4C85B2182EEB79C14 /* CoinbaseAccount.h */,
+				9AD30FBFC4D92A05C4E11300B39BB5A8 /* CoinbaseAccount.m */,
+				3C53A729F2BED884A10E474FF9B97834 /* CoinbaseAccountChange.h */,
+				2F40EB3CCE2BA53FFA78FA910711CBA3 /* CoinbaseAccountChange.m */,
+				EA8BB2B77E48D378FA1C66DD17A5D047 /* CoinbaseAddress.h */,
+				40E794E55C7C74CC23238A48151A708C /* CoinbaseAddress.m */,
+				FAACDA6097BF552D455EC7B393123537 /* CoinbaseApplication.h */,
+				C42909E1FEA3E1B5646D02D6B63792A4 /* CoinbaseApplication.m */,
+				095D96AA1C97EBA5FE91CBB3B1F0ACB3 /* CoinbaseAuthorization.h */,
+				E274687DABECC6A6ECF27584077195B0 /* CoinbaseAuthorization.m */,
+				4BAA565AA7A18B4D24941010E15D618F /* CoinbaseBalance.h */,
+				3CEFFB0496A7FF747932F2B10699AD3A /* CoinbaseBalance.m */,
+				E78CE573DC919111DF02B48563F25534 /* CoinbaseButton.h */,
+				1F28E949D4BCBEDE6D521A30B3C457F1 /* CoinbaseButton.m */,
+				4BBAD242031A47442DF19F78C586BF12 /* CoinbaseCertificatePinning.h */,
+				C0CEC40034F44A090FB86D6A2522E353 /* CoinbaseCertificatePinning.m */,
+				51C1DB1BD3D0A1C63FD28294201AAC47 /* CoinbaseContact.h */,
+				B27AFB5F3164DF67BB09212D9020DE3B /* CoinbaseContact.m */,
+				485030EAD003B3A3CC0B9CA874DE50F6 /* CoinbaseCurrency.h */,
+				8EB5937F918A91C016C03EF8B98AB178 /* CoinbaseCurrency.m */,
+				A13E9B0141574EB30E0E01EB8D8EE8B0 /* CoinbaseInternal.h */,
+				0830000C03D4C46208F98C1EC84DB49A /* CoinbaseObject.h */,
+				7C9F224CD65D2F2518C61B18C3773AAC /* CoinbaseObject.m */,
+				9168B78B1E9F2B43E26C82333F555B85 /* CoinbaseOrder.h */,
+				48544B02F7B338557C9C9B74A97DC65D /* CoinbaseOrder.m */,
+				B47B21993EC3B30E4E8E0193EA822BBB /* CoinbasePagingHelper.h */,
+				F0BB0BD858804941F14F6458B4987A9A /* CoinbasePagingHelper.m */,
+				B151E072319301C13727601B5F944B33 /* CoinbasePaymentMethod.h */,
+				55BC101FC969BFDD2A80C397BB2AC701 /* CoinbasePaymentMethod.m */,
+				58CEF2E4BD28943A59446769A41A055C /* CoinbasePrice.h */,
+				FF686ACFD481FD325C7B6F188CA9E0FC /* CoinbasePrice.m */,
+				E268A0AFEE1F1E7CEA5D7870D5432EE9 /* CoinbaseRecurringPayment.h */,
+				98CE5F8F94E718EF0DF846EF48F2E4A7 /* CoinbaseRecurringPayment.m */,
+				7DDF5EF7FF841C74249E2AD1D56E148F /* CoinbaseRefund.h */,
+				A0CD029AE088B1C5C7394A8ECB88643F /* CoinbaseRefund.m */,
+				004C3FC9F21AA36B75E33B9D0B9B77E9 /* CoinbaseReport.h */,
+				405DEC4F9B0C1E02321B68514951EAB5 /* CoinbaseReport.m */,
+				59454E8B2AC328CECE80512A4CA0C47B /* CoinbaseToken.h */,
+				376D515803365D32653D0D2C740FF6E1 /* CoinbaseToken.m */,
+				15D438BBC2D2CADD48C7E7E3D10AF393 /* CoinbaseTransaction.h */,
+				F90F8052A5691C2F0C5896593D007786 /* CoinbaseTransaction.m */,
+				0076DAC900DF7CFBEAB363FFFFDA5204 /* CoinbaseTransfer.h */,
+				D50BE39024BBEB8FB41C7F6F540CA25D /* CoinbaseTransfer.m */,
+				7A917EDBCCCBA3C54444A56BE347413C /* CoinbaseUser.h */,
+				41710795EA3B754E00791341D9C1682C /* CoinbaseUser.m */,
+			);
+			name = client;
+			sourceTree = "<group>";
+		};
+		B8B34FACEE16B1E599B88601C1B2C267 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F2C18508AD538182EFD824C1D42BB53 /* coinbase-official */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C58DD9DE23626BD3F1CD32F264B8EC0B /* Pods-LitePay2 */ = {
+			isa = PBXGroup;
+			children = (
+				1E310349F7988768EF67FF72C793A39B /* Info.plist */,
+				625A8191F92CBC3D58D391D48AC8D5CA /* Pods-LitePay2.modulemap */,
+				9496DCB69A20CF37DB131F4D3B4C6CF2 /* Pods-LitePay2-acknowledgements.markdown */,
+				D2EBEAB801B97DFA6AE8C18FCDEAA9FF /* Pods-LitePay2-acknowledgements.plist */,
+				DC932E354FA811F6FE82820246D7383A /* Pods-LitePay2-dummy.m */,
+				B81FC6B889481E770FB16D7EA3C47016 /* Pods-LitePay2-frameworks.sh */,
+				4A95E5D1F2090D9CA1357AFC28D1E070 /* Pods-LitePay2-resources.sh */,
+				739034D3E827452F75D6C5C046B5D459 /* Pods-LitePay2-umbrella.h */,
+				3F01AA539C6420CB836EF8D58BBBF525 /* Pods-LitePay2.debug.xcconfig */,
+				E5DE1F62EB7BEF54E42C344CEE88F419 /* Pods-LitePay2.release.xcconfig */,
+			);
+			name = "Pods-LitePay2";
+			path = "Target Support Files/Pods-LitePay2";
+			sourceTree = "<group>";
+		};
+		C9E83A7DA3C91EB8E5E5303B7EBF7486 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE689701B09FEC00B6BF369C1617BDF5 /* coinbase-official.modulemap */,
+				3107E711F6F59902BA9D75DB47CD293A /* coinbase-official.xcconfig */,
+				6CC57FDE10DA136E7DD0D0532026FAAF /* coinbase-official-dummy.m */,
+				FF93B787BB8F3C44844CA15D52BC6A06 /* coinbase-official-prefix.pch */,
+				7DDF83A00E9E9F6622AA659B2CB42ED9 /* coinbase-official-umbrella.h */,
+				01A8F0250F960268EA6ABF2D7BD179AE /* Info.plist */,
+				A1CA16538CE2CBD14C9E9CCA6A566550 /* ResourceBundle-CBCertificates-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/coinbase-official";
+			sourceTree = "<group>";
+		};
+		EF322A0CAF1C716D5010729EAD03ECAC /* core */ = {
+			isa = PBXGroup;
+			children = (
+				1DCF8F50C0D1D16A20D46F2A4DF89533 /* CoinbaseDefines.h */,
+				9346D8DF644DD89F6D7CBDD0A993E4A1 /* CoinbaseDefines.m */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		F31B48E4B89CDDB3072929B76F34A8F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD78B8E3C027F22DBB1EF37497081CB2 /* digicert.der */,
+				D8ED7DCDB64D4FF77CF7E9390CDCEE84 /* digicert-ev.der */,
+				44D029D1CA3F12761FD7E8EE37F72EE4 /* verisign.der */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9E81F66181AB03CE9526B5B0D9819D42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8250CF52A5B3C411BEF463E2DBA172F2 /* coinbase-official-umbrella.h in Headers */,
+				4E5BF7A06E3799FD85E0FFE69A9EC64F /* Coinbase.h in Headers */,
+				235C9D1AED52C227E257393598EFD5A8 /* CoinbaseAccount.h in Headers */,
+				191DB0893CA486C0675FDEC97D3AE381 /* CoinbaseAccountChange.h in Headers */,
+				C06066DE4F19C90285C037DD74CC9081 /* CoinbaseAddress.h in Headers */,
+				181EDCD3955FA1B189393E752AE76D90 /* CoinbaseApplication.h in Headers */,
+				6595C505FC5FC7A05CE84956B8647342 /* CoinbaseAuthorization.h in Headers */,
+				2FD15258F677644F46DCE80DA3110C8E /* CoinbaseBalance.h in Headers */,
+				7ACD1EC1AD290AED530D4C19CFDCBE84 /* CoinbaseButton.h in Headers */,
+				6BD7BD091641ECA43AC781E162FAF756 /* CoinbaseCertificatePinning.h in Headers */,
+				A68487DB951E13166BBB56959406013E /* CoinbaseContact.h in Headers */,
+				22B41DE463482BF10B1129927A369A2F /* CoinbaseCurrency.h in Headers */,
+				BAF1F51D449FF92B413BCF2C9BD3ACE6 /* CoinbaseDefines.h in Headers */,
+				C44AA5C48F5CB382E2091029EEFC24FE /* CoinbaseInternal.h in Headers */,
+				38962B26B52D077E933C81C38E356B51 /* CoinbaseOAuth.h in Headers */,
+				BFECB0393E5D5BCB0FCB603C6A8E0BBA /* CoinbaseObject.h in Headers */,
+				DDC5DE3BF3ABA29C6DE457F2FF304FF1 /* CoinbaseOrder.h in Headers */,
+				377C67E0CC662332D952A7CC6F21223B /* CoinbasePagingHelper.h in Headers */,
+				896B0235EAA6FAC5B1AE44BAF477735F /* CoinbasePaymentMethod.h in Headers */,
+				BBC33412F8EDB097EEE16B3BFD330A2A /* CoinbasePrice.h in Headers */,
+				02D69F45AC38332BB157A61973B4D1C5 /* CoinbaseRecurringPayment.h in Headers */,
+				01DC5A4183AFE298709E5D35CD3EAFED /* CoinbaseRefund.h in Headers */,
+				37D82FBF421537DEE0B8D1710D8C4557 /* CoinbaseReport.h in Headers */,
+				4DE84AE2F0BE3FE6191A117B9797625B /* CoinbaseToken.h in Headers */,
+				8D1B27C559B0E4E793ABEC8203C7818C /* CoinbaseTransaction.h in Headers */,
+				07163E9B409E0A82423A8BA3B39FE971 /* CoinbaseTransfer.h in Headers */,
+				440B31EBE68C0F2E103C1B96B9FDBB48 /* CoinbaseUser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF8A5231D03E2910748209C73841E002 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40C8F8E2762C5F3E234729617E917E3 /* Pods-LitePay2-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		08D33982608988966225C37BF4F467DF /* coinbase-official */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECCC2788199707F4A5B8F70678D340D /* Build configuration list for PBXNativeTarget "coinbase-official" */;
+			buildPhases = (
+				8BE45BD468E83174700483AC5AA5A8FB /* Sources */,
+				308234A50F214A5857095D92E6BDF8C7 /* Frameworks */,
+				2D1695548A2B795DF4C082E9F47E3BB2 /* Resources */,
+				9E81F66181AB03CE9526B5B0D9819D42 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A7B8962561F67EB7EA08D7BFC83EB89 /* PBXTargetDependency */,
+			);
+			name = "coinbase-official";
+			productName = "coinbase-official";
+			productReference = 33F04A75EBDB5319BF344B059256262C /* coinbase_official.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1468F9B82158E3980A58D97749B41BFB /* coinbase-official-CBCertificates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A590655B70C1DC47C50A94D437C930B8 /* Build configuration list for PBXNativeTarget "coinbase-official-CBCertificates" */;
+			buildPhases = (
+				0065623A33742F2AB80405B56C2F72E3 /* Sources */,
+				AF3FDEA4C44EA2AD323AF515EE8E30C2 /* Frameworks */,
+				4F04F4F1BF5566808B5FDED391619243 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "coinbase-official-CBCertificates";
+			productName = "coinbase-official-CBCertificates";
+			productReference = 6615FA5453DD7CA058FDF94EAF474304 /* CBCertificates.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E13FE9B9F498EA422A63F2E6443043B1 /* Pods-LitePay2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 313731ACBE28F5558764F1077EFF675A /* Build configuration list for PBXNativeTarget "Pods-LitePay2" */;
+			buildPhases = (
+				389EBFF26A70B3A30A459FFD64661A9E /* Sources */,
+				BBA5D25AFC3A3AEB942A4B1C8BF5A1E4 /* Frameworks */,
+				DF8A5231D03E2910748209C73841E002 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B657E8FA57A5A2826BA329F96D6D2FF /* PBXTargetDependency */,
+			);
+			name = "Pods-LitePay2";
+			productName = "Pods-LitePay2";
+			productReference = 73A8412C61B9376998B992869FB5ABA7 /* Pods_LitePay2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 22C68E0F3E7828A96D2FBF089C7348B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08D33982608988966225C37BF4F467DF /* coinbase-official */,
+				1468F9B82158E3980A58D97749B41BFB /* coinbase-official-CBCertificates */,
+				E13FE9B9F498EA422A63F2E6443043B1 /* Pods-LitePay2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D1695548A2B795DF4C082E9F47E3BB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6295C8F15B8F04B5503AD145239A595 /* CBCertificates.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F04F4F1BF5566808B5FDED391619243 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008FF2DE7CD6AC5FDB0451D5F9275EC7 /* digicert-ev.der in Resources */,
+				68110B60C63813116EDA2CC718891FCB /* digicert.der in Resources */,
+				514D8893A8A597B59B5179306BDEC331 /* verisign.der in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0065623A33742F2AB80405B56C2F72E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		389EBFF26A70B3A30A459FFD64661A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16AA905B9C6937FA2D3A2DF16D0283CB /* Pods-LitePay2-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BE45BD468E83174700483AC5AA5A8FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E55F65C3EE448523F9326EF23E83E4A /* coinbase-official-dummy.m in Sources */,
+				E1BEB7D0A08A2E96F75C10279C596F15 /* Coinbase.m in Sources */,
+				97CFFD9C5F537D09791838F84689A94B /* CoinbaseAccount.m in Sources */,
+				7963EE3AD70581F5653E66F5F40356F6 /* CoinbaseAccountChange.m in Sources */,
+				20A4329B318217AC58FEDB9D602861F1 /* CoinbaseAddress.m in Sources */,
+				55B1AC7E4E3D05B21E8F5FC0980F8262 /* CoinbaseApplication.m in Sources */,
+				3314CBA809E8D1F61775487A8F8AA7D6 /* CoinbaseAuthorization.m in Sources */,
+				3F428454C310619F95DC9192685E3FC1 /* CoinbaseBalance.m in Sources */,
+				500193B9A3564CF8900361E794ACC025 /* CoinbaseButton.m in Sources */,
+				50F1D6F9793248FD2F793CAF0F07FD74 /* CoinbaseCertificatePinning.m in Sources */,
+				B1FB0B724E0BA8889220EEE4B0D97CC4 /* CoinbaseContact.m in Sources */,
+				8BE3CAAA893E5FDA43749B7BCBFC6241 /* CoinbaseCurrency.m in Sources */,
+				221349543308819D1C8749E3A0FA7C41 /* CoinbaseDefines.m in Sources */,
+				D7F88974B4175728A5A447F40300967D /* CoinbaseOAuth.m in Sources */,
+				B717BF2FFE9359E77DFEEC0F098AFABD /* CoinbaseObject.m in Sources */,
+				7FE3642A8F2CDBABCA485AC5DB19EEC2 /* CoinbaseOrder.m in Sources */,
+				4F9031E7E7E9534081077B5F157273DA /* CoinbasePagingHelper.m in Sources */,
+				3370167AB757CFD485E26C3B713D22BE /* CoinbasePaymentMethod.m in Sources */,
+				111574B7CAD1E25222DF74D03982E330 /* CoinbasePrice.m in Sources */,
+				F7D0F0090DE25349C7D0635DE0C507EB /* CoinbaseRecurringPayment.m in Sources */,
+				6A82C69D157FEC47CDF6BBC267D980A6 /* CoinbaseRefund.m in Sources */,
+				B6FBB43047573D7D83DDDA4B29DB67BF /* CoinbaseReport.m in Sources */,
+				119165E9E493DE05E89EA69E4CC14E9C /* CoinbaseToken.m in Sources */,
+				365D75FFE4FD64CEDC54AF2C2DA8AC6A /* CoinbaseTransaction.m in Sources */,
+				59E432F591C01EFAD77A010BA7ADD205 /* CoinbaseTransfer.m in Sources */,
+				A48194E7D23F7C9262C8C7999B17DE30 /* CoinbaseUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B657E8FA57A5A2826BA329F96D6D2FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "coinbase-official";
+			target = 08D33982608988966225C37BF4F467DF /* coinbase-official */;
+			targetProxy = FAACFEBB8F55ED743CBDD903E24A6F5B /* PBXContainerItemProxy */;
+		};
+		6A7B8962561F67EB7EA08D7BFC83EB89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "coinbase-official-CBCertificates";
+			target = 1468F9B82158E3980A58D97749B41BFB /* coinbase-official-CBCertificates */;
+			targetProxy = A68223BF436B75BCAA690267617A5970 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		13A95306D85E4471AB6BE665B012E60A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		229C25256F7FDFCCBA6789F736B9B7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3107E711F6F59902BA9D75DB47CD293A /* coinbase-official.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/coinbase-official";
+				INFOPLIST_FILE = "Target Support Files/coinbase-official/ResourceBundle-CBCertificates-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = CBCertificates;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		2F5B60060E5DD67F9C86ABBFC30AC0F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3107E711F6F59902BA9D75DB47CD293A /* coinbase-official.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/coinbase-official/coinbase-official-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/coinbase-official/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/coinbase-official/coinbase-official.modulemap";
+				PRODUCT_NAME = coinbase_official;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6464533B8E9097EF86C2185464B6EA07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5DE1F62EB7BEF54E42C344CEE88F419 /* Pods-LitePay2.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LitePay2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LitePay2/Pods-LitePay2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LitePay2;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E8333274F4AB64785B04AB5B2A37231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A8AFD558CA78B853AF06C2B436767841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3107E711F6F59902BA9D75DB47CD293A /* coinbase-official.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/coinbase-official";
+				INFOPLIST_FILE = "Target Support Files/coinbase-official/ResourceBundle-CBCertificates-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = CBCertificates;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		B196D15876CB2F9953D51575F78ECC4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F01AA539C6420CB836EF8D58BBBF525 /* Pods-LitePay2.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LitePay2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LitePay2/Pods-LitePay2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LitePay2;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EF5944254D2170BC24B41939D5EB58B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3107E711F6F59902BA9D75DB47CD293A /* coinbase-official.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/coinbase-official/coinbase-official-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/coinbase-official/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/coinbase-official/coinbase-official.modulemap";
+				PRODUCT_NAME = coinbase_official;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A95306D85E4471AB6BE665B012E60A /* Debug */,
+				8E8333274F4AB64785B04AB5B2A37231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		313731ACBE28F5558764F1077EFF675A /* Build configuration list for PBXNativeTarget "Pods-LitePay2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B196D15876CB2F9953D51575F78ECC4A /* Debug */,
+				6464533B8E9097EF86C2185464B6EA07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A590655B70C1DC47C50A94D437C930B8 /* Build configuration list for PBXNativeTarget "coinbase-official-CBCertificates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8AFD558CA78B853AF06C2B436767841 /* Debug */,
+				229C25256F7FDFCCBA6789F736B9B7FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CECCC2788199707F4A5B8F70678D340D /* Build configuration list for PBXNativeTarget "coinbase-official" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F5B60060E5DD67F9C86ABBFC30AC0F1 /* Debug */,
+				EF5944254D2170BC24B41939D5EB58B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

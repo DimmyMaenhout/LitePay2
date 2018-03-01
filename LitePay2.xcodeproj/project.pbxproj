@@ -7,21 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C5092047E3EF00A023D5 /* LoginViewController.swift */; };
+		63C6C50C2047E88400A023D5 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */; };
+		63C6C5102047FB9400A023D5 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C50F2047FB9400A023D5 /* QRCodeScannerViewController.swift */; };
 		63F17B412046B41400538D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B402046B41400538D2E /* AppDelegate.swift */; };
-		63F17B432046B41400538D2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B422046B41400538D2E /* ViewController.swift */; };
 		63F17B462046B41400538D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F17B442046B41400538D2E /* Main.storyboard */; };
 		63F17B482046B41400538D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F17B472046B41400538D2E /* Assets.xcassets */; };
 		63F17B4B2046B41400538D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F17B492046B41400538D2E /* LaunchScreen.storyboard */; };
+		63F17B562046BDAD00538D2E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B552046BDAD00538D2E /* Currency.swift */; };
+		63F17B592046C24900538D2E /* KoersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B582046C24900538D2E /* KoersCell.swift */; };
+		63F17B5C2046E36600538D2E /* CurrencyRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B5B2046E36600538D2E /* CurrencyRateViewController.swift */; };
+		63F17B5E2046F21500538D2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B5D2046F21500538D2E /* HomeViewController.swift */; };
+		63F17B602046F65200538D2E /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B5F2046F65200538D2E /* PayViewController.swift */; };
+		63F17B62204731DD00538D2E /* ChangePincodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B61204731DD00538D2E /* ChangePincodeViewController.swift */; };
+		63F17B64204738D400538D2E /* ConfirmPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B63204738D400538D2E /* ConfirmPaymentViewController.swift */; };
+		63F17B6620473E6F00538D2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B6520473E6F00538D2E /* SettingsViewController.swift */; };
+		6E408A4C8313BAB0C6353874 /* Pods_LitePay2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59EC41E7D95BBB2FDC4B33E /* Pods_LitePay2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63C6C5092047E3EF00A023D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		63C6C50F2047FB9400A023D5 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		63F17B3D2046B41400538D2E /* LitePay2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LitePay2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F17B402046B41400538D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63F17B422046B41400538D2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63F17B452046B41400538D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63F17B472046B41400538D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63F17B4A2046B41400538D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63F17B4C2046B41400538D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63F17B552046BDAD00538D2E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		63F17B582046C24900538D2E /* KoersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoersCell.swift; sourceTree = "<group>"; };
+		63F17B5B2046E36600538D2E /* CurrencyRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewController.swift; sourceTree = "<group>"; };
+		63F17B5D2046F21500538D2E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		63F17B5F2046F65200538D2E /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		63F17B61204731DD00538D2E /* ChangePincodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePincodeViewController.swift; sourceTree = "<group>"; };
+		63F17B63204738D400538D2E /* ConfirmPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentViewController.swift; sourceTree = "<group>"; };
+		63F17B6520473E6F00538D2E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B59EC41E7D95BBB2FDC4B33E /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LitePay2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5E1780FF83BB5609913B1B /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2.release.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
+		E353957490931AEF80D6C232 /* Pods-LitePay2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E408A4C8313BAB0C6353874 /* Pods_LitePay2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F75E98CF54A6B8CE53278AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B59EC41E7D95BBB2FDC4B33E /* Pods_LitePay2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63F17B342046B41400538D2E = {
 			isa = PBXGroup;
 			children = (
 				63F17B3F2046B41400538D2E /* LitePay2 */,
 				63F17B3E2046B41400538D2E /* Products */,
+				B66AB97F329A42C9C0B818B5 /* Pods */,
+				2F75E98CF54A6B8CE53278AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +89,57 @@
 		63F17B3F2046B41400538D2E /* LitePay2 */ = {
 			isa = PBXGroup;
 			children = (
+				63F17B5A2046E33B00538D2E /* ViewControllers */,
+				63F17B572046C21F00538D2E /* Views */,
+				63F17B522046BC7C00538D2E /* Model */,
 				63F17B402046B41400538D2E /* AppDelegate.swift */,
-				63F17B422046B41400538D2E /* ViewController.swift */,
 				63F17B442046B41400538D2E /* Main.storyboard */,
 				63F17B472046B41400538D2E /* Assets.xcassets */,
 				63F17B492046B41400538D2E /* LaunchScreen.storyboard */,
 				63F17B4C2046B41400538D2E /* Info.plist */,
 			);
 			path = LitePay2;
+			sourceTree = "<group>";
+		};
+		63F17B522046BC7C00538D2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63F17B552046BDAD00538D2E /* Currency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63F17B572046C21F00538D2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63F17B582046C24900538D2E /* KoersCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63F17B5A2046E33B00538D2E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				63F17B5B2046E36600538D2E /* CurrencyRateViewController.swift */,
+				63F17B5D2046F21500538D2E /* HomeViewController.swift */,
+				63F17B5F2046F65200538D2E /* PayViewController.swift */,
+				63F17B61204731DD00538D2E /* ChangePincodeViewController.swift */,
+				63F17B63204738D400538D2E /* ConfirmPaymentViewController.swift */,
+				63F17B6520473E6F00538D2E /* SettingsViewController.swift */,
+				63C6C5092047E3EF00A023D5 /* LoginViewController.swift */,
+				63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */,
+				63C6C50F2047FB9400A023D5 /* QRCodeScannerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B66AB97F329A42C9C0B818B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E353957490931AEF80D6C232 /* Pods-LitePay2.debug.xcconfig */,
+				CF5E1780FF83BB5609913B1B /* Pods-LitePay2.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63F17B4F2046B41400538D2E /* Build configuration list for PBXNativeTarget "LitePay2" */;
 			buildPhases = (
+				111D9F600AA5A1DB16BE86A7 /* [CP] Check Pods Manifest.lock */,
 				63F17B392046B41400538D2E /* Sources */,
 				63F17B3A2046B41400538D2E /* Frameworks */,
 				63F17B3B2046B41400538D2E /* Resources */,
+				08B7C92F3B4B78911DC413F1 /* [CP] Embed Pods Frameworks */,
+				91F1C150C4B153A32A58E17A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +212,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08B7C92F3B4B78911DC413F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/coinbase-official/coinbase_official.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/coinbase_official.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		111D9F600AA5A1DB16BE86A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LitePay2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91F1C150C4B153A32A58E17A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63F17B392046B41400538D2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63F17B432046B41400538D2E /* ViewController.swift in Sources */,
+				63F17B562046BDAD00538D2E /* Currency.swift in Sources */,
+				63F17B62204731DD00538D2E /* ChangePincodeViewController.swift in Sources */,
+				63F17B602046F65200538D2E /* PayViewController.swift in Sources */,
+				63F17B6620473E6F00538D2E /* SettingsViewController.swift in Sources */,
+				63F17B64204738D400538D2E /* ConfirmPaymentViewController.swift in Sources */,
+				63C6C5102047FB9400A023D5 /* QRCodeScannerViewController.swift in Sources */,
+				63C6C50C2047E88400A023D5 /* QRCodeViewController.swift in Sources */,
+				63F17B5C2046E36600538D2E /* CurrencyRateViewController.swift in Sources */,
+				63F17B592046C24900538D2E /* KoersCell.swift in Sources */,
 				63F17B412046B41400538D2E /* AppDelegate.swift in Sources */,
+				63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */,
+				63F17B5E2046F21500538D2E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +417,7 @@
 		};
 		63F17B502046B41400538D2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E353957490931AEF80D6C232 /* Pods-LitePay2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +432,7 @@
 		};
 		63F17B512046B41400538D2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF5E1780FF83BB5609913B1B /* Pods-LitePay2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
