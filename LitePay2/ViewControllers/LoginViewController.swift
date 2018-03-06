@@ -14,4 +14,7 @@ class LoginViewController : UIViewController {
     @IBOutlet weak var passwordTxtField : UITextField!
     @IBOutlet weak var loginBtn : UIButton!
     
+    @IBAction func handleAuthentication(_ sender: Any) {
+        CoinbaseAPI.redirectOauth()
+    }
 }
