@@ -4,7 +4,7 @@ import AVFoundation
 
 //AVCaptureMetadataOutput = het coregedeelte om qr code te lezen
 //AVCaptureMetadataOutputObjectsDelegate =
-class QRCodeScannerViewController : UIViewController {
+class QRCodeReaderViewController : UIViewController {
     
     @IBOutlet weak var QRCodeScannerImageView : UIView!
     @IBOutlet weak var headerInfoLbl: UILabel!
@@ -24,7 +24,7 @@ class QRCodeScannerViewController : UIViewController {
         *  to perform real-time capture we use AVCaptureSession object and add the input of te video capture device
         */
         
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
         guard let captureDevice = deviceDiscoverySession.devices.first else {
             print("Failed to get the camera device")
@@ -75,7 +75,7 @@ class QRCodeScannerViewController : UIViewController {
         }
     }
 }
-extension QRCodeScannerViewController : AVCaptureMetadataOutputObjectsDelegate {
+extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         //check if the metadataObjects array is not nill and it contains at least one object
         if metadataObjects.count == 0 {

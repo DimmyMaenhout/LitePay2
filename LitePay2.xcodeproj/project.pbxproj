@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		062AC56BE4654F0F30A31DA3 /* Pods_LitePay2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6346829020507C8E00785567 /* CoinbaseAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346828F20507C8E00785567 /* CoinbaseAppDelegate.swift */; };
+		6346829220512AE700785567 /* CoinbaseAppDelegateImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346829120512AE700785567 /* CoinbaseAppDelegateImplementation.swift */; };
 		63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C5092047E3EF00A023D5 /* LoginViewController.swift */; };
 		63C6C50C2047E88400A023D5 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */; };
-		63C6C5102047FB9400A023D5 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C50F2047FB9400A023D5 /* QRCodeScannerViewController.swift */; };
+		63C6C5102047FB9400A023D5 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C50F2047FB9400A023D5 /* QRCodeReaderViewController.swift */; };
+		63C7ED3E20517CF9005B5B16 /* LitePayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C7ED3D20517CF9005B5B16 /* LitePayData.swift */; };
 		63F17B412046B41400538D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B402046B41400538D2E /* AppDelegate.swift */; };
 		63F17B462046B41400538D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F17B442046B41400538D2E /* Main.storyboard */; };
 		63F17B482046B41400538D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F17B472046B41400538D2E /* Assets.xcassets */; };
@@ -30,9 +33,12 @@
 /* Begin PBXFileReference section */
 		3D688C7C2A8C913AC8461DF4 /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2.release.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
 		5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LitePay2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6346828F20507C8E00785567 /* CoinbaseAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseAppDelegate.swift; sourceTree = "<group>"; };
+		6346829120512AE700785567 /* CoinbaseAppDelegateImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseAppDelegateImplementation.swift; sourceTree = "<group>"; };
 		63C6C5092047E3EF00A023D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
-		63C6C50F2047FB9400A023D5 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		63C6C50F2047FB9400A023D5 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		63C7ED3D20517CF9005B5B16 /* LitePayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitePayData.swift; sourceTree = "<group>"; };
 		63F17B3D2046B41400538D2E /* LitePay2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LitePay2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F17B402046B41400538D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63F17B452046B41400538D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,7 +132,7 @@
 				63F17B6520473E6F00538D2E /* SettingsViewController.swift */,
 				63C6C5092047E3EF00A023D5 /* LoginViewController.swift */,
 				63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */,
-				63C6C50F2047FB9400A023D5 /* QRCodeScannerViewController.swift */,
+				63C6C50F2047FB9400A023D5 /* QRCodeReaderViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -135,6 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				63F9B1FF204D8FE000BDC6D6 /* CoinbaseAPI.swift */,
+				6346828F20507C8E00785567 /* CoinbaseAppDelegate.swift */,
+				6346829120512AE700785567 /* CoinbaseAppDelegateImplementation.swift */,
+				63C7ED3D20517CF9005B5B16 /* LitePayData.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -288,16 +297,19 @@
 			files = (
 				63F17B562046BDAD00538D2E /* Currency.swift in Sources */,
 				63F17B62204731DD00538D2E /* ChangePincodeViewController.swift in Sources */,
+				6346829220512AE700785567 /* CoinbaseAppDelegateImplementation.swift in Sources */,
 				63F17B602046F65200538D2E /* PayViewController.swift in Sources */,
 				63F17B6620473E6F00538D2E /* SettingsViewController.swift in Sources */,
 				63F17B64204738D400538D2E /* ConfirmPaymentViewController.swift in Sources */,
-				63C6C5102047FB9400A023D5 /* QRCodeScannerViewController.swift in Sources */,
+				63C6C5102047FB9400A023D5 /* QRCodeReaderViewController.swift in Sources */,
 				63C6C50C2047E88400A023D5 /* QRCodeViewController.swift in Sources */,
 				63F17B5C2046E36600538D2E /* CurrencyRateViewController.swift in Sources */,
 				63F9B200204D8FE000BDC6D6 /* CoinbaseAPI.swift in Sources */,
 				63F17B592046C24900538D2E /* KoersCell.swift in Sources */,
+				6346829020507C8E00785567 /* CoinbaseAppDelegate.swift in Sources */,
 				63F17B412046B41400538D2E /* AppDelegate.swift in Sources */,
 				63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */,
+				63C7ED3E20517CF9005B5B16 /* LitePayData.swift in Sources */,
 				63F17B5E2046F21500538D2E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
