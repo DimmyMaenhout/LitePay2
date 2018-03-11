@@ -5,13 +5,9 @@ import AVFoundation
 //AVCaptureMetadataOutput = het coregedeelte om qr code te lezen
 //AVCaptureMetadataOutputObjectsDelegate =
 class QRCodeReaderViewController : UIViewController {
+
     
-    @IBOutlet weak var QRCodeScannerImageView : UIView!
-    @IBOutlet weak var headerInfoLbl: UILabel!
-    @IBOutlet weak var infoIcon: UIImageView!
-    @IBOutlet weak var explanationLbl: UILabel!
-    
-    
+    @IBOutlet weak var videoPreview: UIView!
     var captureSession = AVCaptureSession()
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -80,7 +76,7 @@ extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
         //check if the metadataObjects array is not nill and it contains at least one object
         if metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
-            explanationLbl.text = "No QR code is detected"
+            //explanationLbl.text = "No QR code is detected"
             return
         }
         
@@ -93,7 +89,7 @@ extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
             qrCodeFrameView?.frame = barcodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                explanationLbl.text = metadataObj.stringValue
+                //explanationLbl.text = metadataObj.stringValue
             }
         }
         
