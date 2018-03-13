@@ -1,12 +1,5 @@
-//
-//  AppDelegate.swift
-//  LitePay2
-//
-//  Created by Dimmy Maenhout on 28/02/2018.
-//  Copyright © 2018 Dimmy Maenhout. All rights reserved.
-//
-
 import UIKit
+import coinbase_official
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +11,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print("App delegate lijn 16, url.scheme: \(String(describing: url.scheme))")
+        print("App delegate lijn 17, url: \(url)")
+        
+        if url.scheme == "dmaenhout.litepay2" {
+            print("App delegate lijn 20, url.scheme matches. Started (method) finish authentication")
+            CoinbaseOAuth.finishAuthentication(for: url, clientId: LitePayData.clientId, clientSecret: LitePayData.clientSecret,
+                completion:
+                { (result : Any?, error: Error?) -> Void in
+                    if error != nil {
+                        // Could not authenticate.
+                        print("App delegate lijn 26, Could not authenticate (error): \(String(describing: error))" )
+                    }
+                    else {
+                        // Tokens successfully obtained!
+                        print("App delegate lijn 30, obtained tokens")
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "homescreen") as! HomeViewController
+                        print("App delegate lijn 34, go to method authentication complete in home view controller")
+                        controller.authenticationComplete(result as! [AnyHashable : Any])
+                        
+                        self.window = UIWindow(frame: UIScreen.main.bounds)
+                        self.window?.rootViewController = controller
+                        self.window?.makeKeyAndVisible()
+                        print("App delegate lijn 40, make home screen visible")
+                        
+                    }
+            } )
+            return true
+        }
+        else {
+            print("App delegate lijn 47, url.scheme doesn't match")
+            return false
+        }
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
