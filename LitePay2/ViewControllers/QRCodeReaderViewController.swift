@@ -4,14 +4,10 @@ import AVFoundation
 
 //AVCaptureMetadataOutput = het coregedeelte om qr code te lezen
 //AVCaptureMetadataOutputObjectsDelegate =
-class QRCodeScannerViewController : UIViewController {
+class QRCodeReaderViewController : UIViewController {
+
     
-    @IBOutlet weak var QRCodeScannerImageView : UIView!
-    @IBOutlet weak var headerInfoLbl: UILabel!
-    @IBOutlet weak var infoIcon: UIImageView!
-    @IBOutlet weak var explanationLbl: UILabel!
-    
-    
+    @IBOutlet weak var videoPreview: UIView!
     var captureSession = AVCaptureSession()
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -24,10 +20,10 @@ class QRCodeScannerViewController : UIViewController {
         *  to perform real-time capture we use AVCaptureSession object and add the input of te video capture device
         */
         
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
-        
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
+        print("QRCode reader view controller lijn 24, get the rear end camera: \(deviceDiscoverySession)")
         guard let captureDevice = deviceDiscoverySession.devices.first else {
-            print("Failed to get the camera device")
+            print("QRCode reader view controller lijn 26, Failed to get the camera device")
             return
         }
         
@@ -49,6 +45,7 @@ class QRCodeScannerViewController : UIViewController {
             
             //metadataObjectTypes, this is the point where we tell the app what kind of metada were interested in (QR)
             captureMetaDataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+            print("QRCode reader view controller lijn 48, interested in (type) QR: \(captureMetaDataOutput.metadataObjectTypes)")
             
             //initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -58,10 +55,11 @@ class QRCodeScannerViewController : UIViewController {
             
             //start video capture
             captureSession.startRunning()
+            print("QRCode reader view controller lijn 58, started video capture")
         }
         catch {
             //if any error occurs
-            print(error)
+            print("QRCode reader view controller lijn 62, error occured: \(error)")
             return
         }
         //initialize QR Code Frame to highlight the QR code
@@ -75,17 +73,20 @@ class QRCodeScannerViewController : UIViewController {
         }
     }
 }
-extension QRCodeScannerViewController : AVCaptureMetadataOutputObjectsDelegate {
+
+extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         //check if the metadataObjects array is not nill and it contains at least one object
         if metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
-            explanationLbl.text = "No QR code is detected"
+            //explanationLbl.text = "No QR code is detected"
             return
         }
         
         //get the metadata object
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        
+        print("QRCode reader view controller lijn 89, metadataObj: \(metadataObj)")
         
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
             //if the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
@@ -93,7 +94,7 @@ extension QRCodeScannerViewController : AVCaptureMetadataOutputObjectsDelegate {
             qrCodeFrameView?.frame = barcodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                explanationLbl.text = metadataObj.stringValue
+                //explanationLbl.text = metadataObj.stringValue
             }
         }
         
