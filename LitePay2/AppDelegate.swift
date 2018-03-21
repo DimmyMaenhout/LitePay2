@@ -13,38 +13,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        print("App delegate lijn 16, url.scheme: \(String(describing: url.scheme))")
-        print("App delegate lijn 17, url: \(url)")
+        print("App delegate line 16, url.scheme: \(String(describing: url.scheme))")
+        print("App delegate line 17, url: \(url)")
         
         if url.scheme == "dmaenhout.litepay2" {
-            print("App delegate lijn 20, url.scheme matches. Started (method) finish authentication")
+            print("App delegate line 20, url.scheme matches. Started (method) finish authentication")
             CoinbaseOAuth.finishAuthentication(for: url, clientId: LitePayData.clientId, clientSecret: LitePayData.clientSecret,
                 completion:
                 { (result : Any?, error: Error?) -> Void in
                     if error != nil {
                         // Could not authenticate.
-                        print("App delegate lijn 26, Could not authenticate (error): \(String(describing: error))" )
+                        print("App delegate line 26, Could not authenticate (error): \(String(describing: error))" )
                     }
                     else {
                         // Tokens successfully obtained!
-                        print("App delegate lijn 30, obtained tokens")
+                        print("App delegate line 30, obtained tokens")
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let controller = storyboard.instantiateViewController(withIdentifier: "homescreen") as! HomeViewController
-                        print("App delegate lijn 34, go to method authentication complete in home view controller")
+                        print("App delegate line 34, go to method authentication complete in home view controller")
                         controller.authenticationComplete(result as! [AnyHashable : Any])
                         
                         self.window = UIWindow(frame: UIScreen.main.bounds)
                         self.window?.rootViewController = controller
                         self.window?.makeKeyAndVisible()
-                        print("App delegate lijn 40, make home screen visible")
+                        print("App delegate line 40, make home screen visible")
                         
                     }
             } )
             return true
         }
         else {
-            print("App delegate lijn 47, url.scheme doesn't match")
+            print("App delegate line 47, url.scheme doesn't match")
             return false
         }
     }
