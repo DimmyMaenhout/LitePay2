@@ -20,6 +20,7 @@ struct LitePayData {
     /*  urls voor calls naar coinbase*/
     static let baseUrlCoinbase = "https://api.coinbase.com/v2/"
     //list current users accounts
-    static let accounts = "accounts"
+    static let accounts = "accounts/"
+    static let addresses = "addresses"
     
 }
