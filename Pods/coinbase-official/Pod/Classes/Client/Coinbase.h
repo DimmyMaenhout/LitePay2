@@ -588,7 +588,13 @@ agreeBTCAmountVaries:(BOOL)agreeBTCAmountVaries
 /// Required scope: transactions
 ///
 
--(void) getTransactions:(void(^)(NSArray*, CoinbaseUser*, CoinbaseBalance*, CoinbaseBalance*, CoinbasePagingHelper*, NSError*))callback;
+-(void) getTransactions:(NSString *)accountId
+               callback:(void(^)(NSArray <CoinbaseTransaction *>*,
+                                 CoinbaseUser*,
+                                 CoinbaseBalance*,
+                                 CoinbaseBalance*,
+                                 CoinbasePagingHelper*,
+                                 NSError*))callback;
 
 -(void) getTransactionsWithPage:(NSUInteger)page
                           limit:(NSUInteger)limit
