@@ -288,7 +288,7 @@ static NSNumber * __strong requestTimeoutInterval;
         }
     }
 
-    NSURL *baseURL = [NSURL URLWithString:@"v1/" relativeToURL:(self.baseURL == nil ? [NSURL URLWithString:@"https://api.coinbase.com/"] : self.baseURL)];
+    NSURL *baseURL = [NSURL URLWithString:@"v2/" relativeToURL:(self.baseURL == nil ? [NSURL URLWithString:@"https://api.coinbase.com/"] : self.baseURL)];
     NSURL *URL = [[NSURL URLWithString:path relativeToURL:baseURL] absoluteURL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:(requestTimeoutInterval == nil ? 15.0f : requestTimeoutInterval.doubleValue)];
     
@@ -330,6 +330,14 @@ static NSNumber * __strong requestTimeoutInterval;
     } else if (self.authenticationType == CoinbaseAuthenticationTypeOAuth) {
         // OAuth
         [request setValue:[NSString stringWithFormat:@"Bearer %@", self.accessToken] forHTTPHeaderField:@"Authorization"];
+        
+        static NSDateFormatter *dateFormatter;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            dateFormatter = [NSDateFormatter new];
+            dateFormatter.dateFormat = @"YYYY-MM-dd";
+        });
+        [request setValue:[dateFormatter stringFromDate:[NSDate new]] forHTTPHeaderField:@"CB-VERSION"];
     }
     
     NSBundle *mainBundle = [NSBundle mainBundle];
@@ -381,7 +389,7 @@ static NSNumber * __strong requestTimeoutInterval;
 
         if ([response isKindOfClass:[NSDictionary class]])
         {
-            NSArray *responseAccounts = [response objectForKey:@"accounts"];
+            NSArray *responseAccounts = [response objectForKey:@"data"];
 
             NSMutableArray *accounts = [[NSMutableArray alloc] initWithCapacity:responseAccounts.count];
 
@@ -585,7 +593,7 @@ static NSNumber * __strong requestTimeoutInterval;
                                     label:(NSString*)label
                               callBackURL:(NSString *)callBackURL
                                competiton:(void(^)(CoinbaseAddress*, NSError*))callback
-{
+{//changed @{@"address" with   @"accounts"
     NSDictionary *parameters = @{@"address" :
                                     @{@"label" : ObjectOrEmptyString(label),
                                       @"callback_url" : ObjectOrEmptyString(callBackURL)}};
@@ -1974,9 +1982,11 @@ agreeBTCAmountVaries:(BOOL)agreeBTCAmountVaries
 
 #pragma mark - Transactions
 
--(void) getTransactions:(void(^)(NSArray*, CoinbaseUser*, CoinbaseBalance*, CoinbaseBalance*, CoinbasePagingHelper*, NSError*))callback
+-(void) getTransactions:(NSString *)accountId callback:(void(^)(NSArray*, CoinbaseUser*, CoinbaseBalance*, CoinbaseBalance*, CoinbasePagingHelper*, NSError*))callback
 {
-    [self doRequestType:CoinbaseRequestTypeGet path:@"transactions" parameters:nil headers:nil completion:^(id response, NSError *error) {
+    NSString *path = [NSString stringWithFormat:@"accounts/%@/transactions", accountId];
+    
+    [self doRequestType:CoinbaseRequestTypeGet path:@"path" parameters:nil headers:nil completion:^(id response, NSError *error) {
 
         if (error)
         {
@@ -1990,13 +2000,13 @@ agreeBTCAmountVaries:(BOOL)agreeBTCAmountVaries
             CoinbaseBalance *nativeBalance = [[CoinbaseBalance alloc] initWithDictionary:[response objectForKey:@"native_balance"]];
             CoinbaseUser *user = [[CoinbaseUser alloc] initWithDictionary:[response objectForKey:@"current_user"]];
 
-            NSArray *responseTransactions = [response objectForKey:@"transactions"];
+            NSArray *responseTransactions = [response objectForKey:@"data"];
 
             NSMutableArray *transactions = [[NSMutableArray alloc] initWithCapacity:responseTransactions.count];
 
             for (NSDictionary *dictionary in responseTransactions)
             {
-                CoinbaseTransaction *transaction = [[CoinbaseTransaction alloc] initWithDictionary:[dictionary objectForKey:@"transaction"]];
+                CoinbaseTransaction *transaction = [[CoinbaseTransaction alloc] initWithDictionary:dictionary];
                 [transactions addObject:transaction];
             }
             CoinbasePagingHelper *pagingHelper = [[CoinbasePagingHelper alloc] initWithDictionary:response];
@@ -2208,7 +2218,7 @@ agreeBTCAmountVaries:(BOOL)agreeBTCAmountVaries
 
 -(void) getCurrentUser:(void(^)(CoinbaseUser*, NSError*))callback
 {
-    [self doRequestType:CoinbaseRequestTypeGet path:@"users/self" parameters:nil headers:nil completion:^(id response, NSError *error) {
+    [self doRequestType:CoinbaseRequestTypeGet path:@"user" parameters:nil headers:nil completion:^(id response, NSError *error) {
 
         if (error)
         {
@@ -2218,7 +2228,7 @@ agreeBTCAmountVaries:(BOOL)agreeBTCAmountVaries
 
         if ([response isKindOfClass:[NSDictionary class]])
         {
-            CoinbaseUser *user = [[CoinbaseUser alloc] initWithDictionary:[response objectForKey:@"user"]];
+            CoinbaseUser *user = [[CoinbaseUser alloc] initWithDictionary:[response objectForKey:@"data"]];
             callback(user , error);
         }
     }];
