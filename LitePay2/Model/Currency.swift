@@ -24,4 +24,8 @@ enum CurrencyCode {
     /*Used for abbreviation of currency*/
     case EUR
     case LTC
+    case BTC
+    case BCH
+    case ETH
+    case OTHER
 }
