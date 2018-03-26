@@ -15,6 +15,10 @@ class HomeViewController : UIViewController {
     var refreshToken = ""
     var accounts : [CoinbaseAccount] = []
     
+    //dict accountIDs has currencies as keys and account's id's as values
+    //there can be multiple accounts with the same currency, so we use an array
+    var currencyAccountIDs : [String: [CoinbaseAccount]] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +81,7 @@ class HomeViewController : UIViewController {
                 
                 } as! CoinbaseCompletionBlock)
     }
+    
     //Gets all of the users accounts (wallets)
     func getAccounts()  {
         
@@ -93,7 +98,7 @@ class HomeViewController : UIViewController {
                         //If there is an error, show alert
                         print("Home view controller line 94, got till here")
                         if error != nil{
-                            print("Home view controller line 96, error occured when trying to get accounts.")
+                            print("Home view controller line 96, error occured when trying to get accounts. error: \(error?.localizedDescription)")
                             
                             let alert = UIAlertController(title: "Error", message: "Er is een fout opgtreden bij het ophalen van de accounts", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -113,14 +118,12 @@ class HomeViewController : UIViewController {
                         guard let pagingHelper = pagingHelper else
                         {
                             print("Home view controller line 115, pagingHelper is nil, exiting method getAccounts")
-                            
                             return
                         }
-                        
+                    
                         self.accounts = accounts as! [CoinbaseAccount]
                         print("Home view controller line 122, # accounts: \(accounts.count)")
                         print("Home view controller line 123, # account in self.accounts: \(self.accounts.count)")
-                    
                         self.getAccountIDs(self.accounts)
                 })
                 
@@ -133,13 +136,104 @@ class HomeViewController : UIViewController {
         }
     }
     
-    func getAccountIDs(_ accounts : [CoinbaseAccount]){
+    func getAccountIDs(_ accounts : [CoinbaseAccount]) /*-> [String: [CoinbaseAccount]] */ {
+        var ltc : [CoinbaseAccount] = []
+        var btc : [CoinbaseAccount] = []
+        var bch : [CoinbaseAccount] = []
+        var eth : [CoinbaseAccount] = []
+        var eur : [CoinbaseAccount] = []
+        var other: [CoinbaseAccount] = []
+        /*deze mag verwijderd worden, is enkel om te testen */var adressen : [CoinbaseAddress] = []
+        //currencyAccountIDs = Dictionary(uniqueKeysWithValues: ["LTC", "BTC", "BCH", "ETH", "OTHER"])
         
-        print("Home view controller line 138, got till here")
-        for account2 in self.accounts {
-            print("Home view controller line 140, account name \(account2.name), accountID: \(account2.accountID), native balance: \(account2.nativeBalance.amount)")
+        print("Home view controller line 138, accessed method getAccountsIDs")
+        for account in self.accounts {
+            
+            switch(account.balance.currency){
+            case "\(CurrencyCode.LTC)":
+                ltc.append(account)
+                currencyAccountIDs["\(CurrencyCode.LTC)"] = ltc
+                print("Home view controller line 156, LTC account id: \(account.accountID)")
+                
+            case "\(CurrencyCode.BTC)":
+                btc.append(account)
+                currencyAccountIDs["\(CurrencyCode.BTC)"] = btc
+                
+            case "\(CurrencyCode.BCH)":
+                bch.append(account)
+                currencyAccountIDs["\(CurrencyCode.BCH)"] = bch
+                
+            case "\(CurrencyCode.ETH)":
+                eth.append(account)
+                currencyAccountIDs["\(CurrencyCode.ETH)"] = eth
+                
+            case "\(CurrencyCode.EUR)":
+                eur.append(account)
+                currencyAccountIDs["\(CurrencyCode.EUR)"] = eur
+                
+            default:
+                other.append(account)
+                currencyAccountIDs["\(CurrencyCode.OTHER)"] = other
+            }
             
         }
+        print("home view controller line 180, currencyAccountIDs for LTC: \(String(describing: currencyAccountIDs["\(CurrencyCode.LTC)"]?.count)) \n currencyAccountIDs for BTC: \(String(describing: currencyAccountIDs["\(CurrencyCode.BTC)"]?.count)) \n currencyAccountIDs for BCH: \(String(describing: currencyAccountIDs["\(CurrencyCode.BCH)"]?.count)) \n currencyAccountIDs for ETH: \(String(describing: currencyAccountIDs["\(CurrencyCode.ETH)"]?.count)) \n currencyAccountIDs for EUR: \(String(describing: currencyAccountIDs["\(CurrencyCode.EUR)"]?.count)) \n currencyAccountIDs for OTHER: \(String(describing: currencyAccountIDs["\(CurrencyCode.OTHER)"]?.count))")
+
+        //return currencyAccountIDs
+    }
+    
+    //Method which allows the user to select a currency for his payment, at the moment only LTC will be allowed
+    func selectAccount() {
+        
+        if let ltc = currencyAccountIDs["LTC"] {
+            print("Home view controller line 188, method selectAccount ltc value:\(ltc)")
+        }
+        print("Home view controller line 190, currency")
+        
+        
+    }
+    
+    func createNewAddressForAccount(accountID : String){
+        
+        let accessTkn = UserDefaults.standard.object(forKey: "access_token")
+        
+        if let accessToken = accessTkn {
+            
+            client = Coinbase(oAuthAccessToken: accessToken as! String)
+            //If client has a value (not nil) go in statement
+            if let client = client
+            {
+                //client.createBitcoinAddress(withAccountID: accountID, label: <#T##String!#>, callBackURL: <#T##String!#>, competiton: <#T##((CoinbaseAddress?, Error?) -> Void)!##((CoinbaseAddress?, Error?) -> Void)!##(CoinbaseAddress?, Error?) -> Void#>)
+                
+                client.getAccount(accountID,  completion: {(account : CoinbaseAccount?, error : Error?) -> Void in
+                    
+                    //if there is no error go in statement
+                    if error != nil {
+                        //if account has a value (not nil) go in statement
+                        if let account = account {
+                            //account.create
+                        }
+                    }
+                    else {
+                        print("Home view controller line 217, func createNewAddressForAccount error: \(String(describing: error?.localizedDescription))")
+                    }
+                    })
+                
+                /*print(self)
+                 return self.accounts;*/
+            }
+            else
+            {
+                print("Home view controller line 213, client is nil")
+            }
+            
+        }
+        else
+        {
+            
+        }
+        print("Home view controller line 221, accessToken is nil")
+        
     }
     
     func getBalanceInEuro(){
