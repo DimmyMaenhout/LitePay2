@@ -25,9 +25,22 @@ static NSURL * __strong baseURL;
     return [CoinbaseOAuth startOAuthAuthenticationWithClientId:clientId scope:scope redirectUri:redirectUri meta:meta layout:nil];
 }
 
++ (CoinbaseOAuthAuthenticationMechanism)startOAuthAuthenticationWithClientId:(NSString *)clientId
+                                                                       scope:(NSString *)scope
+                                                                 redirectUri:(NSString *)redirectUri
+                                                                        meta:(NSDictionary *)meta
+                                                                      layout:(NSString *)layout {
+    return [CoinbaseOAuth startOAuthAuthenticationWithClientId:clientId
+                                                         scope:scope
+                                                 accountAccess:CoinbaseOAuthAccountAccessSelect
+                                                   redirectUri:redirectUri
+                                                          meta:meta
+                                                        layout:layout];
+}
 
 + (CoinbaseOAuthAuthenticationMechanism)startOAuthAuthenticationWithClientId:(NSString *)clientId
                                                                        scope:(NSString *)scope
+                                                               accountAccess:(CoinbaseOAuthAccountAccess)accountAccess
                                                                  redirectUri:(NSString *)redirectUri
                                                                         meta:(NSDictionary *)meta
                                                                       layout:(NSString *)layout {
@@ -35,6 +48,22 @@ static NSURL * __strong baseURL;
     if (scope) {
         path = [path stringByAppendingFormat:@"&scope=%@", [self URLEncodedStringFromString:scope]];
     }
+    
+    NSString *accountAccessParamValue = @"";
+    switch (accountAccess) {
+        case CoinbaseOAuthAccountAccessSelect:
+            accountAccessParamValue = @"select";
+            break;
+        case CoinbaseOAuthAccountAccessNew:
+            accountAccessParamValue = @"new";
+            break;
+        case CoinbaseOAuthAccountAccessAll:
+            accountAccessParamValue = @"all";
+            break;
+    }
+    
+    path = [path stringByAppendingFormat:@"&account=%@", [self URLEncodedStringFromString:accountAccessParamValue]];
+    
     if (redirectUri) {
         path = [path stringByAppendingFormat:@"&redirect_uri=%@", [self URLEncodedStringFromString:redirectUri]];
     }
