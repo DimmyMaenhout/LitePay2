@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		062AC56BE4654F0F30A31DA3 /* Pods_LitePay2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6335EC322068FD63000AA244 /* SelectAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC312068FD63000AA244 /* SelectAccountViewController.swift */; };
+		6335EC3420690E9E000AA244 /* AccountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC3320690E9E000AA244 /* AccountsCell.swift */; };
+		6335EC36206A2527000AA244 /* HeaderCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */; };
 		63718B452058012C00E3C33E /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63718B442058012C00E3C33E /* Permissions.swift */; };
 		63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C5092047E3EF00A023D5 /* LoginViewController.swift */; };
 		63C6C50C2047E88400A023D5 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */; };
@@ -31,6 +34,9 @@
 /* Begin PBXFileReference section */
 		3D688C7C2A8C913AC8461DF4 /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2.release.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
 		5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LitePay2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6335EC312068FD63000AA244 /* SelectAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountViewController.swift; sourceTree = "<group>"; };
+		6335EC3320690E9E000AA244 /* AccountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCell.swift; sourceTree = "<group>"; };
+		6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCurrencyCell.swift; sourceTree = "<group>"; };
 		63718B442058012C00E3C33E /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		63C6C5092047E3EF00A023D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				63F17B582046C24900538D2E /* KoersCell.swift */,
+				6335EC3320690E9E000AA244 /* AccountsCell.swift */,
+				6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 				63C6C5092047E3EF00A023D5 /* LoginViewController.swift */,
 				63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */,
 				63C6C50F2047FB9400A023D5 /* QRCodeReaderViewController.swift */,
+				6335EC312068FD63000AA244 /* SelectAccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6335EC322068FD63000AA244 /* SelectAccountViewController.swift in Sources */,
 				63718B452058012C00E3C33E /* Permissions.swift in Sources */,
 				63F17B562046BDAD00538D2E /* Currency.swift in Sources */,
 				63F17B62204731DD00538D2E /* ChangePincodeViewController.swift in Sources */,
@@ -302,7 +312,9 @@
 				63F9B200204D8FE000BDC6D6 /* CoinbaseAPIService.swift in Sources */,
 				63F17B592046C24900538D2E /* KoersCell.swift in Sources */,
 				63F17B412046B41400538D2E /* AppDelegate.swift in Sources */,
+				6335EC36206A2527000AA244 /* HeaderCurrencyCell.swift in Sources */,
 				63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */,
+				6335EC3420690E9E000AA244 /* AccountsCell.swift in Sources */,
 				63C7ED3E20517CF9005B5B16 /* LitePayData.swift in Sources */,
 				63F17B5E2046F21500538D2E /* HomeViewController.swift in Sources */,
 			);
