@@ -4,7 +4,6 @@ import coinbase_official
 
 class SelectAccountViewController : UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     var client : Coinbase? = nil
@@ -13,12 +12,8 @@ class SelectAccountViewController : UIViewController {
     var accounts : [CoinbaseAccount] = []
     //dict accountIDs has currencies as keys and account's id's as values
     //there can be multiple accounts with the same currency, so we use an array
-    var currencyAccountIDs : [String: [CoinbaseAccount]] = [:]
-    
-                /*      Belangrijk      */
-    /*  Todo reload table data moet nog aangeroepen worden  */
-                /*      Belangrijk!     */
-    
+    var currencyAccountIDs : [Int: [CoinbaseAccount]] = [:]
+
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -72,9 +67,6 @@ class SelectAccountViewController : UIViewController {
                     self.tableView.reloadData()
                     
                 })
-                
-                /*print(self)
-                 return self.accounts;*/
             }
             else {
                 print("Home view controller line 131, client is nil: \(String(describing: client))")
@@ -99,7 +91,8 @@ class SelectAccountViewController : UIViewController {
             switch(account.balance.currency){
             case "\(CurrencyCode.LTC)":
                 ltc.append(account)
-                currencyAccountIDs["\(CurrencyCode.LTC)"] = ltc
+                
+                currencyAccountIDs[0] = ltc
                 print("Home view controller line 156, LTC account id: \(account.accountID)")
                 //ltcIDs.append(account.accountID) Mag waarschijnlijk verwijderd worden
                 //ltcAccountIDs["\(account.name)"] = ltcIDs
@@ -109,38 +102,45 @@ class SelectAccountViewController : UIViewController {
                 
             case "\(CurrencyCode.BTC)":
                 btc.append(account)
-                currencyAccountIDs["\(CurrencyCode.BTC)"] = btc
+                currencyAccountIDs[1] = btc
                 
             case "\(CurrencyCode.BCH)":
                 bch.append(account)
-                currencyAccountIDs["\(CurrencyCode.BCH)"] = bch
+                currencyAccountIDs[2] = bch
                 
             case "\(CurrencyCode.ETH)":
                 eth.append(account)
-                currencyAccountIDs["\(CurrencyCode.ETH)"] = eth
+                currencyAccountIDs[3] = eth
                 
             case "\(CurrencyCode.EUR)":
                 eur.append(account)
-                currencyAccountIDs["\(CurrencyCode.EUR)"] = eur
+                currencyAccountIDs[4] = eur
                 
             default:
                 other.append(account)
-                currencyAccountIDs["\(CurrencyCode.OTHER)"] = other
+                currencyAccountIDs[5] = other
             }
             
         }
-        print("home view controller line 180, currencyAccountIDs for LTC: \(String(describing: currencyAccountIDs["\(CurrencyCode.LTC)"]?.count)) \n currencyAccountIDs for BTC: \(String(describing: currencyAccountIDs["\(CurrencyCode.BTC)"]?.count)) \n currencyAccountIDs for BCH: \(String(describing: currencyAccountIDs["\(CurrencyCode.BCH)"]?.count)) \n currencyAccountIDs for ETH: \(String(describing: currencyAccountIDs["\(CurrencyCode.ETH)"]?.count)) \n currencyAccountIDs for EUR: \(String(describing: currencyAccountIDs["\(CurrencyCode.EUR)"]?.count)) \n currencyAccountIDs for OTHER: \(String(describing: currencyAccountIDs["\(CurrencyCode.OTHER)"]?.count))")
+        print("home view controller line 180, currencyAccountIDs for LTC: \(String(describing: currencyAccountIDs[0]?.count)) \n currencyAccountIDs for BTC: \(String(describing: currencyAccountIDs[1]?.count)) \n currencyAccountIDs for BCH: \(String(describing: currencyAccountIDs[2]?.count)) \n currencyAccountIDs for ETH: \(String(describing: currencyAccountIDs[3]?.count)) \n currencyAccountIDs for EUR: \(String(describing: currencyAccountIDs[4]?.count)) \n currencyAccountIDs for OTHER: \(String(describing: currencyAccountIDs[5]?.count))")
         
         //return currencyAccountIDs
         return ltcAccountIDs
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "selectedAccountSegue" else {
+            fatalError("Unknown Error")
+        }
+        let QRCodeViewController = segue.destination as! QRCodeViewController
+        QRCodeViewController.account = currencyAccountIDs[tableView.indexPathForSelectedRow!.section]![tableView.indexPathForSelectedRow!.row]
+    }
+
 }
 extension SelectAccountViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //gaan naar scherm
-        // performSegue(withIdentifier: "selectedMovie", sender: self)
-        //performSegue(withIdentifier: "<#T##String#>", sender: self)
+        
+        //performSegue(withIdentifier: "selectedAccountSegue", sender: self)
     }
     
 }
@@ -150,95 +150,27 @@ extension SelectAccountViewController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return currencyAccountIDs.keys.count
     }
+    
     /*  Rows in section depends on the number of valeus a key has (accounts with the same currency) */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch(section){
-        case 0:
-            let currency = "\(CurrencyCode.LTC)"
-            return currencyAccountIDs[currency]?.count ?? 0
-        case 1:
-            let currency = "\(CurrencyCode.BTC)"
-            return currencyAccountIDs[currency]?.count ?? 0
-        case 2:
-            let currency = "\(CurrencyCode.BCH)"
-            return currencyAccountIDs[currency]?.count ?? 0
-        case 4:
-            let currency = "\(CurrencyCode.ETH)"
-            return currencyAccountIDs[currency]?.count ?? 0
-        case 5:
-            let currency = "\(CurrencyCode.EUR)"
-            return currencyAccountIDs[currency]?.count ?? 0
-        case 6:
-            let currency = "\(CurrencyCode.OTHER)"
-            return currencyAccountIDs[currency]?.count ?? 0
-        default:
-            return 0
-            break
-        }
-        
+        return currencyAccountIDs[section]?.count ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell", for: indexPath) as! AccountsCell
-        //if section is not 0 (LTC), make the cells in section not clickable
-        if indexPath.section != 0 {
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        let account = currencyAccountIDs[indexPath.section]![indexPath.row]
+        
+        cell.accountName.text = account.name
+        
+        if let amount = account.balance.amount
+        {
+            cell.balance.text = "\(amount)"
         }
-        switch(indexPath.section){
-        case 0:
-            let account = currencyAccountIDs["\(CurrencyCode.LTC)"]![indexPath.row]
-            cell.accountName.text = account.name
-            guard let amount = account.balance.amount else {
-                print("Select Account view controller line 193, amount is nil")
-                break
-            }
-            cell.balance.text = "\(amount)"
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
-            
-        case 1:
-            let account = currencyAccountIDs["\(CurrencyCode.BTC)"]![indexPath.row]
-            cell.accountName.text = account.name
-            guard let amount = account.balance.amount else {
-                print("Select Account view controller line 202, amount is nil")
-                break
-            }
-            cell.balance.text = "\(amount)"
-        case 2:
-            let account = currencyAccountIDs["\(CurrencyCode.BCH)"]![indexPath.row]
-            cell.accountName.text = account.name
-            guard let amount = account.balance.amount else {
-                print("Select Account view controller line 210, amount is nil")
-                break
-            }
-            cell.balance.text = "\(amount)"
-        case 3:
-            let account = currencyAccountIDs["\(CurrencyCode.ETH)"]![indexPath.row]
-            cell.accountName.text = account.name
-            guard let amount = account.balance.amount else {
-                print("Select Account view controller line 218, amount is nil")
-                break
-            }
-            cell.balance.text = "\(amount)"
-        case 4:
-            let account = currencyAccountIDs["\(CurrencyCode.EUR)"]![indexPath.row]
-            cell.accountName.text = account.name
-            guard let amount = account.balance.amount else {
-                print("Select Account view controller line 226, amount is nil")
-                break
-            }
-            cell.balance.text = "\(amount)"
-        case 5:
-            let account = currencyAccountIDs["\(CurrencyCode.OTHER)"]![indexPath.row]
-            cell.accountName.text = account.name
-            guard let amount = account.balance.amount else {
-                print("Select Account view controller line 234, amount is nil")
-                break
-            }
-            cell.balance.text = "\(amount)"
-        default:
-            break
+        else {
+                print("Select Account view controller line 196, amount is nil for \(currencyAccountIDs[indexPath.section]![indexPath.row])")
         }
+        
         return cell
     }
     /*  Names for the sections  */
@@ -262,5 +194,22 @@ extension SelectAccountViewController : UITableViewDataSource {
             break
         }
         return cell
+    }
+    /*  Shows alert when unsupported currency account is selected   */
+    func selectedUnsuportedPaymentCurrency(){
+        let alert = UIAlertController(title: "", message: "Enkel Litecoin betalingen worden (momenteel) ondersteund)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        print("Select Account view controller line 281, indexPath.section: \(indexPath.section)")
+        if indexPath.section != 0 {
+            selectedUnsuportedPaymentCurrency()
+            return nil
+        }
+        else {
+            return indexPath
+        }
     }
 }
