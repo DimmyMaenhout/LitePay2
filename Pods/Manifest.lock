@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.2.0)
   - coinbase-official (3.3.0):
     - coinbase-official/client (= 3.3.0)
     - coinbase-official/core (= 3.3.0)
@@ -10,11 +11,13 @@ PODS:
     - coinbase-official/core
 
 DEPENDENCIES:
+  - Alamofire (~> 4.2.0)
   - coinbase-official (~> 3.3)
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   coinbase-official: 57de4952bdb85e16a8f99930c57e16505ff571ed
 
-PODFILE CHECKSUM: 50a9ed8a6fe69eea6ecfe9c8fa4849e825c84ff9
+PODFILE CHECKSUM: 26b691b064fb203a71a3ff22f1564b30e42952aa
 
 COCOAPODS: 1.4.0

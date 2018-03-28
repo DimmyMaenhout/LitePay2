@@ -13,10 +13,13 @@ class LoginViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.accessToken = UserDefaults.standard.string(forKey: "access_token")
+        print("Login view controller lijn 18, access_token: \(String(describing: self.accessToken))")
         if((self.accessToken) != nil)
         {
             self.client = Coinbase.init(oAuthAccessToken: self.accessToken)
+            print("Login view controller lijn 22, client: \(String(describing: self.client))")
          }
         updateUI()
     }
@@ -25,8 +28,8 @@ class LoginViewController : UIViewController {
         //Launch web browser or coinbase app to authenticate the user
         if self.isLoggedIn == false {
             
-            CoinbaseAPI.redirectOauth()
-            print("Login view controller lijn 29, started login (redirected to webbrowser)")
+            CoinbaseAPIService.startOAuth()
+            print("Login view controller lijn 32, started login (redirected to webbrowser)")
         }
         else
         {

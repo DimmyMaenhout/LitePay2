@@ -4,7 +4,6 @@ import coinbase_official
 
 class HomeViewController : UIViewController {
     
-    
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var receiveBtn: UIButton!
     
@@ -15,14 +14,15 @@ class HomeViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
-    
+
     func authenticationComplete(_ response: [AnyHashable: Any]?) {
         print("start of authentication complete")
         //Tokens succesfully received!
-        print("Home view controller lijn 23, start of authentication complete response: \(response)")
-        self.accessToken = response!["access_token"] as! String
-        
+        print("Home view controller line 26, start of authentication complete response: \(String(describing: response))")
+        self.accessToken = response!["access_token"] as? String
+        print("Home view controller line 28, accessToken: \(String(describing: self.accessToken))")
         //  user defaults
         UserDefaults.standard.set(accessToken, forKey: "access_token")
         UserDefaults.standard.synchronize()
@@ -33,20 +33,20 @@ class HomeViewController : UIViewController {
         
         // Now that we are authenticated, load some data
         self.client = Coinbase.init(oAuthAccessToken: self.accessToken)
+        print("Home view controller line 39, client: \(String(describing: self.client))")
         
         self.isLoggedIn = true;
+        print("Home view controller line 42, isLogged in : \(self.isLoggedIn)")
     }
     
     func refreshTokens(sender : Any){
         /*refresh token nog zetten*/
-        print("Login view controller lijn 42, started refresh tokens method")
+        print("Login view controller line 47, started refresh tokens method")
         CoinbaseOAuth.getTokensForRefreshToken("refreshToken", clientId: LitePayData.clientId, clientSecret: LitePayData.clientSecret, completion:
-            { (response :
-                //niet zeker dat dit juist is voor response er stond response : Any, error : NSError?
-                [String : Any], error: Error?) -> Void in
+            { (response : [String : Any], error: Error?) -> Void in
                 /*indien er een fout optreed geven we een foutmelding*/
                 if error != nil {
-                    print("Login view controller lijn 49, fout opgetreden bij refresh tokens. Error: \(error)")
+                    print("Login view controller line 54, fout opgetreden bij refresh tokens. Error: \(String(describing: error))")
                     let alert = UIAlertController(title: "", message: "Er is een probleem opgetreden", preferredStyle: .alert)
                     
                     /*mogelijk dat er nog een handler moet zijn ipv nil*/
@@ -55,7 +55,7 @@ class HomeViewController : UIViewController {
                 }
                 else {
                     //new tokens obtained
-                    print("Login view controller lijn 58, tokens verkregen (begin toewijzen aan variabelen)")
+                    print("Login view controller line 63, tokens verkregen (begin toewijzen aan variabelen)")
                     self.refreshToken = response["refresh_token"] as! String
                     self.client = Coinbase.init(oAuthAccessToken: "access_token")
                     
@@ -72,5 +72,4 @@ class HomeViewController : UIViewController {
                 
                 } as! CoinbaseCompletionBlock)
     }
-    
 }

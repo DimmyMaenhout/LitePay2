@@ -16,4 +16,11 @@ struct LitePayData {
     
     /* mock */
     static let baseUrlMockAPI = "https://gateway.api.cloud.wso2.com:443/t/xg6106/cb4/1"
+    
+    /*  urls voor calls naar coinbase*/
+    static let baseUrlCoinbase = "https://api.coinbase.com/v2/"
+    //list current users accounts
+    static let accounts = "accounts/"
+    static let addresses = "addresses"
+    
 }

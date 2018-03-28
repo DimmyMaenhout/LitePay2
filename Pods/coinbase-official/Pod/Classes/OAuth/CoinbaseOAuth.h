@@ -11,6 +11,16 @@ typedef NS_ENUM(NSInteger, CoinbaseOAuthAuthenticationMechanism){
     CoinbaseOAuthMechanismApp,
 };
 
+///  Indicates wallet access on OAuth authentication page. Read more on https://developers.coinbase.com/docs/wallet/coinbase-connect/permissions)
+typedef NS_ENUM(NSInteger, CoinbaseOAuthAccountAccess){
+    /// Allow user to pick the wallet associated with the application.
+    CoinbaseOAuthAccountAccessSelect = 0,
+    /// Application will create a new wallet (named after the application)
+    CoinbaseOAuthAccountAccessNew = 1,
+    /// Application will get access to all of user’s wallets
+    CoinbaseOAuthAccountAccessAll = 2,
+};
+
 ///  The key in an NSError userInfo dictionary where the coinbase specific error code is returned.
 ///
 ///  For example, when the return URL contains error=acccess_denied, the error you receive in
@@ -49,6 +59,18 @@ NS_EXTENSION_UNAVAILABLE_IOS("OAuth is currently not allowed in extensions")
                                                                  redirectUri:(NSString *)redirectUri
                                                                         meta:(NSDictionary *)meta
                                                                       layout:(NSString *)layout;
+
+/// Start the OAuth authentication process. This will open a different application to complete the
+/// authentication flow.
+///
+/// @return the mechanism of authentication. Example: CoinbaseOAuthMechanismApp
++ (CoinbaseOAuthAuthenticationMechanism)startOAuthAuthenticationWithClientId:(NSString *)clientId
+                                                                       scope:(NSString *)scope
+                                                               accountAccess:(CoinbaseOAuthAccountAccess)accountAccess
+                                                                 redirectUri:(NSString *)redirectUri
+                                                                        meta:(NSDictionary *)meta
+                                                                      layout:(NSString *)layout;
+
 
 /// Finish the OAuth authentication process. This should be called when your application is opened
 /// for a Coinbase OAuth URI.

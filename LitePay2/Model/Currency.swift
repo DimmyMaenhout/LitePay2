@@ -1,12 +1,5 @@
-//
-//  Currency.swift
-//  LitePay2
-//
-//  Created by Dimmy Maenhout on 28/02/2018.
-//  Copyright © 2018 Dimmy Maenhout. All rights reserved.
-//
-
 import Foundation
+
 class Currency {
     
     var fullName = ""
@@ -20,8 +13,10 @@ class Currency {
         self.code = codeCurrency
     }
 }
-enum CurrencyCode {
-    /*Used for abbreviation of currency*/
-    case EUR
-    case LTC
+/*  Type is int to use with table view  */
+enum CurrencyCode : Int {
+    /*  Used for abbreviation of currency   */
+    case LTC = 0, BTC, BCH, ETH, EUR, OTHER
+
 }
+
