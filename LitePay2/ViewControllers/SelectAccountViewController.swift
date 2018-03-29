@@ -197,7 +197,7 @@ extension SelectAccountViewController : UITableViewDataSource {
     }
     /*  Shows alert when unsupported currency account is selected   */
     func selectedUnsuportedPaymentCurrency(){
-        let alert = UIAlertController(title: "", message: "Enkel Litecoin betalingen worden (momenteel) ondersteund)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Enkel Litecoin betalingen worden (momenteel) ondersteund", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
