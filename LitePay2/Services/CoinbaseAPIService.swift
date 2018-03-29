@@ -18,21 +18,52 @@ public enum CoinbaseAPIService {
     }
     
     //creates a new address for an account. All arguments are optional (can do an empty POST to create a new address)
-    public static func createNewAddress(accountID : String){
-        //working url: https://api.coinbase.com/v2/accounts/fc0d43e1-a917-52b8-bd7f-eca1647c36a8/addresses
-        let url = URL(string: "\(LitePayData.baseUrlCoinbase)\(LitePayData.accounts):\(accountID)/\(LitePayData.addresses)")
+    public static func createNewAddress(for accountID: String) -> String {
+        var newAddress = ""
+        print("Coinbase Api Service line 23, accountID: \(accountID)")
         
-        Alamofire.request(url!, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.accounts.rawValue)\(accountID)/\(calls.addresses.rawValue)")
+        print("Coinbase Api Service line 26, url: \(String(describing: url))")
+        let accessToken = UserDefaults.standard.string(forKey: "access_token")
         
-    }
-    public static func getAddresses(accountID : String) {
-        let url = URL(string: "\(LitePayData.baseUrlCoinbase)\(LitePayData.accounts):\(accountID)/\(LitePayData.addresses)")
-        
-        //Alamofire.request(url!).responseJSON(completionHandler: <#T##(DataResponse<Any>) -> Void#>)
-        Alamofire.request(url!).responseJSON(completionHandler:
-            {(DataResponse: DataResponse<Any>) -> Void in
-                print("Coinbase API Service line 34, DataResponse: \(DataResponse)")
+        //if accessToken has a value (not nil) go in statement
+        if let accessToken = accessToken  {
+            print("Coinbase Api Service line 31, accessToken: \(accessToken)")
+        //necessary to get access when making the call
+        let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate, LitePayData.authorization: "\(LitePayData.bearer) \(accessToken)", LitePayData.contentType: LitePayData.contentTypeValue]
+        print("Coinbase Api Service line 34, func create New Address. Got Here")
+        Alamofire
+            .request(url!, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON { response in
+            print("Coinbase API Service line 38, func create New Address. Got Here")
+                
+                if let status = response.response?.statusCode
+                {
+                    switch(status)
+                    {
+                        case 201: print("success")
+                        default: print("Coinbase Api Service line 45, error with response status: \(status)")
+                    }
+                }
+                if let result = response.result.value
+                {
+                    let json = result as! [String: Any]
+                    print("Coinbase Api Service line 51, json: \(json)")
+                    guard let data = json["data"] as? [String: Any] else
+                    {
+                        print("Coinbase Api Service line 54, data is nil")
+                        return
+                    }
+                    guard let address = data["address"] else
+                    {
+                        print("Coinbase Api Service line 59, address is nil")
+                        return
+                    }
+                    newAddress = address as! String
+                    print("Coinbase Api Service line 63, address: \(address)")
+                }
             }
-    )}
-    //scopes v1: balance transactions user send orders
+        }
+        return newAddress
+    }
 }
