@@ -17,10 +17,17 @@ struct LitePayData {
     /* mock */
     static let baseUrlMockAPI = "https://gateway.api.cloud.wso2.com:443/t/xg6106/cb4/1"
     
-    /*  urls voor calls naar coinbase*/
-    static let baseUrlCoinbase = "https://api.coinbase.com/v2/"
-    //list current users accounts
-    static let accounts = "accounts/"
-    static let addresses = "addresses"
+    //HTTPHeaders
+    static let cbversion = "CB-VERSION"
+    static let cbVersionDate = "2018-03-22"
+    static let authorization = "Authorization"
+    static let bearer = "Bearer"
+    static let contentType = "Content-Type"
+    static let contentTypeValue = "application/json"
     
+}
+enum calls : String {
+    case baseUrl = "https://api.coinbase.com/v2/"
+    case accounts = "accounts/"
+    case addresses = "addresses"
 }
