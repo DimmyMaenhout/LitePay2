@@ -25,7 +25,7 @@ class SelectAccountViewController : UIViewController {
     func getAccounts()  {
         
         let accessTkn = UserDefaults.standard.object(forKey: "access_token")
-        print("Home view controller line 86, accessTkn: \(String(describing: accessTkn))")
+        print("Select Account view controller line 28, accessTkn: \(String(describing: accessTkn))")
         //If accessTkn has a value (not nil) go in statement
         if let accessToken = accessTkn
         {
@@ -35,41 +35,41 @@ class SelectAccountViewController : UIViewController {
             {
                 client.getAccountsList({( accounts : [Any]?, pagingHelper : CoinbasePagingHelper?, error : Error?) -> Void in
                     //If there is an error, show alert
-                    print("Home view controller line 94, got till here")
+                    print("Select Account view controller line 38, got till here")
                     if error != nil{
-                        print("Home view controller line 96, error occured when trying to get accounts. error: \(String(describing: error?.localizedDescription))")
+                        print("Select Account view controller line 40, error occured when trying to get accounts. error: \(String(describing: error?.localizedDescription))")
                         
                         let alert = UIAlertController(title: "Error", message: "Er is een fout opgtreden bij het ophalen van de accounts", preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                         alert.addAction(defaultAction)
                         self.present(alert, animated: true, completion: nil)
-                        print("Home view controller line 102, exiting method getAccounts")
+                        print("Select Account view controller line 46, exiting method getAccounts")
                         return
                     }
-                    print("Home view controller line 105, got till here")
+                    print("Select Account view controller line 49, got till here")
                     //If accounts is nil go in (else) statement
                     guard let accounts = accounts else
                     {
-                        print("Home view controller line 109, accounts is nil, exiting method getAccounts")
+                        print("Select Account view controller line 53, accounts is nil, exiting method getAccounts")
                         return
                     }
                     //If pagingHelper is nil go in (else) statement
                     guard let pagingHelper = pagingHelper else
                     {
-                        print("Home view controller line 115, pagingHelper is nil, exiting method getAccounts")
+                        print("Select Account view controller line 59, pagingHelper is nil, exiting method getAccounts")
                         return
                     }
                     
                     self.accounts = accounts as! [CoinbaseAccount]
-                    print("Home view controller line 122, # accounts: \(accounts.count)")
-                    print("Home view controller line 123, # account in self.accounts: \(self.accounts.count)")
+                    print("Select Account view controller line 64, # accounts: \(accounts.count)")
+                    print("Select Account view controller line 65, # account in self.accounts: \(self.accounts.count)")
                     self.getAccountIDs(self.accounts)
                     self.tableView.reloadData()
                     
                 })
             }
             else {
-                print("Home view controller line 131, client is nil: \(String(describing: client))")
+                print("Select Account view controller line 72, client is nil: \(String(describing: client))")
             }
         }
     }
@@ -93,11 +93,11 @@ class SelectAccountViewController : UIViewController {
                 ltc.append(account)
                 
                 currencyAccountIDs[0] = ltc
-                print("Home view controller line 156, LTC account id: \(account.accountID)")
+                print("Select Account view controller line 96, LTC account id: \(account.accountID)")
                 //ltcIDs.append(account.accountID) Mag waarschijnlijk verwijderd worden
                 //ltcAccountIDs["\(account.name)"] = ltcIDs
                 ltcAccountIDs["\(account.name)"] = account.accountID
-                print("Home view controller line 164, ltcAccountIDs # \(ltcAccountIDs.count), ltcAccountIDS name: \(account.name), accountID: \(account.accountID)")
+                print("Select Account view controller line 100, ltcAccountIDs # \(ltcAccountIDs.count), ltcAccountIDS name: \(account.name), accountID: \(account.accountID)")
                 
                 
             case "\(CurrencyCode.BTC)":
@@ -122,7 +122,7 @@ class SelectAccountViewController : UIViewController {
             }
             
         }
-        print("home view controller line 180, currencyAccountIDs for LTC: \(String(describing: currencyAccountIDs[0]?.count)) \n currencyAccountIDs for BTC: \(String(describing: currencyAccountIDs[1]?.count)) \n currencyAccountIDs for BCH: \(String(describing: currencyAccountIDs[2]?.count)) \n currencyAccountIDs for ETH: \(String(describing: currencyAccountIDs[3]?.count)) \n currencyAccountIDs for EUR: \(String(describing: currencyAccountIDs[4]?.count)) \n currencyAccountIDs for OTHER: \(String(describing: currencyAccountIDs[5]?.count))")
+        print("Select Account view controller line 125,, currencyAccountIDs for LTC: \(String(describing: currencyAccountIDs[0]?.count)) \n currencyAccountIDs for BTC: \(String(describing: currencyAccountIDs[1]?.count)) \n currencyAccountIDs for BCH: \(String(describing: currencyAccountIDs[2]?.count)) \n currencyAccountIDs for ETH: \(String(describing: currencyAccountIDs[3]?.count)) \n currencyAccountIDs for EUR: \(String(describing: currencyAccountIDs[4]?.count)) \n currencyAccountIDs for OTHER: \(String(describing: currencyAccountIDs[5]?.count))")
         
         //return currencyAccountIDs
         return ltcAccountIDs
@@ -168,7 +168,7 @@ extension SelectAccountViewController : UITableViewDataSource {
             cell.balance.text = "\(amount)"
         }
         else {
-                print("Select Account view controller line 196, amount is nil for \(currencyAccountIDs[indexPath.section]![indexPath.row])")
+                print("Select Account view controller line 171, amount is nil for \(currencyAccountIDs[indexPath.section]![indexPath.row])")
         }
         
         return cell
@@ -203,7 +203,7 @@ extension SelectAccountViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        print("Select Account view controller line 281, indexPath.section: \(indexPath.section)")
+        print("Select Account view controller line 206, indexPath.section: \(indexPath.section)")
         if indexPath.section != 0 {
             selectedUnsuportedPaymentCurrency()
             return nil
