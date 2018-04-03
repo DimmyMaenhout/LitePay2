@@ -27,7 +27,7 @@ class HomeViewController : UIViewController {
         UserDefaults.standard.set(accessToken, forKey: "access_token")
         UserDefaults.standard.synchronize()
         
-        var refreshToken : String = response!["refresh_token"]! as! String
+        let refreshToken : String = response!["refresh_token"]! as! String
         var expiresIn : Int = response!["expires_in"] as! Int //niet zeker dat het type juist is, in vb is dit NSNumber (bovenliggende klasse van Int, Double, float, ...
         self.refreshToken = refreshToken
         
@@ -59,11 +59,9 @@ class HomeViewController : UIViewController {
                     self.refreshToken = response["refresh_token"] as! String
                     self.client = Coinbase.init(oAuthAccessToken: "access_token")
                     
-                    //self.client?.getCurrentUser(<#T##callback: ((CoinbaseUser?, Error?) -> Void)!##((CoinbaseUser?, Error?) -> Void)!##(CoinbaseUser?, Error?) -> Void#>)
                     self.client?.getCurrentUser({ (user : CoinbaseUser, error : Error) in
                         let alert = UIAlertController(title: "Error", message: "Gebruiker: \(user) \nKon niet geladen worden", preferredStyle: .alert)
                         
-                        /*mogelijk dat er nog een handler moet zijn ipv nil*/
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true)
                         
@@ -71,5 +69,21 @@ class HomeViewController : UIViewController {
                 }
                 
                 } as! CoinbaseCompletionBlock)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var buttonPressed = ""
+        switch segue.identifier {
+        case "paySegue"?:
+            buttonPressed = "pay"
+            let selectAccountVC = segue.destination as! SelectAccountViewController
+            selectAccountVC.btnPressedPreviousVc = buttonPressed
+        case "receiveSegue"?:
+            buttonPressed = "receive"
+            let selectAccountVC = segue.destination as! SelectAccountViewController
+            selectAccountVC.btnPressedPreviousVc = buttonPressed
+        default: fatalError("Unknown segue")
+        }
+        
     }
 }
