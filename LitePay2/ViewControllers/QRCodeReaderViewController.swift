@@ -7,6 +7,7 @@ import AVFoundation
 class QRCodeReaderViewController : UIViewController {
 
     
+    @IBOutlet weak var qrCodeLbl: UILabel!
     @IBOutlet weak var videoPreview: UIView!
     var captureSession = AVCaptureSession()
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
@@ -86,15 +87,27 @@ extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
         //get the metadata object
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
-        print("QRCode reader view controller lijn 89, metadataObj: \(metadataObj)")
+        print("QRCode reader view controller lijn 89, metadataObj: \(String(describing: metadataObj.stringValue))")
         
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
             //if the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barcodeObject!.bounds
+            print("Qr code view controller line 96, trying to go to next view controller and giving address with it")
+            let vc = storyboard?.instantiateViewController(withIdentifier: "confirmPayment") as! ConfirmPaymentViewController
             
+            vc.addressPassed = metadataObj.stringValue!
+            navigationController?.pushViewController(vc, animated: true)
+            print("Qr code view controller line 100, navigationController: \(vc.addressPassed)")
             if metadataObj.stringValue != nil {
-                //explanationLbl.text = metadataObj.stringValue
+                print("Qr code reader view controller line 102 metadataObj has a value (not nil)")
+                //to see if the scanned value is correct (may be deleted)
+                qrCodeLbl.text = metadataObj.stringValue
+                //give the address value to the next view controller
+                print("Qr code reader view controller line 106, second try to go to next view controller and giving address with it")
+                let vc = storyboard?.instantiateViewController(withIdentifier: "confirmPayment") as! ConfirmPaymentViewController
+                vc.addressPassed = metadataObj.stringValue!
+                navigationController?.pushViewController(vc, animated: true)
             }
         }
         
