@@ -29,5 +29,7 @@ struct LitePayData {
 enum calls : String {
     case baseUrl = "https://api.coinbase.com/v2/"
     case accounts = "accounts/"
+    case prices = "prices/"
     case addresses = "addresses"
+    case spot = "spot"
 }
