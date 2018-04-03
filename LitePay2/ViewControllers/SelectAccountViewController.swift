@@ -141,9 +141,6 @@ class SelectAccountViewController : UIViewController {
         default:
             fatalError("Select account view controller line 136, unknown segue")
         }
-        /*guard segue.identifier == "selectedAccountSegue" else {
-            fatalError("Unknown Error")
-        }*/
     }
 
 }
@@ -159,9 +156,7 @@ extension SelectAccountViewController : UITableViewDelegate {
         default:
             fatalError("Select account view controller line 157, btn pressed not found (not in switch)")
         }
-        //performSegue(withIdentifier: "selectedAccountSegue", sender: self)
     }
-    
 }
 
 extension SelectAccountViewController : UITableViewDataSource {
@@ -220,7 +215,7 @@ extension SelectAccountViewController : UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
-    
+    //if currency != litecoin show alert and exit method
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         print("Select Account view controller line 206, indexPath.section: \(indexPath.section)")
         if indexPath.section != 0 {
