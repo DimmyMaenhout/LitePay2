@@ -294,7 +294,6 @@
                                         <connections>
                                             <outlet property="accountName" destination="rKc-a1-guV" id="r9P-P6-08r"/>
                                             <outlet property="balance" destination="xJp-5T-e3V" id="Txh-UO-JwU"/>
-                                            <segue destination="Ncn-Pg-Wbh" kind="show" identifier="selectedAccountSegue" id="Xh2-hD-TcZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -314,16 +313,18 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sF3-kr-Zgy" id="Tvt-Dg-WC8"/>
+                        <segue destination="gki-jK-PM7" kind="show" identifier="payView" id="2cN-bn-baF"/>
+                        <segue destination="Ncn-Pg-Wbh" kind="show" identifier="receiveView" id="Xu5-Lf-pfG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rI-ZG-9sT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3222" y="-646"/>
+            <point key="canvasLocation" x="3222" y="-976"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="F9n-iu-yGY">
             <objects>
-                <viewController id="Ncn-Pg-Wbh" customClass="QRCodeViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="receive" id="Ncn-Pg-Wbh" customClass="QRCodeViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yqr-E1-pvE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,11 +361,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFw-jO-6Ag">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-bo-bro">
-                                <rect key="frame" x="16" y="626" width="343" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkn-ds-epI">
+                                <rect key="frame" x="16" y="597" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -372,14 +373,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E4s-bo-bro" firstAttribute="bottom" secondItem="rHc-0I-4K8" secondAttribute="bottom" constant="8" id="1eb-jX-JGq"/>
-                            <constraint firstItem="ZFw-jO-6Ag" firstAttribute="top" secondItem="rHc-0I-4K8" secondAttribute="top" id="7la-c9-RVi"/>
-                            <constraint firstItem="E4s-bo-bro" firstAttribute="top" secondItem="ZFw-jO-6Ag" secondAttribute="bottom" constant="8" id="KOl-Qf-STN"/>
-                            <constraint firstItem="rHc-0I-4K8" firstAttribute="bottom" secondItem="ZFw-jO-6Ag" secondAttribute="bottom" id="PrM-8J-pE6"/>
-                            <constraint firstItem="ZFw-jO-6Ag" firstAttribute="leading" secondItem="rHc-0I-4K8" secondAttribute="leading" id="Vht-Qb-IBH"/>
-                            <constraint firstItem="E4s-bo-bro" firstAttribute="leading" secondItem="rHc-0I-4K8" secondAttribute="leading" constant="16" id="ZxT-rm-hCa"/>
-                            <constraint firstItem="rHc-0I-4K8" firstAttribute="trailing" secondItem="E4s-bo-bro" secondAttribute="trailing" constant="16" id="mwf-BC-KTp"/>
-                            <constraint firstItem="rHc-0I-4K8" firstAttribute="trailing" secondItem="ZFw-jO-6Ag" secondAttribute="trailing" id="yoR-3M-63i"/>
+                            <constraint firstItem="ZFw-jO-6Ag" firstAttribute="leading" secondItem="rHc-0I-4K8" secondAttribute="leading" id="3gn-RG-LgW"/>
+                            <constraint firstItem="tkn-ds-epI" firstAttribute="top" secondItem="ZFw-jO-6Ag" secondAttribute="bottom" constant="8" id="6ex-4o-qx1"/>
+                            <constraint firstItem="tkn-ds-epI" firstAttribute="bottom" secondItem="rHc-0I-4K8" secondAttribute="bottom" id="Bs4-fv-BNd"/>
+                            <constraint firstItem="ZFw-jO-6Ag" firstAttribute="trailing" secondItem="rHc-0I-4K8" secondAttribute="trailing" id="Hpt-u1-fyp"/>
+                            <constraint firstItem="rHc-0I-4K8" firstAttribute="trailing" secondItem="tkn-ds-epI" secondAttribute="trailing" constant="16" id="OWD-62-8CM"/>
+                            <constraint firstItem="tkn-ds-epI" firstAttribute="top" secondItem="ZFw-jO-6Ag" secondAttribute="bottom" constant="8" id="RFX-ye-0Ko"/>
+                            <constraint firstItem="ZFw-jO-6Ag" firstAttribute="top" secondItem="rHc-0I-4K8" secondAttribute="top" id="fEf-AC-duG"/>
+                            <constraint firstItem="tkn-ds-epI" firstAttribute="leading" secondItem="rHc-0I-4K8" secondAttribute="leading" constant="16" id="kag-QH-fwF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rHc-0I-4K8"/>
                     </view>
@@ -387,12 +388,13 @@
                         <barButtonItem key="backBarButtonItem" title="Betalen" id="JbW-aM-lfo"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="qrCodeLbl" destination="tkn-ds-epI" id="46V-e7-VYR"/>
                         <outlet property="videoPreview" destination="ZFw-jO-6Ag" id="pwx-J8-6vP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztG-BZ-lnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4029.5999999999999" y="-1352.473763118441"/>
+            <point key="canvasLocation" x="4838" y="-1344"/>
         </scene>
         <!--Home-->
         <scene sceneID="lle-JS-qMK">
@@ -410,7 +412,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Betalen"/>
                                         <connections>
-                                            <segue destination="gki-jK-PM7" kind="show" id="UsW-q6-CEQ"/>
+                                            <segue destination="hQZ-zN-B24" kind="show" identifier="paySegue" id="wXA-ee-3kA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smH-HI-DBF">
@@ -418,7 +420,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Ontvangen"/>
                                         <connections>
-                                            <segue destination="hQZ-zN-B24" kind="show" id="BKu-tc-VAD"/>
+                                            <segue destination="hQZ-zN-B24" kind="show" identifier="receiveSegue" id="BKu-tc-VAD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -448,7 +450,7 @@
         <!--Pay View Controller-->
         <scene sceneID="GAD-g4-myT">
             <objects>
-                <viewController id="gki-jK-PM7" customClass="PayViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pay" id="gki-jK-PM7" customClass="PayViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ts-u2-tFp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -507,15 +509,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hti-vK-nPm"/>
                     </view>
+                    <connections>
+                        <outlet property="LtcIcon" destination="FTb-9h-Dt4" id="VNO-bN-xfI"/>
+                        <outlet property="LtcTxtField" destination="W32-xa-ony" id="mDL-qp-Qwd"/>
+                        <outlet property="ScanQRBtn" destination="ZUx-tX-zGh" id="ZJs-nP-ZXR"/>
+                        <outlet property="euroTxtField" destination="Yu7-I4-B80" id="nvl-e0-JO0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36o-tI-iyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3223" y="-1350"/>
+            <point key="canvasLocation" x="4030" y="-1343"/>
         </scene>
-        <!--Confirm Paymet View Controller-->
+        <!--Confirm Payment View Controller-->
         <scene sceneID="vSj-Ol-rUz">
             <objects>
-                <viewController id="PZ4-LI-gNk" customClass="ConfirmPaymetViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confirmPayment" id="PZ4-LI-gNk" customClass="ConfirmPaymentViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j58-tv-nRG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -568,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-kz-QiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4807" y="-1351"/>
+            <point key="canvasLocation" x="5588" y="-1343"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="nx0-Sk-1Z9">
@@ -617,7 +625,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="UZy-OO-rhc">
             <objects>
-                <tabBarController id="Shf-Xg-MEC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarControllerID" id="Shf-Xg-MEC" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OeQ-hu-WRK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -698,4 +706,7 @@
     <resources>
         <image name="Litecoin_logo" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BKu-tc-VAD"/>
+    </inferredMetricsTieBreakers>
 </document>

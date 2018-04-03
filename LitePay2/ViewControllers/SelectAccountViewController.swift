@@ -13,7 +13,8 @@ class SelectAccountViewController : UIViewController {
     //dict accountIDs has currencies as keys and account's id's as values
     //there can be multiple accounts with the same currency, so we use an array
     var currencyAccountIDs : [Int: [CoinbaseAccount]] = [:]
-
+    var btnPressedPreviousVc : String = ""
+    
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -129,17 +130,35 @@ class SelectAccountViewController : UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "selectedAccountSegue" else {
-            fatalError("Unknown Error")
+        print("Select account view controller line 133, button pressed previous controller \(btnPressedPreviousVc)")
+        switch segue.identifier {
+        case "payView"?:
+            let payviewController = segue.destination as! PayViewController
+            payviewController.account = currencyAccountIDs[tableView.indexPathForSelectedRow!.section]![tableView.indexPathForSelectedRow!.row]
+        case "receiveView"?:
+            let QRCodeViewController = segue.destination as! QRCodeViewController
+            QRCodeViewController.account = currencyAccountIDs[tableView.indexPathForSelectedRow!.section]![tableView.indexPathForSelectedRow!.row]
+        default:
+            fatalError("Select account view controller line 136, unknown segue")
         }
-        let QRCodeViewController = segue.destination as! QRCodeViewController
-        QRCodeViewController.account = currencyAccountIDs[tableView.indexPathForSelectedRow!.section]![tableView.indexPathForSelectedRow!.row]
+        /*guard segue.identifier == "selectedAccountSegue" else {
+            fatalError("Unknown Error")
+        }*/
     }
 
 }
 extension SelectAccountViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        switch btnPressedPreviousVc {
+        case "pay":
+            performSegue(withIdentifier: "payView", sender: self)
+        case "receive":
+            performSegue(withIdentifier: "receiveView", sender: self)
+            
+        default:
+            fatalError("Select account view controller line 157, btn pressed not found (not in switch)")
+        }
         //performSegue(withIdentifier: "selectedAccountSegue", sender: self)
     }
     
