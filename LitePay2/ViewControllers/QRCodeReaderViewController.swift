@@ -12,8 +12,10 @@ class QRCodeReaderViewController : UIViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
+    var address = ""
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         /* get the back-facing camera for capturing videos
@@ -67,16 +69,54 @@ class QRCodeReaderViewController : UIViewController {
         qrCodeFrameView = UIView()
         
         if let qrCodeFrameView = qrCodeFrameView {
+            
             qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
             qrCodeFrameView.layer.borderWidth = 2
             view.addSubview(qrCodeFrameView)
             view.bringSubview(toFront: qrCodeFrameView)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        if captureSession.isRunning == false {
+            
+            captureSession.startRunning()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        
+        if captureSession.isRunning == true {
+            
+            captureSession.stopRunning()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "pinCodeSegue" {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "confirmPayment") as! ConfirmPaymentViewController
+            vc.addressPassed = address
+            print("QRCode reader view controller lijn 82, going to next controller. address (addressPassed to next controller): \(address)")
+        }
+    }
 }
 
 extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        
+        if let qrCodeData = metadataObjects.first {
+            let qrCodeReadable = qrCodeData as? AVMetadataMachineReadableCodeObject
+            if let readableCode = qrCodeReadable {
+                qrCodeDetected(code: readableCode.stringValue!);
+            }
+        }
+        captureSession.stopRunning()
         //check if the metadataObjects array is not nill and it contains at least one object
         if metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
@@ -85,31 +125,36 @@ extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
         }
         
         //get the metadata object
-        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject //hier stond /*
+        print("QRCode reader view controller lijn 100, metadataObj: \(String(describing: metadataObj.stringValue))")
         
-        print("QRCode reader view controller lijn 89, metadataObj: \(String(describing: metadataObj.stringValue))")
-        
+        //If the data type is QR go in statement
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
+            
             //if the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barcodeObject!.bounds
-            print("Qr code view controller line 96, trying to go to next view controller and giving address with it")
-            let vc = storyboard?.instantiateViewController(withIdentifier: "confirmPayment") as! ConfirmPaymentViewController
+            print("Qr code view controller line 107, trying to go to next view controller and giving address with it")
             
-            vc.addressPassed = metadataObj.stringValue!
-            navigationController?.pushViewController(vc, animated: true)
-            print("Qr code view controller line 100, navigationController: \(vc.addressPassed)")
             if metadataObj.stringValue != nil {
-                print("Qr code reader view controller line 102 metadataObj has a value (not nil)")
+                print("Qr code reader view controller line 115 metadataObj has a value (not nil)")
+                
+                //Check if metadataObj isn't an empty String
+                if metadataObj.stringValue != "" {
+                    
+                    print("Qr code reader view controller line 119 metadataObj isn't an empty String")
+                    address = metadataObj.stringValue!
+                }
+                
                 //to see if the scanned value is correct (may be deleted)
                 qrCodeLbl.text = metadataObj.stringValue
-                //give the address value to the next view controller
-                print("Qr code reader view controller line 106, second try to go to next view controller and giving address with it")
-                let vc = storyboard?.instantiateViewController(withIdentifier: "confirmPayment") as! ConfirmPaymentViewController
-                vc.addressPassed = metadataObj.stringValue!
-                navigationController?.pushViewController(vc, animated: true)
+                
+                self.performSegue(withIdentifier: "pinCodeSegue", sender: self)
             }
         }
-        
+    }
+    
+    func qrCodeDetected(code: String) {
+        self.performSegue(withIdentifier: "pinCodeSegue", sender: self)
     }
 }
