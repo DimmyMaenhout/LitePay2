@@ -130,15 +130,22 @@ class SelectAccountViewController : UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Select account view controller line 133, button pressed previous controller \(btnPressedPreviousVc)")
+        
+        print("Select account view controller line 133, button pressed previous controller = \(btnPressedPreviousVc)")
         switch segue.identifier {
+            
         case "payView"?:
+            
             let payviewController = segue.destination as! PayViewController
             payviewController.account = currencyAccountIDs[tableView.indexPathForSelectedRow!.section]![tableView.indexPathForSelectedRow!.row]
+            
         case "receiveView"?:
+            
             let QRCodeViewController = segue.destination as! QRCodeViewController
             QRCodeViewController.account = currencyAccountIDs[tableView.indexPathForSelectedRow!.section]![tableView.indexPathForSelectedRow!.row]
+            
         default:
+            
             fatalError("Select account view controller line 136, unknown segue")
         }
     }
@@ -148,12 +155,17 @@ extension SelectAccountViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch btnPressedPreviousVc {
+            
         case "pay":
+            
             performSegue(withIdentifier: "payView", sender: self)
+            
         case "receive":
+            
             performSegue(withIdentifier: "receiveView", sender: self)
             
         default:
+            
             fatalError("Select account view controller line 157, btn pressed not found (not in switch)")
         }
     }
