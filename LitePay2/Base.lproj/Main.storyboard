@@ -118,6 +118,7 @@
                     <navigationItem key="navigationItem" id="kbf-a9-fyn"/>
                     <connections>
                         <outlet property="currencyRateController" destination="jxl-IA-iWt" id="Ppk-0G-ifw"/>
+                        <outlet property="currencyRateTableView" destination="jxl-IA-iWt" id="4cD-F1-fSi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAb-FX-WLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -469,17 +470,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TzR-Ul-Qt7">
                                         <rect key="frame" x="8" y="116" width="343" height="76"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="calculateAmountInOtherCurrency:" destination="gki-jK-PM7" eventType="editingDidEnd" id="eNH-hN-6vr"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€ 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,00000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
                                                 <rect key="frame" x="0.0" y="46" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -514,7 +518,8 @@
                         <outlet property="LtcIcon" destination="FTb-9h-Dt4" id="VNO-bN-xfI"/>
                         <outlet property="LtcTxtField" destination="W32-xa-ony" id="mDL-qp-Qwd"/>
                         <outlet property="ScanQRBtn" destination="ZUx-tX-zGh" id="ZJs-nP-ZXR"/>
-                        <outlet property="euroTxtField" destination="Yu7-I4-B80" id="nvl-e0-JO0"/>
+                        <outlet property="euroTxtField" destination="W32-xa-ony" id="vy8-BA-wkb"/>
+                        <outlet property="ltcTxtField" destination="Yu7-I4-B80" id="9c3-zJ-qDO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36o-tI-iyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
