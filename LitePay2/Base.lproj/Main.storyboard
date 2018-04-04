@@ -390,6 +390,7 @@
                     <connections>
                         <outlet property="qrCodeLbl" destination="tkn-ds-epI" id="46V-e7-VYR"/>
                         <outlet property="videoPreview" destination="ZFw-jO-6Ag" id="pwx-J8-6vP"/>
+                        <segue destination="PZ4-LI-gNk" kind="show" identifier="pinCodeSegue" id="WJs-gT-QgA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztG-BZ-lnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -528,50 +529,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Fe-hx-88o">
-                                <rect key="frame" x="34" y="150" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLI-CS-ouq">
-                                <rect key="frame" x="117" y="150" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bqz-JE-QFa">
-                                <rect key="frame" x="204" y="150" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C0W-Bg-nyV">
-                                <rect key="frame" x="285" y="150" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bevestig met uw pincode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-77-hSc">
-                                <rect key="frame" x="87" y="73" width="201" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bevestig met uw pincode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-77-hSc">
+                                <rect key="frame" x="87" y="72" width="201" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l7s-o7-qbN">
+                                <rect key="frame" x="16" y="117" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pKC-77-hSc" firstAttribute="centerX" secondItem="j58-tv-nRG" secondAttribute="centerX" id="7Qv-uf-2qm"/>
+                            <constraint firstItem="l7s-o7-qbN" firstAttribute="top" secondItem="pKC-77-hSc" secondAttribute="bottom" constant="24" id="Xea-Jm-0MF"/>
+                            <constraint firstItem="pKC-77-hSc" firstAttribute="top" secondItem="SLg-zd-nDl" secondAttribute="top" constant="8" id="YJM-Q7-6qN"/>
+                            <constraint firstItem="l7s-o7-qbN" firstAttribute="leading" secondItem="SLg-zd-nDl" secondAttribute="leading" constant="16" id="cTl-Pz-olN"/>
+                            <constraint firstItem="l7s-o7-qbN" firstAttribute="centerX" secondItem="j58-tv-nRG" secondAttribute="centerX" id="clM-pA-CvZ"/>
+                            <constraint firstItem="SLg-zd-nDl" firstAttribute="trailing" secondItem="l7s-o7-qbN" secondAttribute="trailing" constant="16" id="eXf-ai-YaV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SLg-zd-nDl"/>
                     </view>
                     <connections>
-                        <outlet property="firstNrPinTxtField" destination="5Fe-hx-88o" id="Yhf-Uy-f9c"/>
-                        <outlet property="fourthNrPinTxtfield" destination="C0W-Bg-nyV" id="xGz-B6-dwr"/>
-                        <outlet property="secondNrPinTxtField" destination="dLI-CS-ouq" id="gsc-Vs-64k"/>
-                        <outlet property="thirdNrPinTxtField" destination="Bqz-JE-QFa" id="2iS-dU-f5e"/>
+                        <outlet property="pinCodeField" destination="l7s-o7-qbN" id="t2e-0k-CTC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-kz-QiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
