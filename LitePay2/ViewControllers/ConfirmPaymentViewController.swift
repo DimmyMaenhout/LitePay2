@@ -1,13 +1,19 @@
 import Foundation
 import UIKit
+import coinbase_official
 
 class ConfirmPaymentViewController : UIViewController {
     
-    
-    @IBOutlet weak var firstNrPinTxtField: UITextField!
-    @IBOutlet weak var secondNrPinTxtField: UITextField!
-    @IBOutlet weak var thirdNrPinTxtField: UITextField!
-    @IBOutlet weak var fourthNrPinTxtfield: UITextField!
+    @IBOutlet weak var pinCodeField: UITextField!
     
     var addressPassed = ""
+    var account : CoinbaseAccount?
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        print("Confirm payment view controller line 16, address passed from previous controller (QR code reader view controller): \(addressPassed)")
+    }
+    
 }

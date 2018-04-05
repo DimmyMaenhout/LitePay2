@@ -130,16 +130,16 @@
 		63F17B5A2046E33B00538D2E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				63F17B5D2046F21500538D2E /* HomeViewController.swift */,
-				63F17B5F2046F65200538D2E /* PayViewController.swift */,
 				63F17B61204731DD00538D2E /* ChangePincodeViewController.swift */,
 				63F17B63204738D400538D2E /* ConfirmPaymentViewController.swift */,
-				63F17B6520473E6F00538D2E /* SettingsViewController.swift */,
+				63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */,
+				63F17B5D2046F21500538D2E /* HomeViewController.swift */,
 				63C6C5092047E3EF00A023D5 /* LoginViewController.swift */,
+				63F17B5F2046F65200538D2E /* PayViewController.swift */,
 				63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */,
 				63C6C50F2047FB9400A023D5 /* QRCodeReaderViewController.swift */,
 				6335EC312068FD63000AA244 /* SelectAccountViewController.swift */,
-				63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */,
+				63F17B6520473E6F00538D2E /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
