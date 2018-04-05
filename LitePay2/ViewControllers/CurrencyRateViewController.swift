@@ -7,11 +7,11 @@ class CurrencyRateViewController : UIViewController {
     
     var currencyRates : [String: String]? {
 //        This is a property observer.
-//        The willSet and didSet observers provide a way to observe (and to respond appropriately) when the value of a variable or property is being set.
+//        The willSet and didSet observers provide a way to observe (and to respond appropriately) when the value of a variable          or property is being set.
 //        Observers aren't called when the or property is first initialized, they are only called when the value is set outside of an initialization context
 //        didSet is called immediatly after the new value is set
         didSet {
-            //getCurrencyRates()
+            
             print("Currency rates view controller line 15, var currencyRate didSet: \(currencyRates)")
             currencyRateTableView.reloadData()
         }
@@ -20,11 +20,9 @@ class CurrencyRateViewController : UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-//        currencyRateTableView.delegate = self
         currencyRateTableView.dataSource = self
-        //currencyRates = getCurrencyRates()
         getCurrencyRates()
-        
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     func getCurrencyRates(){
@@ -50,13 +48,11 @@ extension CurrencyRateViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
 //        all elements in currencyRates need to be showed, if currencyRates = nil return 0
-        if currencyRates?.count != nil {
-            return (currencyRates?.count)!
-        }
         return currencyRates?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = currencyRateTableView.dequeueReusableCell(withIdentifier: "currencyRateCell", for: indexPath) as! KoersCell
         
 //        show the key and value at indexPath.row, to show every key and value we use Array(key/value)[ at this position ]
