@@ -10,35 +10,38 @@ class SelectAccountViewController : UIViewController {
     var accessToken : String? =  ""
     var refreshToken = ""
     var accounts : [CoinbaseAccount] = []
-    //dict accountIDs has currencies as keys and account's id's as values
-    //there can be multiple accounts with the same currency, so we use an array
+//    dict accountIDs has currencies as keys and account's id's as values
+//    there can be multiple accounts with the same currency, so we use an array
     var currencyAccountIDs : [Int: [CoinbaseAccount]] = [:]
     var btnPressedPreviousVc : String = ""
     
     override func viewDidLoad() {
+        
         tableView.dataSource = self
         tableView.delegate = self
         
         getAccounts()
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
-    //Gets all of the users accounts (wallets)
+//    Gets all of the users accounts (wallets)
     func getAccounts()  {
         
         let accessTkn = UserDefaults.standard.object(forKey: "access_token")
         print("Select Account view controller line 28, accessTkn: \(String(describing: accessTkn))")
-        //If accessTkn has a value (not nil) go in statement
+        
+//        If accessTkn has a value (not nil) go in statement
         if let accessToken = accessTkn
         {
             client = Coinbase(oAuthAccessToken: accessToken as! String)
-            //If client has a value (not nil) go in statement
+//            If client has a value (not nil) go in statement
             if let client = client
             {
                 client.getAccountsList({( accounts : [Any]?, pagingHelper : CoinbasePagingHelper?, error : Error?) -> Void in
-                    //If there is an error, show alert
-                    print("Select Account view controller line 38, got till here")
+//                    If there is an error, show alert
+                    print("Select Account view controller line 41, got till here")
                     if error != nil{
-                        print("Select Account view controller line 40, error occured when trying to get accounts. error: \(String(describing: error?.localizedDescription))")
+                        print("Select Account view controller line 43, error occured when trying to get accounts. error: \(String(describing: error?.localizedDescription))")
                         
                         let alert = UIAlertController(title: "Error", message: "Er is een fout opgtreden bij het ophalen van de accounts", preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -47,17 +50,18 @@ class SelectAccountViewController : UIViewController {
                         print("Select Account view controller line 46, exiting method getAccounts")
                         return
                     }
-                    print("Select Account view controller line 49, got till here")
-                    //If accounts is nil go in (else) statement
+                    
+                    print("Select Account view controller line 52, got till here")
+//                    If accounts is nil go in (else) statement
                     guard let accounts = accounts else
                     {
-                        print("Select Account view controller line 53, accounts is nil, exiting method getAccounts")
+                        print("Select Account view controller line 57, accounts is nil, exiting method getAccounts")
                         return
                     }
-                    //If pagingHelper is nil go in (else) statement
+//                    If pagingHelper is nil go in (else) statement
                     guard let pagingHelper = pagingHelper else
                     {
-                        print("Select Account view controller line 59, pagingHelper is nil, exiting method getAccounts")
+                        print("Select Account view controller line 63, pagingHelper is nil, exiting method getAccounts")
                         return
                     }
                     
@@ -65,11 +69,13 @@ class SelectAccountViewController : UIViewController {
                     print("Select Account view controller line 64, # accounts: \(accounts.count)")
                     print("Select Account view controller line 65, # account in self.accounts: \(self.accounts.count)")
                     self.getAccountIDs(self.accounts)
+//                    Put data in table
                     self.tableView.reloadData()
                     
                 })
             }
             else {
+                
                 print("Select Account view controller line 72, client is nil: \(String(describing: client))")
             }
         }
@@ -84,19 +90,20 @@ class SelectAccountViewController : UIViewController {
         var eur : [CoinbaseAccount] = []
         var other: [CoinbaseAccount] = []
         var ltcAccountIDs : [String: String] = [:]
-        //var ltcIDs : [String] = []    Mag waarschijnlijk verwijderd worden
+//        var ltcIDs : [String] = []    Mag waarschijnlijk verwijderd worden
         
         print("Select Account view controller line 100, accessed method getAccountsIDs")
         for account in self.accounts {
             
             switch(account.balance.currency){
+                
             case "\(CurrencyCode.LTC)":
                 ltc.append(account)
                 
                 currencyAccountIDs[0] = ltc
                 print("Select Account view controller line 96, LTC account id: \(account.accountID)")
-                //ltcIDs.append(account.accountID) Mag waarschijnlijk verwijderd worden
-                //ltcAccountIDs["\(account.name)"] = ltcIDs
+//                ltcIDs.append(account.accountID) Mag waarschijnlijk verwijderd worden
+//                ltcAccountIDs["\(account.name)"] = ltcIDs
                 ltcAccountIDs["\(account.name)"] = account.accountID
                 print("Select Account view controller line 100, ltcAccountIDs # \(ltcAccountIDs.count), ltcAccountIDS name: \(account.name), accountID: \(account.accountID)")
                 
@@ -121,11 +128,11 @@ class SelectAccountViewController : UIViewController {
                 other.append(account)
                 currencyAccountIDs[5] = other
             }
-            
         }
+        
         print("Select Account view controller line 125,, currencyAccountIDs for LTC: \(String(describing: currencyAccountIDs[0]?.count)) \n currencyAccountIDs for BTC: \(String(describing: currencyAccountIDs[1]?.count)) \n currencyAccountIDs for BCH: \(String(describing: currencyAccountIDs[2]?.count)) \n currencyAccountIDs for ETH: \(String(describing: currencyAccountIDs[3]?.count)) \n currencyAccountIDs for EUR: \(String(describing: currencyAccountIDs[4]?.count)) \n currencyAccountIDs for OTHER: \(String(describing: currencyAccountIDs[5]?.count))")
         
-        //return currencyAccountIDs
+//        return currencyAccountIDs
         return ltcAccountIDs
     }
 
@@ -172,18 +179,21 @@ extension SelectAccountViewController : UITableViewDelegate {
 }
 
 extension SelectAccountViewController : UITableViewDataSource {
-    /*  The amount of sections equals the amount of keys in currencyAccountIDs  */
+    
+//    The amount of sections equals the amount of keys in currencyAccountIDs
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return currencyAccountIDs.keys.count
     }
     
-    /*  Rows in section depends on the number of valeus a key has (accounts with the same currency) */
+//    Rows in section depends on the number of valeus a key has (accounts with the same currency)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return currencyAccountIDs[section]?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell", for: indexPath) as! AccountsCell
         let account = currencyAccountIDs[indexPath.section]![indexPath.row]
         
@@ -199,8 +209,9 @@ extension SelectAccountViewController : UITableViewDataSource {
         
         return cell
     }
-    /*  Names for the sections  */
+//    Names for the sections
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell") as! HeaderCurrencyCell
         
         switch(section){
@@ -221,20 +232,25 @@ extension SelectAccountViewController : UITableViewDataSource {
         }
         return cell
     }
-    /*  Shows alert when unsupported currency account is selected   */
+    
+//    Shows alert when unsupported currency account is selected
     func selectedUnsuportedPaymentCurrency(){
+        
         let alert = UIAlertController(title: "", message: "Enkel Litecoin betalingen worden (momenteel) ondersteund", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
     //if currency != litecoin show alert and exit method
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
         print("Select Account view controller line 206, indexPath.section: \(indexPath.section)")
         if indexPath.section != 0 {
+            
             selectedUnsuportedPaymentCurrency()
             return nil
         }
         else {
+            
             return indexPath
         }
     }
