@@ -71,4 +71,56 @@ public enum CoinbaseAPIService {
             
         }
     }
+    
+//    Shows every currency rate in euro
+//    No authentication neccesary to get this information (accessToken)
+    static func getExchangeRates(completion: @escaping ([String: String]?) -> Void) {
+        
+//        on completion return rates
+        var rates : [String: String] = [:]
+        let eur = CurrencyCode.EUR
+        
+        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.exchangeRates.rawValue)\(calls.currency.rawValue)\(eur)")!
+        print("Coinbase Api Service line 79, url: \(String(describing: url))")
+        
+        
+            //necessary to get access when making the call
+            let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
+           
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+                .responseJSON
+                {
+                    response in
+//                    print("Coinbase API Service line 93, response: \(response)")
+                    
+                    if let status = response.response?.statusCode
+                    {
+                        switch(status)
+                        {
+                            case 200: print("Coinbase api service line 101, status = success")
+                            default: print("Coinbase Api Service line 102, error with response status: \(status)")
+                        }
+                    }
+                    
+                    if let result = response.result.value
+                    {
+                        let json = result as! [String: Any]
+                        //print("Coinbase Api Service line 109, json: \(json)")
+                        
+                        //if json["data"] = nil go in else statement
+                        guard let data = json["data"] as? [String: Any] else
+                        {
+//                            print("Coinbase Api Service line 114, data is nil")
+                            return
+                        }
+//                        print("Coinbase Api Service line 114, data: \(data)")
+                        
+                        rates = data["rates"] as! [String: String]
+                        print("Coinbase Api Service line 114, rates: \(rates)")
+                    }
+                    completion(rates)
+                }
+    }
+    
+    
 }
