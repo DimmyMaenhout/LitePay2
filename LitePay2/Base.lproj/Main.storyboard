@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Currency Rate View Controller-->
+        <!--Koers-->
         <scene sceneID="z7g-pP-FNB">
             <objects>
                 <viewController id="4Ky-lR-xaY" customClass="CurrencyRateViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,10 +100,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="4Ky-lR-xaY" id="Mwj-rk-zdz"/>
-                                    <outlet property="delegate" destination="4Ky-lR-xaY" id="e3V-PK-nHR"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,9 +111,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Y3-zR-ALw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kbf-a9-fyn"/>
+                    <navigationItem key="navigationItem" title="Koers" id="kbf-a9-fyn"/>
                     <connections>
-                        <outlet property="currencyRateController" destination="jxl-IA-iWt" id="Ppk-0G-ifw"/>
                         <outlet property="currencyRateTableView" destination="jxl-IA-iWt" id="4cD-F1-fSi"/>
                     </connections>
                 </viewController>
@@ -176,7 +171,7 @@
             </objects>
             <point key="canvasLocation" x="3222" y="806"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Instellingen-->
         <scene sceneID="huS-I0-EdV">
             <objects>
                 <tableViewController id="SKb-8i-l0N" customClass="SettingsViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,7 +211,7 @@
                             <outlet property="delegate" destination="SKb-8i-l0N" id="pXb-Hl-8vc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="g3Y-hd-rYQ"/>
+                    <navigationItem key="navigationItem" title="Instellingen" id="g3Y-hd-rYQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th8-Be-Qn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
