@@ -209,6 +209,7 @@ extension SelectAccountViewController : UITableViewDataSource {
         
         return cell
     }
+    
 //    Names for the sections
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -240,6 +241,7 @@ extension SelectAccountViewController : UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
+    
     //if currency != litecoin show alert and exit method
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
