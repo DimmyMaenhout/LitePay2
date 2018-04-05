@@ -32,4 +32,6 @@ enum calls : String {
     case prices = "prices/"
     case addresses = "addresses"
     case spot = "spot"
+    case exchangeRates = "exchange-rates"
+    case currency = "?currency="
 }
