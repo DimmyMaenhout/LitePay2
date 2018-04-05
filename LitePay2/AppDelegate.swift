@@ -30,13 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         print("App delegate line 30, obtained tokens")
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let controller = storyboard.instantiateViewController(withIdentifier: "homescreen") as! HomeViewController
+                        let homeController = storyboard.instantiateViewController(withIdentifier: "homescreen") as! HomeViewController
+                        let tabbarController = storyboard.instantiateViewController(withIdentifier: "tabBarControllerID") as! UITabBarController
                         print("App delegate line 34, go to method authentication complete in home view controller")
-                        controller.authenticationComplete(result as! [AnyHashable : Any])
-                        
+                        homeController.authenticationComplete(result as? [AnyHashable : Any])
                         self.window = UIWindow(frame: UIScreen.main.bounds)
-                        self.window?.rootViewController = controller
+                        self.window?.rootViewController = tabbarController
                         self.window?.makeKeyAndVisible()
+                        
                         print("App delegate line 40, make home screen visible")
                         
                     }
