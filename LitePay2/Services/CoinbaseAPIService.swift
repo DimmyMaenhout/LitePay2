@@ -122,5 +122,101 @@ public enum CoinbaseAPIService {
                 }
     }
     
-    
+    static func getExchangeRate(for currency: String, completion: @escaping ([String: String]?) -> Void) {
+        
+        //        on completion return rate of the given currency
+        var rates : [String: String] = [:]
+        let eur = CurrencyCode.EUR
+        
+        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.exchangeRates.rawValue)\(calls.currency.rawValue)\(eur)")!
+        print("Coinbase Api Service line 79, url: \(String(describing: url))")
+        
+        
+        //necessary to get access when making the call
+        let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON
+            {
+                response in
+//                print("Coinbase API Service line 93, response: \(response)")
+                
+                if let status = response.response?.statusCode
+                {
+                    switch(status)
+                    {
+                    case 200: print("Coinbase api service line 101, status = success")
+                    default: print("Coinbase Api Service line 102, error with response status: \(status)")
+                    }
+                }
+                
+                if let result = response.result.value
+                {
+                    let json = result as! [String: Any]
+//                    print("Coinbase Api Service line 109, json: \(json)")
+                    
+//                    if json["data"] = nil go in else statement
+                    guard let data = json["data"] as? [String: Any] else
+                    {
+//                        print("Coinbase Api Service line 114, data is nil")
+                        return
+                    }
+//                    print("Coinbase Api Service line 114, data: \(data)")
+                    
+                    rates = data["rates"] as! [String: String]
+                    print("Coinbase Api Service line 114, rates: \(rates)")
+                }
+                completion(rates)
+        }
+    }
+//    returns the (key && value) value for the used currency
+    static func getExchangeRateFor(currency: String, completion: @escaping ([String: String]?) -> Void) {
+        
+//        on completion return rate of the given currency
+        var rateForCurrency : [String: String] = [:]
+        let eur = CurrencyCode.EUR
+        
+        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.exchangeRates.rawValue)\(calls.currency.rawValue)\(eur)")!
+        print("Coinbase Api Service line 180, url: \(String(describing: url))")
+        
+        
+//        necessary to get access when making the call
+        let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON
+            {
+                response in
+//                print("Coinbase API Service line 190, response: \(response)")
+                
+                if let status = response.response?.statusCode
+                {
+                    switch(status)
+                    {
+                    case 200: print("Coinbase api service line 196, status = success")
+                    default: print("Coinbase Api Service line 197, error with response status: \(status)")
+                    }
+                }
+                
+                if let result = response.result.value
+                {
+                    let json = result as! [String: Any]
+//                    print("Coinbase Api Service line 204, json: \(json)")
+                    
+//                    if json["data"] = nil go in else statement
+                    guard let data = json["data"] as? [String: Any] else
+                    {
+//                        print("Coinbase Api Service line 209, data is nil")
+                        return
+                    }
+//                    print("Coinbase Api Service line 212, data: \(data)")
+                    
+                    let rates = data["rates"] as! [String: String]
+                    var currencyRate = rates["\(currency)"]
+                    rateForCurrency[currency] = currencyRate
+                    print("Coinbase Api Service line 217, rateForCurrency: \(rateForCurrency)")
+                }
+                completion(rateForCurrency)
+        }
+    }
 }
