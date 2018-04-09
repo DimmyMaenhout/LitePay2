@@ -59,7 +59,7 @@ class SelectAccountViewController : UIViewController {
                         return
                     }
 //                    If pagingHelper is nil go in (else) statement
-                    guard let pagingHelper = pagingHelper else
+                    guard pagingHelper != nil else
                     {
                         print("Select Account view controller line 63, pagingHelper is nil, exiting method getAccounts")
                         return
