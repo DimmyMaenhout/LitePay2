@@ -15,6 +15,8 @@ class HomeViewController : UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        payBtn.layer.cornerRadius = 5
+        receiveBtn.layer.cornerRadius = 5
     }
 
     func authenticationComplete(_ response: [AnyHashable: Any]?) {

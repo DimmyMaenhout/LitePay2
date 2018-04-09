@@ -5,6 +5,7 @@ import coinbase_official
 class LoginViewController : UIViewController {
     
     @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var signInBtn: UIButton!
     
     var isLoggedIn = false
     var client : Coinbase? = nil
@@ -22,6 +23,8 @@ class LoginViewController : UIViewController {
             print("Login view controller lijn 22, client: \(String(describing: self.client))")
          }
         updateUI()
+        
+        signInBtn.layer.cornerRadius = 5
     }
     
     @IBAction func handleAuthentication(_ sender: Any) {
