@@ -420,60 +420,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ur4-wP-HQZ">
-                                <rect key="frame" x="8" y="213" width="359" height="241"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eA-Er-FRA">
+                                <rect key="frame" x="0.0" y="49" width="375" height="569"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Litecoin_logo" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-9h-Dt4">
-                                        <rect key="frame" x="129.5" y="0.0" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="7zV-n0-1bm"/>
-                                            <constraint firstAttribute="width" constant="100" id="cHD-xb-9Wx"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TzR-Ul-Qt7">
-                                        <rect key="frame" x="8" y="116" width="343" height="76"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ur4-wP-HQZ">
+                                        <rect key="frame" x="16" y="179" width="344" height="241"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Litecoin_logo" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-9h-Dt4">
+                                                <rect key="frame" x="122" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="7zV-n0-1bm"/>
+                                                    <constraint firstAttribute="width" constant="100" id="cHD-xb-9Wx"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TzR-Ul-Qt7">
+                                                <rect key="frame" x="8" y="116" width="328" height="76"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
+                                                        <rect key="frame" x="0.0" y="0.0" width="328" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                        <connections>
+                                                            <action selector="euroTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEnd" id="mhT-iq-TBU"/>
+                                                            <outlet property="delegate" destination="gki-jK-PM7" id="AJR-OR-kms"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,00000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
+                                                        <rect key="frame" x="0.0" y="46" width="328" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                        <connections>
+                                                            <action selector="ltcTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEnd" id="9c6-oV-QD5"/>
+                                                            <outlet property="delegate" destination="gki-jK-PM7" id="nR3-Fa-hky"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Yu7-I4-B80" firstAttribute="width" secondItem="W32-xa-ony" secondAttribute="width" id="txF-ma-CoM"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-tX-zGh">
+                                                <rect key="frame" x="116" y="208" width="112" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Scan QR-code"/>
                                                 <connections>
-                                                    <action selector="calculateAmountInOtherCurrency:" destination="gki-jK-PM7" eventType="editingDidEnd" id="eNH-hN-6vr"/>
+                                                    <segue destination="YLZ-6o-gEj" kind="show" id="QHa-ds-4Oc"/>
                                                 </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,00000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
-                                                <rect key="frame" x="0.0" y="46" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                            </textField>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Yu7-I4-B80" firstAttribute="width" secondItem="W32-xa-ony" secondAttribute="width" id="txF-ma-CoM"/>
+                                            <constraint firstItem="TzR-Ul-Qt7" firstAttribute="leading" secondItem="Ur4-wP-HQZ" secondAttribute="leading" constant="8" id="9XB-n0-sU4"/>
+                                            <constraint firstAttribute="trailing" secondItem="TzR-Ul-Qt7" secondAttribute="trailing" constant="8" id="bPA-Au-dp4"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-tX-zGh">
-                                        <rect key="frame" x="123.5" y="208" width="112" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Scan QR-code"/>
-                                        <connections>
-                                            <segue destination="YLZ-6o-gEj" kind="show" id="QHa-ds-4Oc"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TzR-Ul-Qt7" firstAttribute="leading" secondItem="Ur4-wP-HQZ" secondAttribute="leading" constant="8" id="9XB-n0-sU4"/>
-                                    <constraint firstAttribute="trailing" secondItem="TzR-Ul-Qt7" secondAttribute="trailing" constant="8" id="bPA-Au-dp4"/>
+                                    <constraint firstItem="Ur4-wP-HQZ" firstAttribute="leading" secondItem="6eA-Er-FRA" secondAttribute="leading" constant="16" id="X9A-9P-2He"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ur4-wP-HQZ" secondAttribute="bottom" constant="149" id="a47-li-U6Y"/>
+                                    <constraint firstItem="Ur4-wP-HQZ" firstAttribute="top" secondItem="6eA-Er-FRA" secondAttribute="top" constant="179" id="epo-8T-b0Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ur4-wP-HQZ" secondAttribute="trailing" constant="16" id="hfS-Ep-wbC"/>
+                                    <constraint firstItem="Ur4-wP-HQZ" firstAttribute="centerX" secondItem="6eA-Er-FRA" secondAttribute="centerX" id="rwY-XA-6Ou"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ur4-wP-HQZ" firstAttribute="leading" secondItem="Hti-vK-nPm" secondAttribute="leading" constant="8" id="BA5-w5-p2Z"/>
-                            <constraint firstItem="Ur4-wP-HQZ" firstAttribute="centerX" secondItem="7ts-u2-tFp" secondAttribute="centerX" id="MQI-zP-Rjp"/>
-                            <constraint firstItem="Hti-vK-nPm" firstAttribute="trailing" secondItem="Ur4-wP-HQZ" secondAttribute="trailing" constant="8" id="SUa-Rk-y89"/>
-                            <constraint firstItem="Ur4-wP-HQZ" firstAttribute="centerY" secondItem="7ts-u2-tFp" secondAttribute="centerY" id="dps-Pv-C0x"/>
+                            <constraint firstItem="Hti-vK-nPm" firstAttribute="trailing" secondItem="6eA-Er-FRA" secondAttribute="trailing" id="1kn-ng-b8X"/>
+                            <constraint firstItem="6eA-Er-FRA" firstAttribute="leading" secondItem="Hti-vK-nPm" secondAttribute="leading" id="6aj-hi-k5G"/>
+                            <constraint firstItem="Hti-vK-nPm" firstAttribute="trailing" secondItem="6eA-Er-FRA" secondAttribute="trailing" id="84x-K3-RIb"/>
+                            <constraint firstItem="Hti-vK-nPm" firstAttribute="bottom" secondItem="6eA-Er-FRA" secondAttribute="bottom" id="B3l-K3-QuB"/>
+                            <constraint firstItem="Hti-vK-nPm" firstAttribute="bottom" secondItem="6eA-Er-FRA" secondAttribute="bottom" id="GAb-bR-2L2"/>
+                            <constraint firstItem="6eA-Er-FRA" firstAttribute="centerY" secondItem="7ts-u2-tFp" secondAttribute="centerY" id="KHs-Cs-beN"/>
+                            <constraint firstItem="6eA-Er-FRA" firstAttribute="leading" secondItem="Hti-vK-nPm" secondAttribute="leading" id="Tgp-L5-MK2"/>
+                            <constraint firstItem="6eA-Er-FRA" firstAttribute="centerX" secondItem="7ts-u2-tFp" secondAttribute="centerX" id="oPg-DX-3Se"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hti-vK-nPm"/>
                     </view>
@@ -483,6 +504,7 @@
                         <outlet property="ScanQRBtn" destination="ZUx-tX-zGh" id="ZJs-nP-ZXR"/>
                         <outlet property="euroTxtField" destination="W32-xa-ony" id="vy8-BA-wkb"/>
                         <outlet property="ltcTxtField" destination="Yu7-I4-B80" id="9c3-zJ-qDO"/>
+                        <outlet property="scrollView" destination="6eA-Er-FRA" id="wzf-ST-lYe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36o-tI-iyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
