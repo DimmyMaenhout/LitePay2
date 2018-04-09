@@ -33,7 +33,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="f4J-Gl-q29">
                                                     <rect key="frame" x="16" y="16" width="343" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="LTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-KR-Z3s">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="LTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-KR-Z3s">
                                                             <rect key="frame" x="0.0" y="0.0" width="161" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
@@ -223,7 +223,7 @@
                                             <outlet property="currencyLabel" destination="Mw0-Gj-obI" id="PXt-y0-Zgl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountCell" rowHeight="60" id="d8u-8t-d81" customClass="AccountsCell" customModule="LitePay2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="accountCell" rowHeight="60" id="d8u-8t-d81" customClass="AccountsCell" customModule="LitePay2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d8u-8t-d81" id="biH-sI-Uq8">
@@ -325,11 +325,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFw-jO-6Ag">
-                                <rect key="frame" x="0.0" y="64" width="375" height="525"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkn-ds-epI">
-                                <rect key="frame" x="16" y="597" width="343" height="21"/>
+                                <rect key="frame" x="16" y="611" width="343" height="7"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -343,8 +343,10 @@
                             <constraint firstItem="ZFw-jO-6Ag" firstAttribute="trailing" secondItem="rHc-0I-4K8" secondAttribute="trailing" id="Hpt-u1-fyp"/>
                             <constraint firstItem="rHc-0I-4K8" firstAttribute="trailing" secondItem="tkn-ds-epI" secondAttribute="trailing" constant="16" id="OWD-62-8CM"/>
                             <constraint firstItem="tkn-ds-epI" firstAttribute="top" secondItem="ZFw-jO-6Ag" secondAttribute="bottom" constant="8" id="RFX-ye-0Ko"/>
+                            <constraint firstItem="ZFw-jO-6Ag" firstAttribute="centerY" secondItem="wC4-UW-iMR" secondAttribute="centerY" id="UF1-3a-wa4"/>
                             <constraint firstItem="ZFw-jO-6Ag" firstAttribute="top" secondItem="rHc-0I-4K8" secondAttribute="top" id="fEf-AC-duG"/>
                             <constraint firstItem="tkn-ds-epI" firstAttribute="leading" secondItem="rHc-0I-4K8" secondAttribute="leading" constant="16" id="kag-QH-fwF"/>
+                            <constraint firstItem="ZFw-jO-6Ag" firstAttribute="centerX" secondItem="wC4-UW-iMR" secondAttribute="centerX" id="wcJ-1e-7Bz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rHc-0I-4K8"/>
                     </view>
@@ -424,7 +426,7 @@
                                 <rect key="frame" x="0.0" y="49" width="375" height="569"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ur4-wP-HQZ">
-                                        <rect key="frame" x="16" y="179" width="344" height="241"/>
+                                        <rect key="frame" x="16" y="179" width="344" height="292"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Litecoin_logo" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-9h-Dt4">
                                                 <rect key="frame" x="122" y="0.0" width="100" height="100"/>
@@ -434,37 +436,82 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TzR-Ul-Qt7">
-                                                <rect key="frame" x="8" y="116" width="328" height="76"/>
+                                                <rect key="frame" x="8" y="116" width="328" height="127"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zi5-Pl-ygc">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krq-qb-cYF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="11" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR 0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
+                                                                <rect key="frame" x="15" y="0.0" width="313" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                                <connections>
+                                                                    <action selector="euroTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEndOnExit" id="FZc-Zn-j5i"/>
+                                                                    <action selector="euroTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEnd" id="mhT-iq-TBU"/>
+                                                                    <outlet property="delegate" destination="gki-jK-PM7" id="AJR-OR-kms"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="krq-qb-cYF" firstAttribute="leading" secondItem="zi5-Pl-ygc" secondAttribute="leading" id="5mz-uZ-EWT"/>
+                                                            <constraint firstAttribute="trailing" secondItem="W32-xa-ony" secondAttribute="trailing" id="PPL-99-ZMI"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nux-Cf-ppV">
+                                                        <rect key="frame" x="0.0" y="46" width="328" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="QEL-l1-8hD"/>
+                                                        </constraints>
+                                                        <state key="normal" image="switch-vertical-orientation-arrows"/>
                                                         <connections>
-                                                            <action selector="euroTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEnd" id="mhT-iq-TBU"/>
-                                                            <outlet property="delegate" destination="gki-jK-PM7" id="AJR-OR-kms"/>
+                                                            <action selector="switchBtnPressed:" destination="gki-jK-PM7" eventType="touchUpInside" id="w0X-uV-bzA"/>
                                                         </connections>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,00000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
-                                                        <rect key="frame" x="0.0" y="46" width="328" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                                        <connections>
-                                                            <action selector="ltcTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEnd" id="9c6-oV-QD5"/>
-                                                            <outlet property="delegate" destination="gki-jK-PM7" id="nR3-Fa-hky"/>
-                                                        </connections>
-                                                    </textField>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NjQ-Kj-LBd">
+                                                        <rect key="frame" x="0.0" y="97" width="328" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sz-Rl-VHZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,00000000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
+                                                                <rect key="frame" x="33.5" y="0.0" width="294.5" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                                <connections>
+                                                                    <action selector="ltcTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEnd" id="9c6-oV-QD5"/>
+                                                                    <action selector="ltcTextfieldDidChange:" destination="gki-jK-PM7" eventType="editingDidEndOnExit" id="qs9-8S-fNr"/>
+                                                                    <outlet property="delegate" destination="gki-jK-PM7" id="nR3-Fa-hky"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Yu7-I4-B80" secondAttribute="trailing" id="JLc-7u-kZ8"/>
+                                                            <constraint firstItem="5sz-Rl-VHZ" firstAttribute="leading" secondItem="NjQ-Kj-LBd" secondAttribute="leading" id="mes-uf-ryY"/>
+                                                        </constraints>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Yu7-I4-B80" firstAttribute="width" secondItem="W32-xa-ony" secondAttribute="width" id="txF-ma-CoM"/>
+                                                    <constraint firstItem="Nux-Cf-ppV" firstAttribute="centerX" secondItem="TzR-Ul-Qt7" secondAttribute="centerX" id="B0l-01-gw9"/>
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-tX-zGh">
-                                                <rect key="frame" x="116" y="208" width="112" height="33"/>
+                                                <rect key="frame" x="116" y="259" width="112" height="33"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Scan QR-code"/>
+                                                <state key="normal" title="Scan QR-code">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="YLZ-6o-gEj" kind="show" id="QHa-ds-4Oc"/>
                                                 </connections>
@@ -502,7 +549,9 @@
                         <outlet property="LtcIcon" destination="FTb-9h-Dt4" id="VNO-bN-xfI"/>
                         <outlet property="LtcTxtField" destination="W32-xa-ony" id="mDL-qp-Qwd"/>
                         <outlet property="ScanQRBtn" destination="ZUx-tX-zGh" id="ZJs-nP-ZXR"/>
+                        <outlet property="euroIconLbl" destination="krq-qb-cYF" id="7v7-oD-7To"/>
                         <outlet property="euroTxtField" destination="W32-xa-ony" id="vy8-BA-wkb"/>
+                        <outlet property="ltcIconLbl" destination="5sz-Rl-VHZ" id="pCJ-m8-tSq"/>
                         <outlet property="ltcTxtField" destination="Yu7-I4-B80" id="9c3-zJ-qDO"/>
                         <outlet property="scrollView" destination="6eA-Er-FRA" id="wzf-ST-lYe"/>
                     </connections>
@@ -678,6 +727,7 @@
     </scenes>
     <resources>
         <image name="Litecoin_logo" width="225" height="225"/>
+        <image name="switch-vertical-orientation-arrows" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BKu-tc-VAD"/>
