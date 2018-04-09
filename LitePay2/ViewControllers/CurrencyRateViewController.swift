@@ -22,6 +22,8 @@ class CurrencyRateViewController : UIViewController {
         super.viewDidLoad()
         currencyRateTableView.dataSource = self
         getCurrencyRates()
+        
+//        removes the unwanted space between the navbar and first cell
         self.automaticallyAdjustsScrollViewInsets = false
     }
     
