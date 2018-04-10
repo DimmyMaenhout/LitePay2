@@ -12,7 +12,7 @@ class CurrencyRateViewController : UIViewController {
 //        didSet is called immediatly after the new value is set
         didSet {
             
-            print("Currency rates view controller line 15, var currencyRate didSet: \(currencyRates)")
+            print("Currency rates view controller line 15, var currencyRate didSet: \(String(describing: currencyRates))")
             currencyRateTableView.reloadData()
         }
     }
