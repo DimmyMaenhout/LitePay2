@@ -627,15 +627,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-a3-jR2">
-                                <rect key="frame" x="8" y="286.5" width="359" height="94.5"/>
+                                <rect key="frame" x="8" y="266" width="359" height="135"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tF8-p4-9TO">
-                                        <rect key="frame" x="158.5" y="0.0" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="e7c-xh-O5m">
+                                        <rect key="frame" x="16" y="0.0" width="327" height="61"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gelieve aan te melden met uw Coinbase account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tF8-p4-9TO">
+                                                <rect key="frame" x="0.0" y="8" width="327" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="tF8-p4-9TO" firstAttribute="centerY" secondItem="e7c-xh-O5m" secondAttribute="centerY" id="1LJ-UF-lZr"/>
+                                            <constraint firstItem="tF8-p4-9TO" firstAttribute="leading" secondItem="e7c-xh-O5m" secondAttribute="leading" id="84r-W2-3vg"/>
+                                            <constraint firstItem="tF8-p4-9TO" firstAttribute="top" secondItem="e7c-xh-O5m" secondAttribute="top" constant="8" id="WF8-5h-aim"/>
+                                            <constraint firstAttribute="trailing" secondItem="tF8-p4-9TO" secondAttribute="trailing" id="YS1-hD-QKr"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0y-P7-gUM">
-                                        <rect key="frame" x="114.5" y="44.5" width="130" height="50"/>
+                                        <rect key="frame" x="114.5" y="85" width="130" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="irI-OW-nuE"/>
@@ -650,6 +662,11 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="e7c-xh-O5m" firstAttribute="leading" secondItem="HJF-a3-jR2" secondAttribute="leading" constant="16" id="8OS-Iq-PbF"/>
+                                    <constraint firstItem="e7c-xh-O5m" firstAttribute="centerX" secondItem="HJF-a3-jR2" secondAttribute="centerX" id="K5w-pJ-rMw"/>
+                                    <constraint firstAttribute="trailing" secondItem="e7c-xh-O5m" secondAttribute="trailing" constant="16" id="QKC-1a-oKb"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
