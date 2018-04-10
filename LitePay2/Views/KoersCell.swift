@@ -9,7 +9,6 @@ class KoersCell : UITableViewCell{
     var valuta : Currency! {
         didSet{
             codeCurrencyLbl.text = valuta.code
-            fullNameLabel.text = valuta.fullName
             valueCurrencyLabel.text = String(describing: valuta.value)
         }
     }
