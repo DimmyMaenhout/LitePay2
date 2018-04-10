@@ -212,7 +212,7 @@ public enum CoinbaseAPIService {
 //                    print("Coinbase Api Service line 212, data: \(data)")
                     
                     let rates = data["rates"] as! [String: String]
-                    var currencyRate = rates["\(currency)"]
+                    let currencyRate = rates["\(currency)"]
                     rateForCurrency[currency] = currencyRate
                     print("Coinbase Api Service line 217, rateForCurrency: \(rateForCurrency)")
                 }
