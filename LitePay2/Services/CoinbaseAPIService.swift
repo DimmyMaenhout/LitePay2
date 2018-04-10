@@ -219,4 +219,50 @@ public enum CoinbaseAPIService {
                 completion(rateForCurrency)
         }
     }
+    
+    static func getSpotPrice(currencyAccount: String, completion: @escaping (String?) -> Void) {
+        
+        var amountEuro = ""
+        let eur = CurrencyCode.EUR
+        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.prices.rawValue)\(currencyAccount)-\(eur)/\(calls.spot.rawValue)")!
+        print("Coinbase Api Service line 227, url: \(String(describing: url))")
+        
+        
+        //necessary to get access when making the call
+        let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON
+            {
+                response in
+                print("Coinbase API Service line 237, response: \(response)")
+                
+                if let status = response.response?.statusCode
+                {
+                    switch(status)
+                    {
+                    case 200: print("Coinbase api service line 243, status = success")
+                    default: print("Coinbase Api Service line 244, error with response status: \(status)")
+                    }
+                }
+                
+                if let result = response.result.value
+                {
+                    let json = result as! [String: Any]
+//                    print("Coinbase Api Service line 109, json: \(json)")
+                    
+                    //                    if json["data"] = nil go in else statement
+                    guard let data = json["data"] as? [String: Any] else
+                    {
+                        print("Coinbase Api Service line 257, data is nil")
+                        return
+                    }
+                    print("Coinbase Api Service line 260, data: \(data)")
+                    
+                    amountEuro = data["amount"] as! String //as! [String: String]
+                    print("Coinbase Api Service line 263, rates: \(amountEuro)")
+                }
+                completion(amountEuro)
+        }
+    }
 }
