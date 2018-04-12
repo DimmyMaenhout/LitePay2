@@ -518,6 +518,9 @@
                                                 <state key="normal" title="Scan QR-code">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="scanQrButtonPressed:" destination="gki-jK-PM7" eventType="touchUpInside" id="vqq-rx-38f"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -557,7 +560,7 @@
                         <outlet property="ltcIconLbl" destination="5sz-Rl-VHZ" id="pCJ-m8-tSq"/>
                         <outlet property="ltcTxtField" destination="Yu7-I4-B80" id="9c3-zJ-qDO"/>
                         <outlet property="scrollView" destination="6eA-Er-FRA" id="wzf-ST-lYe"/>
-                        <segue destination="YLZ-6o-gEj" kind="show" identifier="QRcodeReaderSegue" id="9gZ-B3-lXr"/>
+                        <segue destination="YLZ-6o-gEj" kind="show" identifier="QRcodeReaderSegue" id="H1f-Nh-zfB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36o-tI-iyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
