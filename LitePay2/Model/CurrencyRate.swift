@@ -13,9 +13,9 @@ class CurrencyRate {
         return amountLTC
     }
     
-    func conversToEuro(amountLTC: NSDecimalNumber, currencyRate: NSDecimalNumber) -> NSDecimalNumber {
+    func converseToEuro(amountLTC: NSDecimalNumber, spotPrice: NSDecimalNumber) -> NSDecimalNumber {
         
-        let amountEuro = (amountLTC as Decimal) * (currencyRate as Decimal) as NSDecimalNumber
+        let amountEuro = (amountLTC as Decimal) * (spotPrice as Decimal) as NSDecimalNumber
         return amountEuro
     }
 //          Testen
