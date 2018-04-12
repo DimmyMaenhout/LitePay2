@@ -12,8 +12,8 @@ class QRCodeReaderViewController : UIViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
-    var address = ""
-    
+    var address : String!
+    var amount : Decimal!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -100,9 +100,12 @@ class QRCodeReaderViewController : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "pinCodeSegue" {
+            
             let vc = storyboard?.instantiateViewController(withIdentifier: "confirmPayment") as! ConfirmPaymentViewController
             vc.addressPassed = address
             print("QRCode reader view controller lijn 82, going to next controller. address (addressPassed to next controller): \(address)")
+           
+            vc.amount = amount
         }
     }
 }
