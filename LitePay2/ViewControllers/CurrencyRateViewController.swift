@@ -29,13 +29,13 @@ class CurrencyRateViewController : UIViewController {
     
     func getCurrencyRates(){
         
-        print("Currency rate view controller line 22, got here")
+        print("Currency rate view controller line 32, got here")
         CoinbaseAPIService.getExchangeRates(completion: ({ response in
             
-            print("Currency rate view controller line 24, response: \(response!)")
+            print("Currency rate view controller line 35, response: \(response!)")
             
             self.currencyRates = response!
-            print("Currency rate view controller line 28, self.currencyRates: \(String(describing: self.currencyRates))")
+            print("Currency rate view controller line 38, self.currencyRates: \(String(describing: self.currencyRates))")
         }))
     }
 }

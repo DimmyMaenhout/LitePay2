@@ -1,12 +1,5 @@
-//
-//  LitePayData.swift
-//  LitePay2
-//
-//  Created by Dimmy Maenhout on 08/03/2018.
-//  Copyright © 2018 Dimmy Maenhout. All rights reserved.
-//
-
 import Foundation
+
 struct LitePayData {
     
     static let clientId = "e2598b8ec89426575829e0f50c0a3ea827ffdfbabd205ecf9a871bfcb0386684"
@@ -24,9 +17,10 @@ struct LitePayData {
     static let bearer = "Bearer"
     static let contentType = "Content-Type"
     static let contentTypeValue = "application/json"
-    
 }
+
 enum calls : String {
+    
     case baseUrl = "https://api.coinbase.com/v2/"
     case accounts = "accounts/"
     case prices = "prices/"

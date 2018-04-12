@@ -1,22 +1,25 @@
 import Foundation
 import UIKit
 import AVFoundation
+import coinbase_official
 
 //AVCaptureMetadataOutput = het coregedeelte om qr code te lezen
 //AVCaptureMetadataOutputObjectsDelegate =
 class QRCodeReaderViewController : UIViewController {
 
-    
-    @IBOutlet weak var qrCodeLbl: UILabel!
     @IBOutlet weak var videoPreview: UIView!
     var captureSession = AVCaptureSession()
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
-    var address : String!
+    var address = ""//: String!
     var amount : Decimal!
+    var account: CoinbaseAccount!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        print("QRCode reader view controller lijn 21, amount: \(self.amount)")
+        print("QRCode reader view controller lijn 22, account: \(self.account)")
         
         /* get the back-facing camera for capturing videos
         *  we get retrieve the device that supports the mediatype AVMediaType.video
@@ -24,9 +27,9 @@ class QRCodeReaderViewController : UIViewController {
         */
         
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
-        print("QRCode reader view controller lijn 24, get the rear end camera: \(deviceDiscoverySession)")
+        print("QRCode reader view controller lijn 30, get the rear end camera: \(deviceDiscoverySession)")
         guard let captureDevice = deviceDiscoverySession.devices.first else {
-            print("QRCode reader view controller lijn 26, Failed to get the camera device")
+            print("QRCode reader view controller lijn 32, Failed to get the camera device")
             return
         }
         
@@ -48,7 +51,7 @@ class QRCodeReaderViewController : UIViewController {
             
             //metadataObjectTypes, this is the point where we tell the app what kind of metada were interested in (QR)
             captureMetaDataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-            print("QRCode reader view controller lijn 48, interested in (type) QR: \(captureMetaDataOutput.metadataObjectTypes)")
+            print("QRCode reader view controller lijn 54, interested in (type) QR: \(captureMetaDataOutput.metadataObjectTypes)")
             
             //initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -58,11 +61,11 @@ class QRCodeReaderViewController : UIViewController {
             
             //start video capture
             captureSession.startRunning()
-            print("QRCode reader view controller lijn 58, started video capture")
+            print("QRCode reader view controller lijn 64, started video capture")
         }
         catch {
             //if any error occurs
-            print("QRCode reader view controller lijn 62, error occured: \(error)")
+            print("QRCode reader view controller lijn 68, error occured: \(error)")
             return
         }
         //initialize QR Code Frame to highlight the QR code
@@ -99,13 +102,16 @@ class QRCodeReaderViewController : UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        print("QRCode reader view controller lijn 106, in prepare for segue")
         if segue.identifier == "pinCodeSegue" {
             
-            let vc = storyboard?.instantiateViewController(withIdentifier: "confirmPayment") as! ConfirmPaymentViewController
+            let vc = segue.destination as! ConfirmPaymentViewController
             vc.addressPassed = address
-            print("QRCode reader view controller lijn 82, going to next controller. address (addressPassed to next controller): \(address)")
-           
-            vc.amount = amount
+            print("QRCode reader view controller lijn 110, going to next controller. address (addressPassed to next controller): \(vc.addressPassed)\taddress: \(address)")
+            vc.accountPassed = account
+            print("QRCode reader view controller lijn 112, going to next controller. account (account to next controller): \(vc.accountPassed)")
+            vc.amountPassed = amount
+            print("QRCode reader view controller lijn 114, going to next controller. amount (account to next controller): \(vc.amountPassed)")
         }
     }
 }
@@ -113,23 +119,17 @@ class QRCodeReaderViewController : UIViewController {
 extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
-        if let qrCodeData = metadataObjects.first {
-            let qrCodeReadable = qrCodeData as? AVMetadataMachineReadableCodeObject
-            if let readableCode = qrCodeReadable {
-                qrCodeDetected(code: readableCode.stringValue!);
-            }
-        }
         captureSession.stopRunning()
-        //check if the metadataObjects array is not nill and it contains at least one object
+        //check if the metadataObjects array is not nil and it contains at least one object
         if metadataObjects.count == 0 {
+            
             qrCodeFrameView?.frame = CGRect.zero
-            //explanationLbl.text = "No QR code is detected"
             return
         }
         
         //get the metadata object
-        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject //hier stond /*
-        print("QRCode reader view controller lijn 100, metadataObj: \(String(describing: metadataObj.stringValue))")
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        print("QRCode reader view controller lijn 132, metadataObj: \(String(describing: metadataObj.stringValue))")
         
         //If the data type is QR go in statement
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
@@ -137,27 +137,20 @@ extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
             //if the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barcodeObject!.bounds
-            print("Qr code view controller line 107, trying to go to next view controller and giving address with it")
+            print("Qr code view controller line 140, trying to go to next view controller and giving address with it")
             
             if metadataObj.stringValue != nil {
-                print("Qr code reader view controller line 115 metadataObj has a value (not nil)")
+                print("Qr code reader view controller line 143 metadataObj has a value (not nil)")
                 
                 //Check if metadataObj isn't an empty String
                 if metadataObj.stringValue != "" {
                     
-                    print("Qr code reader view controller line 119 metadataObj isn't an empty String")
+                    print("Qr code reader view controller line 148 metadataObj isn't an empty String")
                     address = metadataObj.stringValue!
+                    
+                    self.performSegue(withIdentifier: "pinCodeSegue", sender: self)
                 }
-                
-                //to see if the scanned value is correct (may be deleted)
-                qrCodeLbl.text = metadataObj.stringValue
-                
-                self.performSegue(withIdentifier: "pinCodeSegue", sender: self)
             }
         }
-    }
-    
-    func qrCodeDetected(code: String) {
-        self.performSegue(withIdentifier: "pinCodeSegue", sender: self)
     }
 }

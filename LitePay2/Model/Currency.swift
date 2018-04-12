@@ -3,7 +3,7 @@ import Foundation
 class Currency {
     
     var fullName = ""
-    var value : NSDecimalNumber = 0 /* gaat nog aangepast moeten worden naar BigDecimal! */
+    var value : NSDecimalNumber = 0
     var code = ""
     
     convenience init(fullNameCurrency : String, valueCurrency : NSDecimalNumber, codeCurrency : String){
@@ -13,9 +13,9 @@ class Currency {
         self.code = codeCurrency
     }
 }
-/*  Type is int to use with table view  */
+//Type is int to use with table view  */
 enum CurrencyCode : Int {
-    /*  Used for abbreviation of currency   */
+//    Used for abbreviation of currency   */
     case LTC = 0, BTC, BCH, ETH, EUR, OTHER
 
 }
