@@ -319,7 +319,7 @@
         <!--Code Reader View Controller-->
         <scene sceneID="8n0-UV-FSx">
             <objects>
-                <viewController id="YLZ-6o-gEj" customClass="QRCodeReaderViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRcodeReaderController" id="YLZ-6o-gEj" customClass="QRCodeReaderViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wC4-UW-iMR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,24 +328,13 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkn-ds-epI">
-                                <rect key="frame" x="16" y="611" width="343" height="7"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZFw-jO-6Ag" firstAttribute="leading" secondItem="rHc-0I-4K8" secondAttribute="leading" id="3gn-RG-LgW"/>
-                            <constraint firstItem="tkn-ds-epI" firstAttribute="top" secondItem="ZFw-jO-6Ag" secondAttribute="bottom" constant="8" id="6ex-4o-qx1"/>
-                            <constraint firstItem="tkn-ds-epI" firstAttribute="bottom" secondItem="rHc-0I-4K8" secondAttribute="bottom" id="Bs4-fv-BNd"/>
                             <constraint firstItem="ZFw-jO-6Ag" firstAttribute="trailing" secondItem="rHc-0I-4K8" secondAttribute="trailing" id="Hpt-u1-fyp"/>
-                            <constraint firstItem="rHc-0I-4K8" firstAttribute="trailing" secondItem="tkn-ds-epI" secondAttribute="trailing" constant="16" id="OWD-62-8CM"/>
-                            <constraint firstItem="tkn-ds-epI" firstAttribute="top" secondItem="ZFw-jO-6Ag" secondAttribute="bottom" constant="8" id="RFX-ye-0Ko"/>
                             <constraint firstItem="ZFw-jO-6Ag" firstAttribute="centerY" secondItem="wC4-UW-iMR" secondAttribute="centerY" id="UF1-3a-wa4"/>
                             <constraint firstItem="ZFw-jO-6Ag" firstAttribute="top" secondItem="rHc-0I-4K8" secondAttribute="top" id="fEf-AC-duG"/>
-                            <constraint firstItem="tkn-ds-epI" firstAttribute="leading" secondItem="rHc-0I-4K8" secondAttribute="leading" constant="16" id="kag-QH-fwF"/>
                             <constraint firstItem="ZFw-jO-6Ag" firstAttribute="centerX" secondItem="wC4-UW-iMR" secondAttribute="centerX" id="wcJ-1e-7Bz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rHc-0I-4K8"/>
@@ -354,14 +343,13 @@
                         <barButtonItem key="backBarButtonItem" title="Betalen" id="JbW-aM-lfo"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="qrCodeLbl" destination="tkn-ds-epI" id="46V-e7-VYR"/>
                         <outlet property="videoPreview" destination="ZFw-jO-6Ag" id="pwx-J8-6vP"/>
                         <segue destination="PZ4-LI-gNk" kind="show" identifier="pinCodeSegue" id="WJs-gT-QgA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztG-BZ-lnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4838" y="-1344"/>
+            <point key="canvasLocation" x="4837.6000000000004" y="-1344.3778110944529"/>
         </scene>
         <!--Home-->
         <scene sceneID="lle-JS-qMK">
@@ -455,14 +443,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zi5-Pl-ygc">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krq-qb-cYF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="11" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krq-qb-cYF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EUR 0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
-                                                                <rect key="frame" x="15" y="0.0" width="313" height="30"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
+                                                                <rect key="frame" x="37" y="0.0" width="291" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
@@ -491,14 +479,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NjQ-Kj-LBd">
                                                         <rect key="frame" x="0.0" y="97" width="328" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sz-Rl-VHZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LTC " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sz-Rl-VHZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LTC 0,00000000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-I4-B80">
-                                                                <rect key="frame" x="33.5" y="0.0" width="294.5" height="30"/>
+                                                                <rect key="frame" x="38" y="0.0" width="290" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -530,9 +518,6 @@
                                                 <state key="normal" title="Scan QR-code">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="YLZ-6o-gEj" kind="show" id="QHa-ds-4Oc"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -572,6 +557,7 @@
                         <outlet property="ltcIconLbl" destination="5sz-Rl-VHZ" id="pCJ-m8-tSq"/>
                         <outlet property="ltcTxtField" destination="Yu7-I4-B80" id="9c3-zJ-qDO"/>
                         <outlet property="scrollView" destination="6eA-Er-FRA" id="wzf-ST-lYe"/>
+                        <segue destination="YLZ-6o-gEj" kind="show" identifier="QRcodeReaderSegue" id="9gZ-B3-lXr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36o-tI-iyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
