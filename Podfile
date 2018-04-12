@@ -8,5 +8,5 @@ target 'LitePay2' do
   # Pods for LitePay2
   pod 'coinbase-official', '~> 3.3'
   pod 'Alamofire', '~> 4.7’   
- 
+  pod 'CryptoSwift'
 end
