@@ -7,16 +7,21 @@ class ConfirmPaymentViewController : UIViewController {
     @IBOutlet weak var pinCodeField: UITextField!
     
     var addressPassed = ""
-    var account : CoinbaseAccount!
-    var amount : Decimal!
+    var accountPassed : CoinbaseAccount!
+    var amountPassed : Decimal!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        print("Confirm payment view controller line 16, address passed from previous controller (QR code reader view controller): \(addressPassed)")
-        
-        CoinbaseAPIService.doTransaction(for: account.accountID)
+        print("Confirm payment view controller line 17, address passed from previous controller (QR code reader view controller): \(addressPassed)")
+        print("Confirm payment view controller line 18, account: \(self.accountPassed)")
+        guard let accountID = accountPassed.accountID else {
+            print("Confirm payment view controller line 20, address is nil")
+            return
+        }
+        print("Confirm payment view controller line 23, account passed from previous controller (QR code reader view controller): \(accountID)")
+        CoinbaseAPIService.doTransaction(from: accountPassed.accountID)
     }
     
 }

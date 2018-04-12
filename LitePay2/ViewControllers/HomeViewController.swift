@@ -23,52 +23,52 @@ class HomeViewController : UIViewController {
         
         print("start of authentication complete")
         
-        //Tokens succesfully received!
-        print("Home view controller line 26, start of authentication complete response: \(String(describing: response))")
+//        Tokens succesfully received!
+        print("Home view controller line 27, start of authentication complete response: \(String(describing: response))")
         self.accessToken = response!["access_token"] as? String
-        print("Home view controller line 28, accessToken: \(String(describing: self.accessToken))")
+        print("Home view controller line 29, accessToken: \(String(describing: self.accessToken))")
         
-        //  user defaults
+//        user defaults
         UserDefaults.standard.set(accessToken, forKey: "access_token")
         UserDefaults.standard.synchronize()
         
         let refreshToken : String = response!["refresh_token"]! as! String
-        var expiresIn : Int = response!["expires_in"] as! Int //niet zeker dat het type juist is, in vb is dit NSNumber (bovenliggende klasse van Int, Double, float, ...
+        var expiresIn : Int = response!["expires_in"] as! Int
         self.refreshToken = refreshToken
         
-        // Now that we are authenticated, load some data
+//        Now that we are authenticated, load some data
         self.client = Coinbase.init(oAuthAccessToken: self.accessToken)
-        print("Home view controller line 39, client: \(String(describing: self.client))")
+        print("Home view controller line 41, client: \(String(describing: self.client))")
         
         self.isLoggedIn = true;
-        print("Home view controller line 42, isLogged in : \(self.isLoggedIn)")
+        print("Home view controller line 44, isLogged in : \(self.isLoggedIn)")
     }
     
     func refreshTokens(sender : Any){
         
-        /*refresh token nog zetten*/
-        print("Login view controller line 47, started refresh tokens method")
+//        refresh token nog zetten
+        print("Login view controller line 50, started refresh tokens method")
         CoinbaseOAuth.getTokensForRefreshToken("refreshToken", clientId: LitePayData.clientId, clientSecret: LitePayData.clientSecret, completion:
             { (response : [String : Any], error: Error?) -> Void in
                 
-                /*indien er een fout optreed geven we een foutmelding*/
+//                indien er een fout optreed geven we een foutmelding
                 if error != nil {
-                    print("Login view controller line 54, error occured while refreshing tokens. Error: \(String(describing: error))")
+                    print("Login view controller line 56, error occured while refreshing tokens. Error: \(String(describing: error))")
                     let alert = UIAlertController(title: "", message: "Er is een probleem opgetreden", preferredStyle: .alert)
                     
-                    /*mogelijk dat er nog een handler moet zijn ipv nil*/
+//                    mogelijk dat er nog een handler moet zijn ipv nil
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true)
                 }
                 else {
                     
-                    //new tokens obtained
-                    print("Login view controller line 63, obtained tokens (start assigning to variables)")
+//                    new tokens obtained
+                    print("Login view controller line 66, obtained tokens (start assigning to variables)")
                     self.refreshToken = response["refresh_token"] as! String
                     self.client = Coinbase.init(oAuthAccessToken: "access_token")
                     
                     self.client?.getCurrentUser({ (user : CoinbaseUser, error : Error) in
-                        let alert = UIAlertController(title: "Error", message: "Gebruiker: \(user) \nKon niet geladen worden", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "Error", message: "Gebruiker: \(user.name) \nKon niet geladen worden", preferredStyle: .alert)
                         
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true)

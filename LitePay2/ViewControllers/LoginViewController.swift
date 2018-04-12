@@ -16,30 +16,30 @@ class LoginViewController : UIViewController {
         super.viewDidLoad()
         
         self.accessToken = UserDefaults.standard.string(forKey: "access_token")
-        print("Login view controller lijn 18, access_token: \(String(describing: self.accessToken))")
-        if((self.accessToken) != nil)
-        {
+        print("Login view controller lijn 19, access_token: \(String(describing: self.accessToken))")
+        if((self.accessToken) != nil) {
+            
             self.client = Coinbase.init(oAuthAccessToken: self.accessToken)
-            print("Login view controller lijn 22, client: \(String(describing: self.client))")
+            print("Login view controller lijn 23, client: \(String(describing: self.client))")
          }
+        
         updateUI()
         
         signInBtn.layer.cornerRadius = 5
     }
     
     @IBAction func handleAuthentication(_ sender: Any) {
+        
         //Launch web browser or coinbase app to authenticate the user
         if self.isLoggedIn == false {
             
             CoinbaseAPIService.startOAuth()
-            print("Login view controller lijn 32, started login (redirected to webbrowser)")
+            print("Login view controller lijn 37, started login (redirected to webbrowser)")
         }
-        else
-        {
+        else {
             self.isLoggedIn = false
             self.client = nil
             self.accessToken = nil
-            //: UserDefaults.standard
             
             updateUI()
         }
@@ -47,6 +47,7 @@ class LoginViewController : UIViewController {
     
     func updateUI() -> Void {
         if self.isLoggedIn == false {
+            
             messageLbl.text = "Gelieve aan te melden met uw coinbase account"
         }
     }

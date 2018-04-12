@@ -8,7 +8,6 @@ public enum CoinbaseAPIService {
     
     //Redirects to coinbase so user can login with coinbase account
     public static func startOAuth() {
-        //v2 : "wallet:accounts:read, wallet:addresses:read, wallet:addresses:create, wallet:transactions:read, wallet:transactions:send, wallet:user:email, wallet:transactions:send:bypass-2fa"
 
         CoinbaseOAuth.startAuthentication(withClientId: LitePayData.clientId,
                                           scope: "wallet:accounts:read, wallet:addresses:read, wallet:addresses:create, wallet:transactions:read, wallet:transactions:send, wallet:user:email",
@@ -19,6 +18,7 @@ public enum CoinbaseAPIService {
     
     //creates a new address for an account. All arguments are optional (can do an empty POST to create a new address)
     public static func createNewAddress(for accountID: String, completion: @escaping (String?) -> Void) {
+        
         var newAddress = ""
         print("Coinbase Api Service line 23, accountID: \(accountID)")
         
@@ -32,43 +32,43 @@ public enum CoinbaseAPIService {
             
             //necessary to get access when making the call
             let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate, LitePayData.authorization: "\(LitePayData.bearer) \(accessToken)", LitePayData.contentType: LitePayData.contentTypeValue]
-            print("Coinbase Api Service line 34, func create New Address. Got Here")
+            print("Coinbase Api Service line 35, func create New Address. Got Here")
             Alamofire
                 .request(url!, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { response in
-                    print("Coinbase API Service line 38, func create New Address. Got Here")
+                    print("Coinbase API Service line 39, func create New Address. Got Here")
                     
-                    if let status = response.response?.statusCode
-                    {
-                        switch(status)
-                        {
-                        case 201: print("Coinbase api service line 44, status = success")
-                        default: print("Coinbase Api Service line 45, error with response status: \(status)")
+                    if let status = response.response?.statusCode {
+                        
+                        switch(status) {
+                            
+                            case 201: print("Coinbase api service line 45, status = success")
+                            default: print("Coinbase Api Service line 46, error with response status: \(status)")
                         }
                     }
-                    if let result = response.result.value
-                    {
+                    
+                    if let result = response.result.value {
+                        
                         let json = result as! [String: Any]
-                        print("Coinbase Api Service line 51, json: \(json)")
+                        print("Coinbase Api Service line 53, json: \(json)")
                         //if json["data"] = nil go in else statement
-                        guard let data = json["data"] as? [String: Any] else
-                        {
-                            print("Coinbase Api Service line 54, data is nil")
+                        
+                        guard let data = json["data"] as? [String: Any] else {
+                            
+                            print("Coinbase Api Service line 58, data is nil")
                             return
                         }
                         //if data["address"] = nil go in else statement
-                        guard let address = data["address"] else
-                        {
-                            print("Coinbase Api Service line 59, address is nil")
+                        guard let address = data["address"] else {
+                            
+                            print("Coinbase Api Service line 64, address is nil")
                             return
                         }
                         newAddress = address as! String
-                        print("Coinbase Api Service line 63, address: \(address)")
-                        
+                        print("Coinbase Api Service line 68, address: \(address)")
                     }
                     completion(newAddress)
             }
-            
         }
     }
     
@@ -81,94 +81,94 @@ public enum CoinbaseAPIService {
         let eur = CurrencyCode.EUR
         
         let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.exchangeRates.rawValue)\(calls.currency.rawValue)\(eur)")!
-        print("Coinbase Api Service line 79, url: \(String(describing: url))")
+        print("Coinbase Api Service line 84, url: \(String(describing: url))")
         
-        
-            //necessary to get access when making the call
-            let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
-           
-            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
-                .responseJSON
-                {
-                    response in
-//                    print("Coinbase API Service line 93, response: \(response)")
-                    
-                    if let status = response.response?.statusCode
-                    {
-                        switch(status)
-                        {
-                            case 200: print("Coinbase api service line 101, status = success")
-                            default: print("Coinbase Api Service line 102, error with response status: \(status)")
-                        }
-                    }
-                    
-                    if let result = response.result.value
-                    {
-                        let json = result as! [String: Any]
-                        //print("Coinbase Api Service line 109, json: \(json)")
-                        
-                        //if json["data"] = nil go in else statement
-                        guard let data = json["data"] as? [String: Any] else
-                        {
-//                            print("Coinbase Api Service line 114, data is nil")
-                            return
-                        }
-//                        print("Coinbase Api Service line 114, data: \(data)")
-                        
-                        rates = data["rates"] as! [String: String]
-                        print("Coinbase Api Service line 114, rates: \(rates)")
-                    }
-                    completion(rates)
-                }
-    }
-    
-    static func getExchangeRate(for currency: String, completion: @escaping ([String: String]?) -> Void) {
-        
-        //        on completion return rate of the given currency
-        var rates : [String: String] = [:]
-        let eur = CurrencyCode.EUR
-        
-        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.exchangeRates.rawValue)\(calls.currency.rawValue)\(eur)")!
-        print("Coinbase Api Service line 79, url: \(String(describing: url))")
-        
-        
-        //necessary to get access when making the call
+//        necessary to get access when making the call
         let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON
             {
                 response in
-//                print("Coinbase API Service line 142, response: \(response)")
+//                print("Coinbase API Service line 93, response: \(response)")
                 
-                if let status = response.response?.statusCode
-                {
-                    switch(status)
-                    {
-                    case 200: print("Coinbase api service line 148, status = success")
-                    default: print("Coinbase Api Service line 149, error with response status: \(status)")
+                if let status = response.response?.statusCode {
+                    
+                    switch(status) {
+                        
+                        case 200: print("Coinbase api service line 99, status = success")
+                        default: print("Coinbase Api Service line 100, error with response status: \(status)")
                     }
                 }
                 
-                if let result = response.result.value
-                {
-                    let json = result as! [String: Any]
-//                    print("Coinbase Api Service line 156, json: \(json)")
+                if let result = response.result.value {
                     
-//                    if json["data"] = nil go in else statement
-                    guard let data = json["data"] as? [String: Any] else
-                    {
-//                        print("Coinbase Api Service line 161, data is nil")
+                    let json = result as! [String: Any]
+//                    print("Coinbase Api Service line 107, json: \(json)")
+                    
+                    //if json["data"] = nil go in else statement
+                    guard let data = json["data"] as? [String: Any] else {
+                        
+//                        print("Coinbase Api Service line 112, data is nil")
                         return
                     }
-//                    print("Coinbase Api Service line 164, data: \(data)")
+//                    print("Coinbase Api Service line 115, data: \(data)")
                     
                     rates = data["rates"] as! [String: String]
-                    print("Coinbase Api Service line 167, rates: \(rates)")
+                    print("Coinbase Api Service line 118, rates: \(rates)")
                 }
                 completion(rates)
         }
     }
+    
+    static func getExchangeRate(for currency: String, completion: @escaping ([String: String]?) -> Void) {
+        
+//        on completion return rate of the given currency
+        var rates : [String: String] = [:]
+        let eur = CurrencyCode.EUR
+        
+        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.exchangeRates.rawValue)\(calls.currency.rawValue)\(eur)")!
+        print("Coinbase Api Service line 131, url: \(String(describing: url))")
+        
+        
+//        necessary to get access when making the call
+        let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON
+            {
+                response in
+//                print("Coinbase API Service line 141, response: \(response)")
+                
+                if let status = response.response?.statusCode {
+                    
+                    switch(status) {
+                        
+                        case 200: print("Coinbase api service line 147, status = success")
+                        default: print("Coinbase Api Service line 148, error with response status: \(status)")
+                    }
+                }
+                
+                if let result = response.result.value {
+                    
+                    let json = result as! [String: Any]
+//                    print("Coinbase Api Service line 155, json: \(json)")
+                    
+//                    if json["data"] = nil go in else statement
+                    guard let data = json["data"] as? [String: Any] else {
+                        
+                        print("Coinbase Api Service line 160, data is nil")
+                        return
+                    }
+//                    print("Coinbase Api Service line 163, data: \(data)")
+                    
+                    rates = data["rates"] as! [String: String]
+                    print("Coinbase Api Service line 166, rates: \(rates)")
+                }
+                completion(rates)
+        }
+    }
+    
 //    returns the (key && value) value for the used currency
     static func getExchangeRateFor(currency: String, completion: @escaping ([String: String]?) -> Void) {
         
@@ -189,24 +189,24 @@ public enum CoinbaseAPIService {
                 response in
 //                print("Coinbase API Service line 190, response: \(response)")
                 
-                if let status = response.response?.statusCode
-                {
-                    switch(status)
-                    {
+                if let status = response.response?.statusCode {
+                    
+                    switch(status) {
+                        
                     case 200: print("Coinbase api service line 196, status = success")
                     default: print("Coinbase Api Service line 197, error with response status: \(status)")
                     }
                 }
                 
-                if let result = response.result.value
-                {
+                if let result = response.result.value {
+                    
                     let json = result as! [String: Any]
 //                    print("Coinbase Api Service line 204, json: \(json)")
                     
 //                    if json["data"] = nil go in else statement
-                    guard let data = json["data"] as? [String: Any] else
-                    {
-//                        print("Coinbase Api Service line 209, data is nil")
+                    guard let data = json["data"] as? [String: Any] else {
+                        
+                        print("Coinbase Api Service line 209, data is nil")
                         return
                     }
 //                    print("Coinbase Api Service line 212, data: \(data)")
@@ -217,7 +217,7 @@ public enum CoinbaseAPIService {
                     print("Coinbase Api Service line 217, rateForCurrency: \(rateForCurrency)")
                 }
                 completion(rateForCurrency)
-        }
+            }
     }
     
     static func getSpotPrice(currencyAccount: String, completion: @escaping (String?) -> Void) {
@@ -225,7 +225,7 @@ public enum CoinbaseAPIService {
         var amountEuro = ""
         let eur = CurrencyCode.EUR
         let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.prices.rawValue)\(currencyAccount)-\(eur)/\(calls.spot.rawValue)")!
-        print("Coinbase Api Service line 227, url: \(String(describing: url))")
+        print("Coinbase Api Service line 228, url: \(String(describing: url))")
         
         
         //necessary to get access when making the call
@@ -235,41 +235,43 @@ public enum CoinbaseAPIService {
             .responseJSON
             {
                 response in
-                print("Coinbase API Service line 237, response: \(response)")
+                print("Coinbase API Service line 238, response: \(response)")
                 
-                if let status = response.response?.statusCode
-                {
-                    switch(status)
-                    {
-                    case 200: print("Coinbase api service line 243, status = success")
-                    default: print("Coinbase Api Service line 244, error with response status: \(status)")
+                if let status = response.response?.statusCode {
+                    
+                    switch(status) {
+                        
+                        case 200: print("Coinbase api service line 244, status = success")
+                        default: print("Coinbase Api Service line 245, error with response status: \(status)")
                     }
                 }
                 
-                if let result = response.result.value
-                {
+                if let result = response.result.value {
+                    
                     let json = result as! [String: Any]
 //                    print("Coinbase Api Service line 109, json: \(json)")
                     
-                    //                    if json["data"] = nil go in else statement
-                    guard let data = json["data"] as? [String: Any] else
-                    {
+//                    if json["data"] = nil go in else statement
+                    guard let data = json["data"] as? [String: Any] else {
+                        
                         print("Coinbase Api Service line 257, data is nil")
                         return
                     }
-                    print("Coinbase Api Service line 260, data: \(data)")
+                    
+                    print("Coinbase Api Service line 261, data: \(data)")
                     
                     amountEuro = data["amount"] as! String //as! [String: String]
-                    print("Coinbase Api Service line 263, rates: \(amountEuro)")
+                    print("Coinbase Api Service line 264, rates: \(amountEuro)")
                 }
                 completion(amountEuro)
         }
     }
     
-    static func doTransaction(for accountID: String){
+//    accountID is necessary for the url link (parameter)
+    static func doTransaction(from accountID: String){
         
         let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.accounts.rawValue)\(accountID)\(calls.transactions.rawValue)")!
-        print("Coinbase Api Service line 227, url: \(String(describing: url))")
+        print("Coinbase Api Service line 274, url: \(String(describing: url))")
         
         let accessToken = UserDefaults.standard.string(forKey: "access_token")
         
@@ -280,32 +282,32 @@ public enum CoinbaseAPIService {
             .responseJSON
             {
                 response in
-                print("Coinbase API Service line 237, response: \(response)")
+                print("Coinbase API Service line 285, response: \(response)")
                 
-                if let status = response.response?.statusCode
-                {
-                    switch(status)
-                    {
-                    case 200: print("Coinbase api service line 243, status = success")
-                    default: print("Coinbase Api Service line 244, error with response status: \(status)")
+                if let status = response.response?.statusCode {
+                    
+                    switch(status) {
+                        
+                        case 200: print("Coinbase api service line 291, status = success")
+                        default: print("Coinbase Api Service line 292, error with response status: \(status)")
                     }
                 }
                 
-                if let result = response.result.value
-                {
-                    let json = result as! [String: Any]
-                    //                    print("Coinbase Api Service line 109, json: \(json)")
+                if let result = response.result.value {
                     
-                    //                    if json["data"] = nil go in else statement
+                    let json = result as! [String: Any]
+//                    print("Coinbase Api Service line 299, json: \(json)")
+                    
+//                    if json["data"] = nil go in else statement
                     guard let data = json["data"] as? [String: Any] else
                     {
-                        print("Coinbase Api Service line 257, data is nil")
+                        print("Coinbase Api Service line 304, data is nil")
                         return
                     }
-                    print("Coinbase Api Service line 260, data: \(data)")
+                    print("Coinbase Api Service line 307, data: \(data)")
                     
 //                    amountEuro = data["amount"] as! String //as! [String: String]
-//                    print("Coinbase Api Service line 263, rates: \(amountEuro)")
+//                    print("Coinbase Api Service line 310, rates: \(amountEuro)")
                 }
 //                completion(amountEuro)
         }

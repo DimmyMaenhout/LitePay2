@@ -3,7 +3,7 @@ import Foundation
 class Currency {
     
     var fullName = ""
-    var value : NSDecimalNumber = 0 /* gaat nog aangepast moeten worden naar BigDecimal! */
+    var value : NSDecimalNumber = 0
     var code = ""
     
     convenience init(fullNameCurrency : String, valueCurrency : NSDecimalNumber, codeCurrency : String){

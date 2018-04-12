@@ -32,7 +32,8 @@ class PayViewController : UIViewController {
         
         super.viewDidLoad()
         getValueForCurrency()
-    
+        getValueInEuro()
+        print("Pay view controller line 36, account is: \(account)")
 //        sets the euro textfield as "active" (ready for the user to type when he/she comes on the screen)
         euroTxtField.becomeFirstResponder()
         ScanQRBtn.layer.cornerRadius = 5
@@ -42,49 +43,49 @@ class PayViewController : UIViewController {
         changeButtonColor()
         changeButtonIsEnabled()
         
-        getValueInEuro()
+        print("Pay view controller line 46, button is: \(ScanQRBtn.isEnabled)")
     }
     
 //    switches the textfields from place when switch button is pressed
     @IBAction func switchBtnPressed(_ sender: Any) {
         
-        print("Payview controller line 47, in function switchBtnPressed, i = \(i)")
+        print("Payview controller line 52, in function switchBtnPressed, i = \(i)")
         
         UIView.beginAnimations(nil, context: nil)
         
         if (i % 2 != 0) {
 //            i is odd
-            print("Payview controller line 52, in if statement. i = \(i)")
+            print("Payview controller line 58, in if statement. i = \(i)")
             (euroTxtField.frame.origin, ltcTxtField.frame.origin, euroTxtField.placeholder, ltcTxtField.placeholder, euroTxtField.frame.size.width) =
             (ltcTxtField.frame.origin, euroTxtField.frame.origin, ltcTxtField.placeholder, euroTxtField.placeholder, ltcTxtField.frame.size.width)
             
             (euroIconLbl.frame.origin, ltcIconLbl.frame.origin, euroIconLbl.text, ltcIconLbl.text) =
             (ltcIconLbl.frame.origin, euroIconLbl.frame.origin, ltcIconLbl.text, euroIconLbl.text)
             
-            print("Payview controller line 60, euroTextField.isEnabled = \(euroTxtField.isEnabled)")
-            print("Payview controller line 59, ltcTextField.isEnabled = \(ltcTxtField.isEnabled)")
+            print("Payview controller line 65, euroTextField.isEnabled = \(euroTxtField.isEnabled)")
+            print("Payview controller line 66, ltcTextField.isEnabled = \(ltcTxtField.isEnabled)")
         }
         else {
 //            i is even
-            print("Payview controller line 64, in else statement. i = \(i)")
+            print("Payview controller line 70, in else statement. i = \(i)")
             (ltcTxtField.frame.origin, euroTxtField.frame.origin, ltcTxtField.placeholder, euroTxtField.placeholder, ltcTxtField.frame.size.width) =
             (euroTxtField.frame.origin, ltcTxtField.frame.origin, euroTxtField.placeholder, ltcTxtField.placeholder, euroTxtField.frame.size.width)
             
             (ltcIconLbl.frame.origin, euroIconLbl.frame.origin, ltcIconLbl.text, euroIconLbl.text) =
             (euroIconLbl.frame.origin, ltcIconLbl.frame.origin, euroIconLbl.text, ltcIconLbl.text)
             
-            print("Payview controller line 71, ltcTextField.isEnabled = \(ltcTxtField.isEnabled)")
-            print("Payview controller line 72, euroTextField.isEnabled = \(euroTxtField.isEnabled)")
+            print("Payview controller line 77, ltcTextField.isEnabled = \(ltcTxtField.isEnabled)")
+            print("Payview controller line 78, euroTextField.isEnabled = \(euroTxtField.isEnabled)")
         }
         
         UIView.commitAnimations()
         i += 1
     }
     
-    //    If editing stopped the value wil be conversed to another currnency (depends on acount.balance.currency)
+//    If editing stopped the value wil be conversed to another currency (depends on acount.balance.currency)
     @IBAction func euroTextfieldDidChange(_ sender: UITextField) {
         
-        print("Pay view controller line 80, euro textfield: \(String(describing: euroTxtField.text))")
+        print("Pay view controller line 88, euro textfield: \(String(describing: euroTxtField.text))")
         let input = NSDecimalNumber(string: euroTxtField.text)
         let cur = CurrencyRate()
         cur.converseToLTC(amountEuro: input, currencyRate: rate! as NSDecimalNumber)
@@ -92,97 +93,103 @@ class PayViewController : UIViewController {
         checkFieldEmpty()
         calculate()
         checkSufficientBalance()
+        print("Pay view controller line 96, button is: \(ScanQRBtn.isEnabled)")
     }
 
+    @IBAction func scanQrButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "QRcodeReaderSegue", sender: self)
+    }
     func getValueForCurrency() {
     
         CoinbaseAPIService.getExchangeRateFor(currency: account.balance.currency, completion: { response in
             
-            print("Pay view controller line 101, response: \(String(describing: response))")
+            print("Pay view controller line 107, response: \(String(describing: response))")
             guard let cur = response else {
                 
                 return
             }
             
-            print("Pay view controller line 106, cur: \(String(describing: cur))")
+            print("Pay view controller line 113, cur: \(String(describing: cur))")
             
             guard let value = cur[self.account.balance.currency] else {
                 
-                print("Pay view controller line 110, value is nil")
+                print("Pay view controller line 117, value is nil")
                 return
             }
             
-            print("Pay view controller line 114, value: \(String(describing: value))")
+            print("Pay view controller line 121, value: \(String(describing: value))")
             
             self.rate = NSDecimalNumber(string: value) as Decimal
-            print("Pay view controller line 117, rate: \(String(describing: self.rate))")
+            print("Pay view controller line 124, rate: \(String(describing: self.rate))")
         })
     }
     
     func getValueInEuro(){
+        
         CoinbaseAPIService.getSpotPrice(currencyAccount: account.balance.currency, completion: {response in
             
-            print("Pay view controller line 124, response: \(String(describing: response))")
+            print("Pay view controller line 132, response: \(String(describing: response))")
             guard let value = response else {
                 
                 return
             }
-            print("Pay view controller line 129, value €: \(String(describing: value))")
+            print("Pay view controller line 137, value €: \(String(describing: value))")
             
             self.spotPriceEuro = NSDecimalNumber(string: response) as Decimal
-            print("Pay view controller line 132, spotPriceEuro: \(String(describing: self.spotPriceEuro))")
+            print("Pay view controller line 140, spotPriceEuro: \(String(describing: self.spotPriceEuro))")
         })
     }
     
     func calculate() {
         
-        print("Pay view controller line 138, in func calculate")
-        print("Pay view controller line 139, rate: \(String(describing: self.rate))")
-        print("Pay view controller line 139, eurotextField: \(String(describing: euroTxtField.text))")
+        print("Pay view controller line 146, in func calculate")
+        print("Pay view controller line 147, rate: \(String(describing: self.rate))")
+        print("Pay view controller line 148, eurotextField: \(String(describing: euroTxtField.text))")
         
         let euroField = NSDecimalNumber(string: euroTxtField.text, locale: Locale.current)
 
-        print("Pay view controller line 139, eurofield: \(String(describing: euroField))")
+        print("Pay view controller line 152, eurofield: \(String(describing: euroField))")
         guard let rateValue = self.rate else {
             
-            print("Pay view controller line 144, rateValue is nil")
+            print("Pay view controller line 155, rateValue is nil")
             return
         }
         
         if i % 2 == 0 {
-            print("Pay view controller line 149, i: \(i)")
+            print("Pay view controller line 160, i: \(i)")
 //            calculate € to other currency
             let amount = euroField as Decimal * rateValue
-            print("Pay view controller line 152, euroField: \(euroField)\trateValue: \(rateValue) amount: \(amount)")
+            print("Pay view controller line 163, euroField: \(euroField)\trateValue: \(rateValue)\tamount: \(amount)")
             amountInCurrency = amount
-            print("Pay view controller line 153, amountInCurrency: \(amountInCurrency.description)")
+            print("Pay view controller line 165, amountInCurrency: \(amountInCurrency.description)")
             let decimalValue = amount
-            print("Pay view controller line 154, decimalValue: \(decimalValue)")
+            print("Pay view controller line 167, decimalValue: \(decimalValue)")
             
             if euroField.description == "NaN" {
                 
                 ltcTxtField.placeholder = "0.00000000"
-                print("Pay view controller line 158, ltcTxtField.placeholder: \(String(describing: ltcTxtField.placeholder))")
+                print("Pay view controller line 172, ltcTxtField.placeholder: \(String(describing: ltcTxtField.placeholder))")
             } else {
                 
                 ltcTxtField.text = decimalValue.description
-                print("Pay view controller line 164, ltcTxtField = \(String(describing: ltcTxtField.text))")
+                print("Pay view controller line 176, ltcTxtField = \(String(describing: ltcTxtField.text))")
             }
         }
         else {
             
             guard let spotPrice = spotPriceEuro else {
-                print("Pay view controller line 159, rateValue is nil")
+                print("Pay view controller line 182, rateValue is nil")
                 return
             }
-            print("Pay view controller line 183, i: \(i)")
+            print("Pay view controller line 185, i: \(i)")
             let amount = spotPrice * (euroField as Decimal)
             let decimalValue = amount
             ltcTxtField.text = decimalValue.description
-            print("Pay view controller line 187, ltcTxtField = \(String(describing: ltcTxtField.text))")
+            print("Pay view controller line 189, ltcTxtField = \(String(describing: ltcTxtField.text))")
             
 //            The currency which is not €
-            let amountInOtherCurrency = rateValue * (euroField as Decimal)
+            amountInCurrency = amount
         }
     }
     
@@ -193,8 +200,7 @@ class PayViewController : UIViewController {
             
             changeButtonIsEnabled()
         }
-        
-        print("Pay view controller line 201, coinbaseAccount from previous controller (Select account view controller): \nAccountID: \(account.accountID) \nBalance: \(account.balance.amount)")
+        print("Pay view controller line 203, coinbaseAccount from previous controller (Select account view controller): \nAccountID: \(account.accountID) \nBalance: \(account.balance.amount)")
     }
     
 //    Check if sufficient funds
@@ -202,20 +208,24 @@ class PayViewController : UIViewController {
         
         if !(euroTxtField.text?.isEmpty)! {
             
-            print("Pay view controller line 208, coinbaseAccount from previous controller (Select account view controller): \nAccountID: \(account.accountID) \nBalance: \(account.balance.amount)")
+            print("Pay view controller line 211, coinbaseAccount from previous controller (Select account view controller): \nAccountID: \(account.accountID) \nBalance: \(account.balance.amount)")
             
             let amount = NSDecimalNumber(string: euroTxtField.text, locale: Locale.current)
             let balance = NSDecimalNumber(string: account.balance.amount, locale: Locale.current)
             let cur = CurrencyRate()
             var amountInWalletCurrency = NSDecimalNumber()
+            
+//            euro to other currency (euro is the top textfield)
             if i % 2 == 0 {
                 
                 amountInWalletCurrency = cur.converseToLTC(amountEuro: amount, currencyRate: rate! as NSDecimalNumber)
             }
+//            other currency to euro (other currency the top field)
             else {
                 
                 guard let spotP = spotPriceEuro else {
-                    print("Pay view controller line 211, spotP is nil")
+                    
+                    print("Pay view controller line 228, spotP is nil")
                     return
                 }
                 
@@ -231,11 +241,13 @@ class PayViewController : UIViewController {
                 sufficientBalance = false
                 changeButtonColor()
                 changeButtonIsEnabled()
+                print("Pay view controller line 244, button is: \(ScanQRBtn.isEnabled)")
             }
             else {
                 sufficientBalance = true
                 changeButtonColor()
                 changeButtonIsEnabled()
+                print("Pay view controller line 250, button is: \(ScanQRBtn.isEnabled)")
             }
         }
     }
@@ -253,6 +265,7 @@ class PayViewController : UIViewController {
     }
     
     func changeButtonColor(){
+        
         if sufficientBalance == false {
             
             ScanQRBtn.backgroundColor = UIColor(red: 0.722, green: 0.722, blue: 0.722, alpha: 0.45)
@@ -289,13 +302,17 @@ class PayViewController : UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        print("Pay view controller line 305, in prepare for segue")
         if segue.identifier == "QRcodeReaderSegue" {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "QRcodeReaderController") as! QRCodeReaderViewController
+            let vc = segue.destination as! QRCodeReaderViewController
             vc.amount = amountInCurrency
+            vc.account = self.account
+            print("Pay view controller line 310, vc.account is: \(vc.account)")
+            print("Pay view controller line 311, vc.amount is: \(vc.amount)")
+            print("Pay view controller line 312, amount is: \(self.amountInCurrency)")
+            print("Pay view controller line 313, account is: \(self.account)")
         }
     }
-    
 }
 
 extension PayViewController : UITextFieldDelegate {
