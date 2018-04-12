@@ -9,15 +9,18 @@ PODS:
   - coinbase-official/core (3.3.0)
   - coinbase-official/OAuth (3.3.0):
     - coinbase-official/core
+  - CryptoSwift (0.8.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - coinbase-official (~> 3.3)
+  - CryptoSwift
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   coinbase-official: 57de4952bdb85e16a8f99930c57e16505ff571ed
+  CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
 
-PODFILE CHECKSUM: e18eee4958c9d6b83bbe32622981d8dec7572451
+PODFILE CHECKSUM: 31f73e0dd18b3d8809ce3104c6c18e0a1fd0281f
 
 COCOAPODS: 1.4.0
