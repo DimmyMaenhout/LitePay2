@@ -5,10 +5,23 @@ import coinbase_official
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+//        if application has launched before go in if statement
+        if launchedBefore {
+            
+            print("App delegate line 18, not first launch")
+        }
+//        first launch go in else statement
+        else {
+            
+            print("App delegate line 23, is first launch")
+        }
         return true
     }
     
@@ -29,9 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         // Tokens successfully obtained!
                         print("App delegate line 30, obtained tokens")
                         
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let homeController = storyboard.instantiateViewController(withIdentifier: "homescreen") as! HomeViewController
-                        let tabbarController = storyboard.instantiateViewController(withIdentifier: "tabBarControllerID") as! UITabBarController
+//                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let homeController = self.storyboard.instantiateViewController(withIdentifier: "homescreen") as! HomeViewController
+                        let tabbarController = self.storyboard.instantiateViewController(withIdentifier: "tabBarControllerID") as! UITabBarController
                         print("App delegate line 34, go to method authentication complete in home view controller")
                         homeController.authenticationComplete(result as? [AnyHashable : Any])
                         self.window = UIWindow(frame: UIScreen.main.bounds)
