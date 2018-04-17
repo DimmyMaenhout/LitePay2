@@ -17,6 +17,12 @@ class HomeViewController : UIViewController {
         super.viewDidLoad()
         payBtn.layer.cornerRadius = 5
         receiveBtn.layer.cornerRadius = 5
+        
+        if UserDefaults.standard.bool(forKey: "launchedBefore") == false {
+            
+            let vc = storyboard?.instantiateViewController(withIdentifier: "pincodeController") as! ChangePincodeViewController
+            present(vc, animated: true, completion: nil)
+        }
     }
 
     func authenticationComplete(_ response: [AnyHashable: Any]?) {

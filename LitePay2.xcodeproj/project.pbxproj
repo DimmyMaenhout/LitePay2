@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		062AC56BE4654F0F30A31DA3 /* Pods_LitePay2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		63125FA02085F0ED002CB768 /* CurrencyRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63125F9F2085F0ED002CB768 /* CurrencyRateTests.swift */; };
 		6335EC322068FD63000AA244 /* SelectAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC312068FD63000AA244 /* SelectAccountViewController.swift */; };
 		6335EC3420690E9E000AA244 /* AccountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC3320690E9E000AA244 /* AccountsCell.swift */; };
 		6335EC36206A2527000AA244 /* HeaderCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */; };
+		633A51932085475000E95C8F /* sendTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 633A51922085475000E95C8F /* sendTransaction.json */; };
 		63644AD42074F3AF00C89823 /* CurrencyRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */; };
 		63718B452058012C00E3C33E /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63718B442058012C00E3C33E /* Permissions.swift */; };
 		6387C3852076466E000048F4 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387C3842076466E000048F4 /* CurrencyRate.swift */; };
@@ -35,12 +37,26 @@
 		63F9B200204D8FE000BDC6D6 /* CoinbaseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9B1FF204D8FE000BDC6D6 /* CoinbaseAPIService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		63125F9A2085F05D002CB768 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63F17B352046B41400538D2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63F17B3C2046B41400538D2E;
+			remoteInfo = LitePay2;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3D688C7C2A8C913AC8461DF4 /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2.release.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
 		5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LitePay2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63125F952085F05D002CB768 /* LitePay2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LitePay2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63125F992085F05D002CB768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63125F9F2085F0ED002CB768 /* CurrencyRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateTests.swift; sourceTree = "<group>"; };
 		6335EC312068FD63000AA244 /* SelectAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountViewController.swift; sourceTree = "<group>"; };
 		6335EC3320690E9E000AA244 /* AccountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCell.swift; sourceTree = "<group>"; };
 		6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCurrencyCell.swift; sourceTree = "<group>"; };
+		633A51922085475000E95C8F /* sendTransaction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sendTransaction.json; sourceTree = "<group>"; };
 		63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewController.swift; sourceTree = "<group>"; };
 		63718B442058012C00E3C33E /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		6387C3842076466E000048F4 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
@@ -69,6 +85,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		63125F922085F05D002CB768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63F17B3A2046B41400538D2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,10 +104,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63125F962085F05D002CB768 /* LitePay2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				63125F992085F05D002CB768 /* Info.plist */,
+				63125F9F2085F0ED002CB768 /* CurrencyRateTests.swift */,
+			);
+			path = LitePay2Tests;
+			sourceTree = "<group>";
+		};
+		633A51912085464700E95C8F /* json files */ = {
+			isa = PBXGroup;
+			children = (
+				633A51922085475000E95C8F /* sendTransaction.json */,
+			);
+			path = "json files";
+			sourceTree = "<group>";
+		};
 		63F17B342046B41400538D2E = {
 			isa = PBXGroup;
 			children = (
 				63F17B3F2046B41400538D2E /* LitePay2 */,
+				63125F962085F05D002CB768 /* LitePay2Tests */,
 				63F17B3E2046B41400538D2E /* Products */,
 				D665C344138A994442DCAD00 /* Pods */,
 				D38DEDEA07CA129CB86DFF32 /* Frameworks */,
@@ -95,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				63F17B3D2046B41400538D2E /* LitePay2.app */,
+				63125F952085F05D002CB768 /* LitePay2Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,15 +144,16 @@
 		63F17B3F2046B41400538D2E /* LitePay2 */ = {
 			isa = PBXGroup;
 			children = (
+				63F17B402046B41400538D2E /* AppDelegate.swift */,
+				63B9BCBB207B7E33006EBA6E /* Assets.xcassets */,
+				63F17B4C2046B41400538D2E /* Info.plist */,
+				633A51912085464700E95C8F /* json files */,
+				63F17B492046B41400538D2E /* LaunchScreen.storyboard */,
+				63F17B442046B41400538D2E /* Main.storyboard */,
+				63F17B522046BC7C00538D2E /* Model */,
 				63F9B1FE204D8FC000BDC6D6 /* Services */,
 				63F17B5A2046E33B00538D2E /* ViewControllers */,
 				63F17B572046C21F00538D2E /* Views */,
-				63F17B522046BC7C00538D2E /* Model */,
-				63F17B402046B41400538D2E /* AppDelegate.swift */,
-				63B9BCBB207B7E33006EBA6E /* Assets.xcassets */,
-				63F17B442046B41400538D2E /* Main.storyboard */,
-				63F17B492046B41400538D2E /* LaunchScreen.storyboard */,
-				63F17B4C2046B41400538D2E /* Info.plist */,
 			);
 			path = LitePay2;
 			sourceTree = "<group>";
@@ -184,6 +227,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		63125F942085F05D002CB768 /* LitePay2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63125F9C2085F05D002CB768 /* Build configuration list for PBXNativeTarget "LitePay2Tests" */;
+			buildPhases = (
+				63125F912085F05D002CB768 /* Sources */,
+				63125F922085F05D002CB768 /* Frameworks */,
+				63125F932085F05D002CB768 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63125F9B2085F05D002CB768 /* PBXTargetDependency */,
+			);
+			name = LitePay2Tests;
+			productName = LitePay2Tests;
+			productReference = 63125F952085F05D002CB768 /* LitePay2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		63F17B3C2046B41400538D2E /* LitePay2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63F17B4F2046B41400538D2E /* Build configuration list for PBXNativeTarget "LitePay2" */;
@@ -214,6 +275,12 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Dimmy Maenhout";
 				TargetAttributes = {
+					63125F942085F05D002CB768 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 63F17B3C2046B41400538D2E;
+					};
 					63F17B3C2046B41400538D2E = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -234,15 +301,24 @@
 			projectRoot = "";
 			targets = (
 				63F17B3C2046B41400538D2E /* LitePay2 */,
+				63125F942085F05D002CB768 /* LitePay2Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		63125F932085F05D002CB768 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63F17B3B2046B41400538D2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633A51932085475000E95C8F /* sendTransaction.json in Resources */,
 				63F17B4B2046B41400538D2E /* LaunchScreen.storyboard in Resources */,
 				63B9BCBC207B7E34006EBA6E /* Assets.xcassets in Resources */,
 				63F17B462046B41400538D2E /* Main.storyboard in Resources */,
@@ -310,6 +386,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		63125F912085F05D002CB768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63125FA02085F0ED002CB768 /* CurrencyRateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63F17B392046B41400538D2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,6 +424,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		63125F9B2085F05D002CB768 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63F17B3C2046B41400538D2E /* LitePay2 */;
+			targetProxy = 63125F9A2085F05D002CB768 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		63F17B442046B41400538D2E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -360,6 +452,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		63125F9D2085F05D002CB768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QSK66EYT9M;
+				INFOPLIST_FILE = LitePay2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dmaenhout.LitePay2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LitePay2.app/LitePay2";
+			};
+			name = Debug;
+		};
+		63125F9E2085F05D002CB768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QSK66EYT9M;
+				INFOPLIST_FILE = LitePay2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dmaenhout.LitePay2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LitePay2.app/LitePay2";
+			};
+			name = Release;
+		};
 		63F17B4D2046B41400538D2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -504,6 +631,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		63125F9C2085F05D002CB768 /* Build configuration list for PBXNativeTarget "LitePay2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63125F9D2085F05D002CB768 /* Debug */,
+				63125F9E2085F05D002CB768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		63F17B382046B41400538D2E /* Build configuration list for PBXProject "LitePay2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
