@@ -91,53 +91,127 @@
         <!--Change Pincode View Controller-->
         <scene sceneID="vv3-mR-qTS">
             <objects>
-                <viewController id="ukc-XZ-0h7" customClass="ChangePincodeViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pincodeController" id="ukc-XZ-0h7" customClass="ChangePincodeViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JQx-pS-sow">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zLn-Rf-Nts">
-                                <rect key="frame" x="16" y="264.5" width="343" height="138"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="236-xT-UfF">
+                                <rect key="frame" x="0.0" y="49" width="375" height="569"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pincode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCq-xP-wa6">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nieuwe pincode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzE-uZ-kFJ">
-                                        <rect key="frame" x="0.0" y="54" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Herhaal nieuwe pincode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgF-hu-hm5">
-                                        <rect key="frame" x="0.0" y="108" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-CL-0cd">
+                                        <rect key="frame" x="24" y="175" width="328" height="219"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-6w-3IT">
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="73"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gelieve een pincode met 4 cijfers in te geven" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-56-VWM">
+                                                        <rect key="frame" x="8" y="16" width="312" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="mcl-56-VWM" firstAttribute="centerY" secondItem="0WM-6w-3IT" secondAttribute="centerY" id="URW-kF-Ex3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mcl-56-VWM" secondAttribute="bottom" constant="16" id="XeW-DB-Fh0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mcl-56-VWM" secondAttribute="trailing" constant="8" id="g0f-Lx-sEZ"/>
+                                                    <constraint firstItem="mcl-56-VWM" firstAttribute="leading" secondItem="0WM-6w-3IT" secondAttribute="leading" constant="8" id="qk5-TL-iHd"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HiV-Nu-bib">
+                                                <rect key="frame" x="0.0" y="89" width="328" height="130"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current pin" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ME-oR-tXv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="328" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="moveFocusToNewPin:" destination="ukc-XZ-0h7" eventType="editingDidEndOnExit" id="6xk-Qg-ktH"/>
+                                                            <outlet property="delegate" destination="ukc-XZ-0h7" id="mbG-P8-uYM"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New pin" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-Hh-jnf">
+                                                        <rect key="frame" x="0.0" y="50" width="328" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="moveFocusToRepeatPin:" destination="ukc-XZ-0h7" eventType="editingDidEndOnExit" id="YSi-Qb-X7i"/>
+                                                            <outlet property="delegate" destination="ukc-XZ-0h7" id="dJa-Aw-qAD"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat new pin" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKZ-oQ-45n">
+                                                        <rect key="frame" x="0.0" y="100" width="328" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="checkRepeatNewPinMatches:" destination="ukc-XZ-0h7" eventType="editingDidEnd" id="dvJ-CH-lOc"/>
+                                                            <outlet property="delegate" destination="ukc-XZ-0h7" id="n0N-32-pLt"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="0WM-6w-3IT" secondAttribute="trailing" id="EHx-H3-Kxb"/>
+                                            <constraint firstItem="HiV-Nu-bib" firstAttribute="leading" secondItem="Ydi-CL-0cd" secondAttribute="leading" id="Tjc-ek-TwL"/>
+                                            <constraint firstAttribute="trailing" secondItem="HiV-Nu-bib" secondAttribute="trailing" id="WX4-1Y-5i9"/>
+                                            <constraint firstItem="0WM-6w-3IT" firstAttribute="leading" secondItem="Ydi-CL-0cd" secondAttribute="leading" id="uwU-Fn-GZg"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-LD-QhI">
+                                        <rect key="frame" x="122.5" y="418" width="130" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="9CF-tB-q83"/>
+                                            <constraint firstAttribute="height" constant="50" id="Eaq-fE-7Bm"/>
+                                        </constraints>
+                                        <state key="normal" title="Verander pincode">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="savePin" destination="ukc-XZ-0h7" eventType="touchUpInside" id="OkN-aM-8O0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="Ydi-CL-0cd" firstAttribute="leading" secondItem="236-xT-UfF" secondAttribute="leading" constant="24" id="1Tj-LO-YAc"/>
+                                    <constraint firstItem="Lug-LD-QhI" firstAttribute="centerX" secondItem="236-xT-UfF" secondAttribute="centerX" id="7u2-lB-x7g"/>
+                                    <constraint firstItem="Ydi-CL-0cd" firstAttribute="centerX" secondItem="236-xT-UfF" secondAttribute="centerX" id="By1-FV-45u"/>
+                                    <constraint firstItem="Ydi-CL-0cd" firstAttribute="centerX" secondItem="236-xT-UfF" secondAttribute="centerX" id="Ic3-Kh-492"/>
+                                    <constraint firstItem="Ydi-CL-0cd" firstAttribute="centerY" secondItem="236-xT-UfF" secondAttribute="centerY" id="QeV-I2-3e6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ydi-CL-0cd" secondAttribute="trailing" constant="24" id="dh3-vk-6B9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ydi-CL-0cd" secondAttribute="bottom" constant="137" id="eGr-pf-iIe"/>
+                                    <constraint firstItem="Lug-LD-QhI" firstAttribute="top" secondItem="Ydi-CL-0cd" secondAttribute="bottom" constant="24" id="lK5-Sx-7QS"/>
+                                    <constraint firstItem="Ydi-CL-0cd" firstAttribute="centerY" secondItem="236-xT-UfF" secondAttribute="centerY" id="urV-DN-lvr"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zLn-Rf-Nts" firstAttribute="centerY" secondItem="JQx-pS-sow" secondAttribute="centerY" id="Tpp-49-smD"/>
-                            <constraint firstItem="zLn-Rf-Nts" firstAttribute="leading" secondItem="pl1-ti-I8M" secondAttribute="leading" constant="16" id="WvL-2r-n2K"/>
-                            <constraint firstItem="zLn-Rf-Nts" firstAttribute="centerX" secondItem="JQx-pS-sow" secondAttribute="centerX" id="YbD-xF-I1y"/>
-                            <constraint firstItem="pl1-ti-I8M" firstAttribute="trailing" secondItem="zLn-Rf-Nts" secondAttribute="trailing" constant="16" id="iWt-ZS-HOP"/>
+                            <constraint firstItem="236-xT-UfF" firstAttribute="leading" secondItem="pl1-ti-I8M" secondAttribute="leading" id="EpP-Tf-0xP"/>
+                            <constraint firstItem="236-xT-UfF" firstAttribute="centerX" secondItem="JQx-pS-sow" secondAttribute="centerX" id="Ood-FQ-Zbx"/>
+                            <constraint firstItem="pl1-ti-I8M" firstAttribute="trailing" secondItem="236-xT-UfF" secondAttribute="trailing" id="dTu-0C-pVD"/>
+                            <constraint firstItem="pl1-ti-I8M" firstAttribute="bottom" secondItem="236-xT-UfF" secondAttribute="bottom" id="gXu-XS-CPC"/>
+                            <constraint firstItem="236-xT-UfF" firstAttribute="centerY" secondItem="JQx-pS-sow" secondAttribute="centerY" id="uUj-Dd-TkN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pl1-ti-I8M"/>
                     </view>
                     <connections>
-                        <outlet property="currentPinTxtfield" destination="kCq-xP-wa6" id="BVC-Yn-4hQ"/>
-                        <outlet property="newPinTxtField" destination="vzE-uZ-kFJ" id="h9a-Q1-yYf"/>
-                        <outlet property="repeatNewPinTxtfield" destination="zgF-hu-hm5" id="Sjo-Zg-3JJ"/>
+                        <outlet property="changePinBtn" destination="Lug-LD-QhI" id="jcp-sU-DeH"/>
+                        <outlet property="currentPin" destination="8ME-oR-tXv" id="raN-f8-9ve"/>
+                        <outlet property="newPin" destination="Ghz-Hh-jnf" id="lEC-5x-bzC"/>
+                        <outlet property="repeatNewPin" destination="aKZ-oQ-45n" id="sQd-NM-fdC"/>
+                        <outlet property="scrollView" destination="236-xT-UfF" id="rFI-lD-pdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbA-hj-kHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3222" y="806"/>
+            <point key="canvasLocation" x="3221.5999999999999" y="805.54722638680664"/>
         </scene>
         <!--Instellingen-->
         <scene sceneID="huS-I0-EdV">
@@ -576,36 +650,101 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bevestig met uw pincode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-77-hSc">
-                                <rect key="frame" x="87" y="72" width="201" height="21"/>
+                                <rect key="frame" x="87.5" y="72" width="200.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l7s-o7-qbN">
-                                <rect key="frame" x="16" y="117" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ej2-gr-t9u">
+                                <rect key="frame" x="80" y="116.5" width="215" height="109"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="CYk-ps-jk1">
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="35"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l7s-o7-qbN">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="OKC-OA-WGb"/>
+                                                    <constraint firstAttribute="height" constant="35" id="RLP-O1-pix"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="PZ4-LI-gNk" id="UmA-lD-qZM"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-2o-ZYA">
+                                                <rect key="frame" x="60" y="0.0" width="35" height="35"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="PZ4-LI-gNk" id="4zD-jl-6uK"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8f-Xo-kNW">
+                                                <rect key="frame" x="120" y="0.0" width="35" height="35"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="PZ4-LI-gNk" id="cOr-da-Egk"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbT-9f-cpy">
+                                                <rect key="frame" x="180" y="0.0" width="35" height="35"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="PZ4-LI-gNk" id="pd3-lJ-pMU"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="e8f-Xo-kNW" firstAttribute="width" secondItem="l7s-o7-qbN" secondAttribute="width" id="5mc-0G-dLr"/>
+                                            <constraint firstItem="wbT-9f-cpy" firstAttribute="width" secondItem="l7s-o7-qbN" secondAttribute="width" id="NET-y7-1hG"/>
+                                            <constraint firstItem="wvh-2o-ZYA" firstAttribute="width" secondItem="l7s-o7-qbN" secondAttribute="width" id="tHV-xq-198"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQg-dC-7mr">
+                                        <rect key="frame" x="42.5" y="59" width="130" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="4k0-be-iPe"/>
+                                            <constraint firstAttribute="height" constant="50" id="ixX-xM-jwF"/>
+                                        </constraints>
+                                        <state key="normal" title="Bevestig">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="checkPinAndPerformTransaction:" destination="PZ4-LI-gNk" eventType="touchUpInside" id="i9S-WQ-96c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pKC-77-hSc" firstAttribute="centerX" secondItem="j58-tv-nRG" secondAttribute="centerX" id="7Qv-uf-2qm"/>
-                            <constraint firstItem="l7s-o7-qbN" firstAttribute="top" secondItem="pKC-77-hSc" secondAttribute="bottom" constant="24" id="Xea-Jm-0MF"/>
                             <constraint firstItem="pKC-77-hSc" firstAttribute="top" secondItem="SLg-zd-nDl" secondAttribute="top" constant="8" id="YJM-Q7-6qN"/>
-                            <constraint firstItem="l7s-o7-qbN" firstAttribute="leading" secondItem="SLg-zd-nDl" secondAttribute="leading" constant="16" id="cTl-Pz-olN"/>
-                            <constraint firstItem="l7s-o7-qbN" firstAttribute="centerX" secondItem="j58-tv-nRG" secondAttribute="centerX" id="clM-pA-CvZ"/>
-                            <constraint firstItem="SLg-zd-nDl" firstAttribute="trailing" secondItem="l7s-o7-qbN" secondAttribute="trailing" constant="16" id="eXf-ai-YaV"/>
+                            <constraint firstItem="ej2-gr-t9u" firstAttribute="centerX" secondItem="j58-tv-nRG" secondAttribute="centerX" id="kev-qm-0NX"/>
+                            <constraint firstItem="ej2-gr-t9u" firstAttribute="top" secondItem="pKC-77-hSc" secondAttribute="bottom" constant="24" id="o2X-Uy-vG2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SLg-zd-nDl"/>
                     </view>
                     <connections>
-                        <outlet property="pinCodeField" destination="l7s-o7-qbN" id="t2e-0k-CTC"/>
+                        <outlet property="confirmBtn" destination="RQg-dC-7mr" id="gHX-mO-sT9"/>
+                        <outlet property="firstNr" destination="l7s-o7-qbN" id="aG8-eY-eHy"/>
+                        <outlet property="fourthNr" destination="wbT-9f-cpy" id="4Aa-fx-Kx9"/>
+                        <outlet property="secondNr" destination="wvh-2o-ZYA" id="7kW-Hh-df2"/>
+                        <outlet property="thirdNr" destination="e8f-Xo-kNW" id="B4m-x7-Mgr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-kz-QiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5588" y="-1343"/>
+            <point key="canvasLocation" x="5588" y="-1343.4782608695652"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="nx0-Sk-1Z9">
