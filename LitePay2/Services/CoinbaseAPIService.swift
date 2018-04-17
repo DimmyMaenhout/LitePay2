@@ -13,7 +13,7 @@ public enum CoinbaseAPIService {
                                           scope: "wallet:accounts:read, wallet:addresses:read, wallet:addresses:create, wallet:transactions:read, wallet:transactions:send, wallet:user:email",
                                           accountAccess: CoinbaseOAuthAccountAccess.all,
                                           redirectUri: LitePayData.redirectUriTest,
-                                          meta: [AnyHashable("send_limit_amount"): "0.8098",  AnyHashable("send_limit_period"): "day"], layout: "")
+                                          meta: [AnyHashable("send_limit_amount"): "0.8000", AnyHashable("send_limit_currency"): "EUR", AnyHashable("send_limit_period"): "day"], layout: "")
     }
     
     //creates a new address for an account. All arguments are optional (can do an empty POST to create a new address)
@@ -268,49 +268,88 @@ public enum CoinbaseAPIService {
     }
     
 //    accountID is necessary for the url link (parameter)
-    static func doTransaction(from accountID: String){
+    static func doTransaction(from accountID: String, to receiveAccount: String, amount: String, account: CoinbaseAccount){
         
-        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.accounts.rawValue)\(accountID)\(calls.transactions.rawValue)")!
+        let url = URL(string: "\(calls.baseUrl.rawValue)\(calls.accounts.rawValue)\(accountID)/\(calls.transactions.rawValue)")!
         print("Coinbase Api Service line 274, url: \(String(describing: url))")
         
         let accessToken = UserDefaults.standard.string(forKey: "access_token")
+        print("Coinbase Api Service line 277, url: \(String(describing: accessToken))")
         
-        //necessary to get access when making the call
-        let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate, LitePayData.authorization: "\(LitePayData.bearer) \(String(describing: accessToken))", LitePayData.contentType: LitePayData.contentTypeValue, "CB-2FA-Token": "\(String(describing: accessToken))"]
+//        if let accessToken = accessToken {
+//
+//            //necessary to get access when making the call
+            let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate, LitePayData.authorization: "\(LitePayData.bearer) \(String(describing: accessToken))", LitePayData.contentType: LitePayData.contentTypeValue, "CB-2FA-Token": "\(String(describing: accessToken))"]
+//
+//
+            Alamofire.request(url, method: .post, parameters: ["type" : "send", "to" : "\(receiveAccount)", "amount" : "\(amount)", "currency" : "\(account.balance.currency)"], encoding: JSONEncoding.default, headers: headers)
+//                .responseJSON
+//                {
+//                    response in
+//                    print("Coinbase API Service line 285, response: \(response)")
+//
+//                    if let status = response.response?.statusCode {
+//
+//                        switch(status) {
+//
+//                        case 200: print("Coinbase api service line 291, status = success")
+//                        default: print("Coinbase Api Service line 292, error with response status: \(status)")
+//                        }
+//                    }
+//
+//                    if let result = response.result.value {
+//
+//                        let json = result as! [String: Any]
+//                        //                    print("Coinbase Api Service line 299, json: \(json)")
+//
+//                        //                    if json["data"] = nil go in else statement
+//                        guard let data = json["data"] as? [String: Any] else {
+//
+//                            print("Coinbase Api Service line 304, data is nil")
+//                            return
+//                        }
+//                        print("Coinbase Api Service line 307, data: \(data)")
+//
+//                        //                    amountEuro = data["amount"] as! String //as! [String: String]
+//                        //                    print("Coinbase Api Service line 310, rates: \(amountEuro)")
+//                    }
+//                    //                completion(amountEuro)
+//            }
+//        }
         
-        Alamofire.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers)
-            .responseJSON
-            {
-                response in
-                print("Coinbase API Service line 285, response: \(response)")
-                
-                if let status = response.response?.statusCode {
-                    
-                    switch(status) {
-                        
-                        case 200: print("Coinbase api service line 291, status = success")
-                        default: print("Coinbase Api Service line 292, error with response status: \(status)")
+        let mockUrl = URL(string: "https://gateway.api.cloud.wso2.com:443/t/test5397/cb3/v3/accounts/1dim394m-193y-5b2ma-9155-3e4732659enh/transactions")!
+        
+        Alamofire.request(mockUrl, method: .post, parameters: /*["type" : "send", "to" : "fc0d43e1-a917-52b8-bd7f-eca1647c36a8", "amount" : "0", "currency" : "LTC"]*/ nil, encoding: JSONEncoding.default, headers: headers)
+                        .responseJSON
+                        {
+                            response in
+                            print("Coinbase API Service line 326, response: \(response)")
+        
+                            if let status = response.response?.statusCode {
+        
+                                switch(status) {
+        
+                                case 200: print("Coinbase api service line 332, status = success")
+                                default: print("Coinbase Api Service line 333, error with response status: \(status)")
+                                }
+                            }
+        
+                            if let result = response.result.value {
+        
+                                let json = result as! [String: Any]
+                                //                    print("Coinbase Api Service line 299, json: \(json)")
+        
+                                //                    if json["data"] = nil go in else statement
+                                guard let data = json["data"] as? [String: Any] else {
+        
+                                    print("Coinbase Api Service line 345, data is nil")
+                                    return
+                                }
+                                print("Coinbase Api Service line 347, data: \(data)")
+        
+                            }
+                            //                completion(amountEuro)
                     }
-                }
-                
-                if let result = response.result.value {
-                    
-                    let json = result as! [String: Any]
-//                    print("Coinbase Api Service line 299, json: \(json)")
-                    
-//                    if json["data"] = nil go in else statement
-                    guard let data = json["data"] as? [String: Any] else
-                    {
-                        print("Coinbase Api Service line 304, data is nil")
-                        return
-                    }
-                    print("Coinbase Api Service line 307, data: \(data)")
-                    
-//                    amountEuro = data["amount"] as! String //as! [String: String]
-//                    print("Coinbase Api Service line 310, rates: \(amountEuro)")
-                }
-//                completion(amountEuro)
-        }
         
     }
 }
