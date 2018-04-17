@@ -1,19 +1,15 @@
 import Foundation
 
-class CurrencyRate {
+ class CurrencyRate {
+
     
-    
-    init (){
-        
-    }
-    
-    func converseToLTC(amountEuro: NSDecimalNumber, currencyRate: NSDecimalNumber) -> NSDecimalNumber {
+    public func converseToLTC(amountEuro: NSDecimalNumber, currencyRate: NSDecimalNumber) -> NSDecimalNumber {
         
         let amountLTC = (amountEuro as Decimal) * (currencyRate as Decimal) as NSDecimalNumber
         return amountLTC
     }
     
-    func converseToEuro(amountLTC: NSDecimalNumber, spotPrice: NSDecimalNumber) -> NSDecimalNumber {
+    public func converseToEuro(amountLTC: NSDecimalNumber, spotPrice: NSDecimalNumber) -> NSDecimalNumber {
         
         let amountEuro = (amountLTC as Decimal) * (spotPrice as Decimal) as NSDecimalNumber
         return amountEuro
