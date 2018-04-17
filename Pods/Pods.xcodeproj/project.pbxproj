@@ -28,7 +28,7 @@
 		221349543308819D1C8749E3A0FA7C41 /* CoinbaseDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A40CAD5D826C9083819C7672A39F1 /* CoinbaseDefines.m */; };
 		22B41DE463482BF10B1129927A369A2F /* CoinbaseCurrency.h in Headers */ = {isa = PBXBuildFile; fileRef = 198BF4A59A3AFC9771C1057FA2C209AE /* CoinbaseCurrency.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		235C9D1AED52C227E257393598EFD5A8 /* CoinbaseAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = E485902E02B4FACFE5A3084B4228F0A9 /* CoinbaseAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DAD37C61BDACFB79DC9F6E34359A32B /* Pods-LitePay2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC932E354FA811F6FE82820246D7383A /* Pods-LitePay2-dummy.m */; };
+		2DAD37C61BDACFB79DC9F6E34359A32B /* Pods-LitePay2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C054968A04236B2073BB7F402BD548C /* Pods-LitePay2-dummy.m */; };
 		2FD15258F677644F46DCE80DA3110C8E /* CoinbaseBalance.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B541FE82D1D7252FF03362BC66B364 /* CoinbaseBalance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32508A477EB8DE4F4EA066315511C4EF /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42033E26B5CE7C76D4F1DAC9EA474334 /* Authenticator.swift */; };
 		3314CBA809E8D1F61775487A8F8AA7D6 /* CoinbaseAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C1DDF5722255C7FFEB086C6AE51D79 /* CoinbaseAuthorization.m */; };
@@ -83,6 +83,7 @@
 		779811AAB014C57EAB3A43BB83A42F9E /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58634E040EE99013B237C258468752EE /* Rabbit+Foundation.swift */; };
 		790B502A5E39B63AB1CD72638362BDDD /* CTR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445A28447D3BE4DFD4D80AB75465C7B /* CTR.swift */; };
 		7963EE3AD70581F5653E66F5F40356F6 /* CoinbaseAccountChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA882107A7D7889E58CA13C284831E /* CoinbaseAccountChange.m */; };
+		79FAFE0412CD643608C82ABC81C5A772 /* Pods-LitePay2Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D287885B3D59FA1BC66875C7CE33977 /* Pods-LitePay2Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ACD1EC1AD290AED530D4C19CFDCBE84 /* CoinbaseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 207B4E634EDE66298C58E70B422F3983 /* CoinbaseButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514275CD4F1F80725C648FDE6E906E7B /* SessionDelegate.swift */; };
 		7C4FE99E01C8A635B3CE77F05B74B2DA /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAE24D409671AF048EAA4F72F65C7CC /* PKCS7.swift */; };
@@ -142,19 +143,21 @@
 		DBBC0B3E2A77C465F817B4CB91C7CA6E /* RandomBytesSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E5B468A179A7A3845C727C6D70CF8 /* RandomBytesSequence.swift */; };
 		DDC5DE3BF3ABA29C6DE457F2FF304FF1 /* CoinbaseOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A58F4D5E98FCE673A36E25267B97640 /* CoinbaseOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E039B801D197986FE25FD3011D2A324D /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF9CC80F7803019E1953A64CA79C1F /* PBKDF2.swift */; };
-		E0D9F37E77DB3D6DFDC430234121E615 /* Pods-LitePay2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 739034D3E827452F75D6C5C046B5D459 /* Pods-LitePay2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0D9F37E77DB3D6DFDC430234121E615 /* Pods-LitePay2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F46B23043EBAA59A8603F0FEF5206D6F /* Pods-LitePay2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1BEB7D0A08A2E96F75C10279C596F15 /* Coinbase.m in Sources */ = {isa = PBXBuildFile; fileRef = B53E7C884E8021040BD9CD4E88A7281D /* Coinbase.m */; };
-		E6295C8F15B8F04B5503AD145239A595 /* CBCertificates.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D981DF7755C73722E98531193009008 /* CBCertificates.bundle */; };
+		E6295C8F15B8F04B5503AD145239A595 /* CBCertificates.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8189DB5AA46CEF2559F8CEC31AD0CEE5 /* CBCertificates.bundle */; };
 		E780BDD3E588068FF869701FDC2D6BBE /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88FAAC2F7E7B238D0E60E6392A9C61C /* OFB.swift */; };
 		E99E9C0D8889E1ABED1BB66EA5E26F6B /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8D34A6CA3C330D561C1A5118AE96A /* AES.swift */; };
 		E9DDCBC12D0C48E9072371632E2EE354 /* BlockModeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7048C60BD8D1423AB8933BBECA756 /* BlockModeOptions.swift */; };
 		EC44355442C7E895D8BDD437C8FC1A50 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697BB3BDAA7ED078DB0991579A2189B2 /* String+Extension.swift */; };
+		ED0970C812635458EE12356BD962B36D /* Pods-LitePay2Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DA88F497E2AE3EE88BD2A7778B44F2 /* Pods-LitePay2Tests-dummy.m */; };
 		EEBE924BD06D6681AAA6003C3A6DBB33 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E744256DFB394CDCC052CA8195A6C60 /* MD5.swift */; };
 		EEC95E134BF6663B52A72D8B53375C00 /* PKCS7Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A651752C9526A53374247DEBA07FEB7A /* PKCS7Padding.swift */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8561A7D3CD70DF47C599D0A3010E09A /* Notifications.swift */; };
 		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FB9BC50D9BD604C92B6EC83DFC05F /* ResponseSerialization.swift */; };
 		F7D0F0090DE25349C7D0635DE0C507EB /* CoinbaseRecurringPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BAF3C91B2743801CF3BDA094FB36E8 /* CoinbaseRecurringPayment.m */; };
 		F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DBBFF9834A2AC1A0D9B8410C8A02BD /* Alamofire.swift */; };
+		F965EDB4ABFDB0C492AAFE0AA8DD461C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		FFEFA357A2ECFD2C8696A7D9B6559CAC /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27A7C83E1AB04E2E33353FCB4199E4 /* Cipher.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,12 +183,26 @@
 			remoteGlobalIDString = 1468F9B82158E3980A58D97749B41BFB;
 			remoteInfo = "coinbase-official-CBCertificates";
 		};
+		ABACA500DBD5045B47A32780F29E3420 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08D33982608988966225C37BF4F467DF;
+			remoteInfo = "coinbase-official";
+		};
 		C41F027F2A9362D849E6DE45D06A96EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DE16D66575B4E29D54F3F5DB5CD606FB;
 			remoteInfo = CryptoSwift;
+		};
+		F1B9ABBFFA022FE0CD6C1BCE54A7CCCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
+			remoteInfo = Alamofire;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -194,12 +211,14 @@
 		0058372DB4880888BCB82C6D7792B3D9 /* ZeroPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZeroPadding.swift; path = Sources/CryptoSwift/ZeroPadding.swift; sourceTree = "<group>"; };
 		02BE1FB5BAD45BFF22866E0F1035AB03 /* coinbase-official.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "coinbase-official.xcconfig"; sourceTree = "<group>"; };
 		046515291A19E858E12CA885E902F819 /* CoinbasePaymentMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbasePaymentMethod.m; path = Pod/Classes/Client/CoinbasePaymentMethod.m; sourceTree = "<group>"; };
+		0A6E7A0EC24E7981A6FE97A234E6DB63 /* Pods-LitePay2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2-frameworks.sh"; sourceTree = "<group>"; };
 		0B93515F261F7E7DBCB270BBEFBAEFCE /* ECB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ECB.swift; path = Sources/CryptoSwift/BlockMode/ECB.swift; sourceTree = "<group>"; };
 		0D2F1BF874D2AD8713EC2A386275D9BE /* CoinbaseBalance.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseBalance.m; path = Pod/Classes/Client/CoinbaseBalance.m; sourceTree = "<group>"; };
 		0D41A6FE74B3765ACA7E52B7DB670024 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/CryptoSwift/Utils.swift; sourceTree = "<group>"; };
 		0E4471356780F454C6C8A2B28FC72325 /* Checksum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Checksum.swift; path = Sources/CryptoSwift/Checksum.swift; sourceTree = "<group>"; };
 		0E744256DFB394CDCC052CA8195A6C60 /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/CryptoSwift/MD5.swift; sourceTree = "<group>"; };
 		11F1CB88798895400BF69726365AFBC0 /* NoPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoPadding.swift; path = Sources/CryptoSwift/NoPadding.swift; sourceTree = "<group>"; };
+		12758FA4C404FCF2A1483D8A30D44065 /* Pods-LitePay2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2.debug.xcconfig"; sourceTree = "<group>"; };
 		14AA1E2FADEE423C787A76C326B849B3 /* coinbase-official.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "coinbase-official.modulemap"; sourceTree = "<group>"; };
 		16CB311AC91E7F35106E09F85931DD92 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		198BF4A59A3AFC9771C1057FA2C209AE /* CoinbaseCurrency.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseCurrency.h; path = Pod/Classes/Client/CoinbaseCurrency.h; sourceTree = "<group>"; };
@@ -207,26 +226,29 @@
 		1AB8D34A6CA3C330D561C1A5118AE96A /* AES.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AES.swift; path = Sources/CryptoSwift/AES.swift; sourceTree = "<group>"; };
 		1B902277BBD6C1556CB5A8CD04AC7EF4 /* BlockModeWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockModeWorker.swift; path = Sources/CryptoSwift/BlockMode/BlockModeWorker.swift; sourceTree = "<group>"; };
 		1BCF9CC80F7803019E1953A64CA79C1F /* PBKDF2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF2.swift; path = Sources/CryptoSwift/PKCS/PBKDF2.swift; sourceTree = "<group>"; };
+		1C054968A04236B2073BB7F402BD548C /* Pods-LitePay2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LitePay2-dummy.m"; sourceTree = "<group>"; };
 		1C4ABFEE1EA43D3BC9282871A5169B2F /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		1C9BA23B081D5F855FEFAF9C35F64A48 /* BlockMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockMode.swift; path = Sources/CryptoSwift/BlockMode/BlockMode.swift; sourceTree = "<group>"; };
 		1D35F33513DF3312A205395A6A0C967E /* CoinbaseAddress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseAddress.m; path = Pod/Classes/Client/CoinbaseAddress.m; sourceTree = "<group>"; };
-		1E310349F7988768EF67FF72C793A39B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		207B4E634EDE66298C58E70B422F3983 /* CoinbaseButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseButton.h; path = Pod/Classes/Client/CoinbaseButton.h; sourceTree = "<group>"; };
 		2093241DE60216E12DBB7ACA93D338D1 /* PKCS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS5.swift; path = Sources/CryptoSwift/PKCS/PKCS5.swift; sourceTree = "<group>"; };
 		217D6AB8EB5CD254FA925849099199A5 /* Utils+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Utils+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Utils+Foundation.swift"; sourceTree = "<group>"; };
+		2346158FB321953ACA55383C31B94325 /* Pods_LitePay2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LitePay2Tests.framework; path = "Pods-LitePay2Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2445A28447D3BE4DFD4D80AB75465C7B /* CTR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CTR.swift; path = Sources/CryptoSwift/BlockMode/CTR.swift; sourceTree = "<group>"; };
+		268D765324A4BA163065C334BD360ECA /* Pods-LitePay2Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2Tests-resources.sh"; sourceTree = "<group>"; };
 		27DA69BE1765FD87949A409E4BEBE389 /* Int+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Extension.swift"; path = "Sources/CryptoSwift/Int+Extension.swift"; sourceTree = "<group>"; };
 		2828FE67AD72C87E461F49078A02EFD9 /* HKDF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HKDF.swift; path = Sources/CryptoSwift/HKDF.swift; sourceTree = "<group>"; };
+		2A807BE78136434D7F86CBE2DC3C9A8D /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LitePay2.framework; path = "Pods-LitePay2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A40CAD5D826C9083819C7672A39F1 /* CoinbaseDefines.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseDefines.m; path = Pod/Classes/CoinbaseDefines.m; sourceTree = "<group>"; };
 		2F0E5B468A179A7A3845C727C6D70CF8 /* RandomBytesSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomBytesSequence.swift; path = Sources/CryptoSwift/RandomBytesSequence.swift; sourceTree = "<group>"; };
+		2FB56F22BC2EB3A12174F70F67226427 /* coinbase_official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = coinbase_official.framework; path = "coinbase-official.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3393B01610DD6265AF542EEC78284928 /* CoinbaseInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseInternal.h; path = Pod/Classes/Client/CoinbaseInternal.h; sourceTree = "<group>"; };
 		33C129A7C336E323D6EC36EEA97F84F2 /* CoinbaseToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseToken.h; path = Pod/Classes/Client/CoinbaseToken.h; sourceTree = "<group>"; };
 		3470AB003A8DC7102EA15F9986AE6493 /* AES.Cryptors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AES.Cryptors.swift; path = Sources/CryptoSwift/AES.Cryptors.swift; sourceTree = "<group>"; };
-		3994B859FD9D4C5DEECE55F0960CDB6D /* coinbase_official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = coinbase_official.framework; path = "coinbase-official.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3962543A8E7DD5E0AF675E7F2811A4CB /* Pods-LitePay2-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2-resources.sh"; sourceTree = "<group>"; };
 		3C55FB0E7342E74A8DABDEF4F3863000 /* CoinbaseReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseReport.h; path = Pod/Classes/Client/CoinbaseReport.h; sourceTree = "<group>"; };
 		3E1B0B51B720C2AB925165672CDD9EEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E1E6A6215660D091475CCBFE7749389 /* digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; name = digicert.der; path = Pod/Assets/Certificates/digicert.der; sourceTree = "<group>"; };
-		3F01AA539C6420CB836EF8D58BBBF525 /* Pods-LitePay2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2.debug.xcconfig"; sourceTree = "<group>"; };
 		3F376A3B1992B18BFC801E549A54D2F5 /* CoinbaseRefund.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseRefund.m; path = Pod/Classes/Client/CoinbaseRefund.m; sourceTree = "<group>"; };
 		40B226E1DCA8548975D9F0F9483D49EB /* CryptoSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.xcconfig; sourceTree = "<group>"; };
 		40BED3F7575BFB6B21F541BFBA7B6A64 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
@@ -236,8 +258,9 @@
 		4394E99BBA4A8DFF947876596B0A89B2 /* HMAC+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HMAC+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/HMAC+Foundation.swift"; sourceTree = "<group>"; };
 		4478178206C291FEB8B78ABD15EFC5D0 /* Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = Sources/CryptoSwift/Padding.swift; sourceTree = "<group>"; };
 		45AAC4A1C4F3B09BBC4F35B4778934B6 /* coinbase-official-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "coinbase-official-umbrella.h"; sourceTree = "<group>"; };
+		47BFE8F1986F818B3B80264DF56A1292 /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
 		4A58F4D5E98FCE673A36E25267B97640 /* CoinbaseOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseOrder.h; path = Pod/Classes/Client/CoinbaseOrder.h; sourceTree = "<group>"; };
-		4A95E5D1F2090D9CA1357AFC28D1E070 /* Pods-LitePay2-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2-resources.sh"; sourceTree = "<group>"; };
+		4C0A5B89B88F1AC9C969E8D110E71EE8 /* Pods-LitePay2Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LitePay2Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4CA92C3076507CB3B29D5A01D7326EEB /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		4D2E6E6AE291F1F587513ABCBFB9F6FC /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		4D427D53E4FAD2BA08AE3763FCA0B949 /* UInt16+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt16+Extension.swift"; path = "Sources/CryptoSwift/UInt16+Extension.swift"; sourceTree = "<group>"; };
@@ -254,18 +277,18 @@
 		5C76321C58E7799423AFE079D468F909 /* CoinbaseApplication.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseApplication.m; path = Pod/Classes/Client/CoinbaseApplication.m; sourceTree = "<group>"; };
 		5E93CEE895FA200017596573383B5607 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		5FBD657BC61559EA1379F27F574CA9BB /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/CryptoSwift/SHA1.swift; sourceTree = "<group>"; };
-		625A8191F92CBC3D58D391D48AC8D5CA /* Pods-LitePay2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LitePay2.modulemap"; sourceTree = "<group>"; };
+		62606FB8412ADE8A700A5C86C38B9D01 /* Pods-LitePay2Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LitePay2Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		63E68024FD3207B340748BFBF068B1AC /* DigestType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigestType.swift; path = Sources/CryptoSwift/DigestType.swift; sourceTree = "<group>"; };
 		66C1DDF5722255C7FFEB086C6AE51D79 /* CoinbaseAuthorization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseAuthorization.m; path = Pod/Classes/Client/CoinbaseAuthorization.m; sourceTree = "<group>"; };
-		6929F0C0620E0A38A6886B58415CD27C /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LitePay2.framework; path = "Pods-LitePay2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		697BB3BDAA7ED078DB0991579A2189B2 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
+		6A1E3C365679AB184936602CDBA3FA5D /* Pods-LitePay2Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LitePay2Tests.modulemap"; sourceTree = "<group>"; };
+		6A70FE2E607776FAA1342FF5FDC2CE6C /* Pods-LitePay2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BB811071508FC96D3479AF80223EE9A /* CoinbaseDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseDefines.h; path = Pod/Classes/CoinbaseDefines.h; sourceTree = "<group>"; };
 		6BC939768A50098E8EF185FE7378A44F /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		6D125A61040A2503CDE09CD9CB641DC8 /* CoinbaseTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseTransaction.m; path = Pod/Classes/Client/CoinbaseTransaction.m; sourceTree = "<group>"; };
 		6E27A7C83E1AB04E2E33353FCB4199E4 /* Cipher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cipher.swift; path = Sources/CryptoSwift/Cipher.swift; sourceTree = "<group>"; };
 		6F09C075163F46769B2919C73F7DD18B /* Array+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Extension.swift"; path = "Sources/CryptoSwift/Array+Extension.swift"; sourceTree = "<group>"; };
 		6F425F542A70063FF57947B28858FA6E /* SHA2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA2.swift; path = Sources/CryptoSwift/SHA2.swift; sourceTree = "<group>"; };
-		739034D3E827452F75D6C5C046B5D459 /* Pods-LitePay2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LitePay2-umbrella.h"; sourceTree = "<group>"; };
 		73A297C116CFE8796EDF880DBE5D38E9 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		73B5F88F317F4452CAD81AD3BDA17CC5 /* Collection+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Collection+Extension.swift"; path = "Sources/CryptoSwift/Collection+Extension.swift"; sourceTree = "<group>"; };
 		75D7402CFDC47200B3AEE29DDADD7378 /* coinbase-official-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "coinbase-official-prefix.pch"; sourceTree = "<group>"; };
@@ -274,25 +297,26 @@
 		783E5C0CCDAA446E2B63A41749D063EA /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		7B4EDB21C7EEBDFAB5760502DA0D0FC3 /* Updatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Updatable.swift; path = Sources/CryptoSwift/Updatable.swift; sourceTree = "<group>"; };
 		7B51538D2EB4192003994ACD3B192A25 /* ChaCha20+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ChaCha20+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/ChaCha20+Foundation.swift"; sourceTree = "<group>"; };
+		7F0F059B51FB78DA76A181E58DF725DA /* Pods-LitePay2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7F798E05D77DE4D284857AC2DBFD838C /* UInt64+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt64+Extension.swift"; path = "Sources/CryptoSwift/UInt64+Extension.swift"; sourceTree = "<group>"; };
 		800ED49F98C39829C35E89BFC1FEB909 /* CoinbaseToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseToken.m; path = Pod/Classes/Client/CoinbaseToken.m; sourceTree = "<group>"; };
+		8189DB5AA46CEF2559F8CEC31AD0CEE5 /* CBCertificates.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CBCertificates.bundle; path = "coinbase-official-CBCertificates.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82226A84DB26FBEFFD6F4F2D89AA83DF /* CoinbasePrice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbasePrice.h; path = Pod/Classes/Client/CoinbasePrice.h; sourceTree = "<group>"; };
 		83D605619941A2EA92969D8DC55589B6 /* Coinbase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Coinbase.h; path = Pod/Classes/Client/Coinbase.h; sourceTree = "<group>"; };
 		84D915D8DFA77F1BAF5AF02FBFA88F71 /* CoinbaseUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseUser.h; path = Pod/Classes/Client/CoinbaseUser.h; sourceTree = "<group>"; };
 		85A65870D0F5537A88EE396CABBFE7A3 /* SHA3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA3.swift; path = Sources/CryptoSwift/SHA3.swift; sourceTree = "<group>"; };
 		89CD1F8953376ABF361E1B2717E52D76 /* CryptoSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-umbrella.h"; sourceTree = "<group>"; };
 		8B309F62563B1B4C03D5176089046F58 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		8D287885B3D59FA1BC66875C7CE33977 /* Pods-LitePay2Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LitePay2Tests-umbrella.h"; sourceTree = "<group>"; };
 		8DCDFB82E3F2F3B3A110E5730DF8195F /* CoinbaseTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseTransaction.h; path = Pod/Classes/Client/CoinbaseTransaction.h; sourceTree = "<group>"; };
 		8EA88B267A7AB7DB963D117A8A09A8A9 /* CoinbaseApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseApplication.h; path = Pod/Classes/Client/CoinbaseApplication.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9496DCB69A20CF37DB131F4D3B4C6CF2 /* Pods-LitePay2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LitePay2-acknowledgements.markdown"; sourceTree = "<group>"; };
 		94FB9249953EC6A4951738A7355C9F51 /* CoinbaseOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseOrder.m; path = Pod/Classes/Client/CoinbaseOrder.m; sourceTree = "<group>"; };
 		9529E3B23694DEBB831156C690B7ED12 /* Data+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Extension.swift"; path = "Sources/CryptoSwift/Foundation/Data+Extension.swift"; sourceTree = "<group>"; };
-		97361C328A69E13DF8A31EC8E37A0DB1 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CryptoSwift.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DA88F497E2AE3EE88BD2A7778B44F2 /* Pods-LitePay2Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LitePay2Tests-dummy.m"; sourceTree = "<group>"; };
 		9850933527EE26D5C5CA9957EDE89FA8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A6053DCC78B43200E9B5A469E62A1DE /* verisign.der */ = {isa = PBXFileReference; includeInIndex = 1; name = verisign.der; path = Pod/Assets/Certificates/verisign.der; sourceTree = "<group>"; };
 		9BCB910C667B10EA4DA8E2174EC7537C /* Cryptors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cryptors.swift; path = Sources/CryptoSwift/Cryptors.swift; sourceTree = "<group>"; };
-		9D981DF7755C73722E98531193009008 /* CBCertificates.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CBCertificates.bundle; path = "coinbase-official-CBCertificates.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2981C05520AAAEBF91B65D225AD4AE /* CoinbaseButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseButton.m; path = Pod/Classes/Client/CoinbaseButton.m; sourceTree = "<group>"; };
 		A025014E4D966D86E5ACF14F9D83E3CC /* ResourceBundle-CBCertificates-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CBCertificates-Info.plist"; sourceTree = "<group>"; };
 		A1BAF3C91B2743801CF3BDA094FB36E8 /* CoinbaseRecurringPayment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseRecurringPayment.m; path = Pod/Classes/Client/CoinbaseRecurringPayment.m; sourceTree = "<group>"; };
@@ -301,6 +325,7 @@
 		A533CC77C4B6AB285375D627BD4847D6 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		A651752C9526A53374247DEBA07FEB7A /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
 		A6A9089F35B637309CD8149862B9E540 /* String+FoundationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+FoundationExtension.swift"; path = "Sources/CryptoSwift/Foundation/String+FoundationExtension.swift"; sourceTree = "<group>"; };
+		A9264FE4BDF5FAE11E7C7C313D789352 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CryptoSwift.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C73D838568E13D967646F7876F6EB6 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		AA9EC60B41D4EAE7737B6BC705913489 /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
 		AD40B1DD63619FE2368C8D2F199B2DC4 /* CoinbaseCurrency.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseCurrency.m; path = Pod/Classes/Client/CoinbaseCurrency.m; sourceTree = "<group>"; };
@@ -310,7 +335,6 @@
 		B53E7C884E8021040BD9CD4E88A7281D /* Coinbase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Coinbase.m; path = Pod/Classes/Client/Coinbase.m; sourceTree = "<group>"; };
 		B549856F6B3F586A005E8133FB0BAE5A /* CoinbaseContact.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseContact.h; path = Pod/Classes/Client/CoinbaseContact.h; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		B81FC6B889481E770FB16D7EA3C47016 /* Pods-LitePay2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2-frameworks.sh"; sourceTree = "<group>"; };
 		BE9FF22C36260677EBDD64189A008611 /* RandomAccessCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomAccessCryptor.swift; path = Sources/CryptoSwift/RandomAccessCryptor.swift; sourceTree = "<group>"; };
 		BEDAF076237C4747C6C915F6BD13D4A1 /* CoinbaseAddress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAddress.h; path = Pod/Classes/Client/CoinbaseAddress.h; sourceTree = "<group>"; };
 		C1A8DE18A291C283CBC651294EF58134 /* CoinbaseObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseObject.m; path = Pod/Classes/Client/CoinbaseObject.m; sourceTree = "<group>"; };
@@ -329,11 +353,12 @@
 		CEFB7507BE31A1133A97EB2706D622EC /* CoinbaseTransfer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseTransfer.m; path = Pod/Classes/Client/CoinbaseTransfer.m; sourceTree = "<group>"; };
 		CFF9F947F7EA665E10FF3B7462369747 /* CoinbasePagingHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbasePagingHelper.h; path = Pod/Classes/Client/CoinbasePagingHelper.h; sourceTree = "<group>"; };
 		D1450B1BA8C943D39A7BEEB5F2A8BB88 /* coinbase-official-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "coinbase-official-dummy.m"; sourceTree = "<group>"; };
+		D148C0A5396E1EB7BE0A1C10E6AAF6CF /* Pods-LitePay2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LitePay2-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D1D0F8454715D477B582F600D482B233 /* BatchedCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BatchedCollection.swift; path = Sources/CryptoSwift/BatchedCollection.swift; sourceTree = "<group>"; };
-		D2EBEAB801B97DFA6AE8C18FCDEAA9FF /* Pods-LitePay2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LitePay2-acknowledgements.plist"; sourceTree = "<group>"; };
+		D23F32AA6838B443C71247680FB7C66F /* Pods-LitePay2Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LitePay2Tests-frameworks.sh"; sourceTree = "<group>"; };
 		D4DAFA3153119E4D4CD7F7A0BADA15B1 /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/CryptoSwift/HMAC.swift; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DC932E354FA811F6FE82820246D7383A /* Pods-LitePay2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LitePay2-dummy.m"; sourceTree = "<group>"; };
+		DED7CFFBC9E27A128251D3F43CF062BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF27CA6EA6A4B9DE6D879E708567A3B8 /* BlockCipher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockCipher.swift; path = Sources/CryptoSwift/BlockCipher.swift; sourceTree = "<group>"; };
 		E02458C521A4F3616EB9D9A122D17DFC /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		E070BA5B40A46F0080F3C98DF2E4CB29 /* CoinbaseRefund.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseRefund.h; path = Pod/Classes/Client/CoinbaseRefund.h; sourceTree = "<group>"; };
@@ -342,9 +367,11 @@
 		E27FFAC66CA7230A1D65E457A70E6262 /* RandomAccessBlockModeWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomAccessBlockModeWorker.swift; path = Sources/CryptoSwift/BlockMode/RandomAccessBlockModeWorker.swift; sourceTree = "<group>"; };
 		E300CC6ACF1EADA52D7C0B670ACDACBC /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
 		E303993D0E6F10F145AB8419F69AC8AF /* CoinbaseUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoinbaseUser.m; path = Pod/Classes/Client/CoinbaseUser.m; sourceTree = "<group>"; };
+		E3333F9A6D46021D6647D469503BCA8D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E42AA980A0F2518AC94037B5CDFAB5DE /* Pods-LitePay2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LitePay2.modulemap"; sourceTree = "<group>"; };
 		E485902E02B4FACFE5A3084B4228F0A9 /* CoinbaseAccount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAccount.h; path = Pod/Classes/Client/CoinbaseAccount.h; sourceTree = "<group>"; };
 		E52FB9BC50D9BD604C92B6EC83DFC05F /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		E5DE1F62EB7BEF54E42C344CEE88F419 /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
+		E7B7DDF437D7172523410674DF68600A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8872D5C774918695CB67ACD45E9BF43 /* CoinbaseAccountChange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAccountChange.h; path = Pod/Classes/Client/CoinbaseAccountChange.h; sourceTree = "<group>"; };
 		EB7AEADDE579E70843D175121CA73EC5 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		EC5B51A07DDC09DB6E2728D680E36903 /* UInt32+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt32+Extension.swift"; path = "Sources/CryptoSwift/UInt32+Extension.swift"; sourceTree = "<group>"; };
@@ -354,10 +381,11 @@
 		F15B7BA1DA0DC6F0B09B064D32598C4F /* Array+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Array+Foundation.swift"; sourceTree = "<group>"; };
 		F205B21731B85856CED2D563B3B11EF2 /* CoinbaseAuthorization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoinbaseAuthorization.h; path = Pod/Classes/Client/CoinbaseAuthorization.h; sourceTree = "<group>"; };
 		F2DBBFF9834A2AC1A0D9B8410C8A02BD /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		F3BEA1C8876DFBA9FA4C4C71521D5355 /* Pods-LitePay2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LitePay2-acknowledgements.plist"; sourceTree = "<group>"; };
+		F46B23043EBAA59A8603F0FEF5206D6F /* Pods-LitePay2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LitePay2-umbrella.h"; sourceTree = "<group>"; };
 		F5E08E13C7595A91085C333316412B04 /* SecureBytes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureBytes.swift; path = Sources/CryptoSwift/SecureBytes.swift; sourceTree = "<group>"; };
 		F70ADA95D6001E4A88FDB905B0182110 /* CBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBC.swift; path = Sources/CryptoSwift/BlockMode/CBC.swift; sourceTree = "<group>"; };
 		F8561A7D3CD70DF47C599D0A3010E09A /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		F89F04595367CC5F06C66B165E070578 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB7048C60BD8D1423AB8933BBECA756 /* BlockModeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockModeOptions.swift; path = Sources/CryptoSwift/BlockMode/BlockModeOptions.swift; sourceTree = "<group>"; };
 		FBF6FBC46AE8FE1D020C0F8706D1BBA4 /* Generics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Sources/CryptoSwift/Generics.swift; sourceTree = "<group>"; };
 		FC809746E584B01D2B493F7D1454F2AC /* Blowfish+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Blowfish+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Blowfish+Foundation.swift"; sourceTree = "<group>"; };
@@ -379,6 +407,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0E96DE1C09995A9CA110EB327A6837 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882236EDF5EF6A1BFB8353BD067E9218 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F965EDB4ABFDB0C492AAFE0AA8DD461C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +453,19 @@
 			name = core;
 			sourceTree = "<group>";
 		};
+		2F6FB35E74F3BA81DA677A9EA50E4633 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7B7DDF437D7172523410674DF68600A /* Alamofire.framework */,
+				8189DB5AA46CEF2559F8CEC31AD0CEE5 /* CBCertificates.bundle */,
+				2FB56F22BC2EB3A12174F70F67226427 /* coinbase_official.framework */,
+				A9264FE4BDF5FAE11E7C7C313D789352 /* CryptoSwift.framework */,
+				2A807BE78136434D7F86CBE2DC3C9A8D /* Pods_LitePay2.framework */,
+				2346158FB321953ACA55383C31B94325 /* Pods_LitePay2Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3035A81554DC4A1DBE5A01DBA3FDF44B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,14 +478,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
-		33D40936B07E3DFC4CB2ADC5FE92E206 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C58DD9DE23626BD3F1CD32F264B8EC0B /* Pods-LitePay2 */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		390DDFDE961FA5F879247C8009CF1201 /* client */ = {
@@ -622,14 +663,32 @@
 			path = "../Target Support Files/coinbase-official";
 			sourceTree = "<group>";
 		};
+		63BFE4048C49A1926CE562BE65FC22A7 /* Pods-LitePay2 */ = {
+			isa = PBXGroup;
+			children = (
+				E3333F9A6D46021D6647D469503BCA8D /* Info.plist */,
+				E42AA980A0F2518AC94037B5CDFAB5DE /* Pods-LitePay2.modulemap */,
+				D148C0A5396E1EB7BE0A1C10E6AAF6CF /* Pods-LitePay2-acknowledgements.markdown */,
+				F3BEA1C8876DFBA9FA4C4C71521D5355 /* Pods-LitePay2-acknowledgements.plist */,
+				1C054968A04236B2073BB7F402BD548C /* Pods-LitePay2-dummy.m */,
+				0A6E7A0EC24E7981A6FE97A234E6DB63 /* Pods-LitePay2-frameworks.sh */,
+				3962543A8E7DD5E0AF675E7F2811A4CB /* Pods-LitePay2-resources.sh */,
+				F46B23043EBAA59A8603F0FEF5206D6F /* Pods-LitePay2-umbrella.h */,
+				12758FA4C404FCF2A1483D8A30D44065 /* Pods-LitePay2.debug.xcconfig */,
+				47BFE8F1986F818B3B80264DF56A1292 /* Pods-LitePay2.release.xcconfig */,
+			);
+			name = "Pods-LitePay2";
+			path = "Target Support Files/Pods-LitePay2";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				52276111B2A89D67E788D259A93E6E30 /* Pods */,
-				B69526D417BBE66E1C66E9CEA772812D /* Products */,
-				33D40936B07E3DFC4CB2ADC5FE92E206 /* Targets Support Files */,
+				2F6FB35E74F3BA81DA677A9EA50E4633 /* Products */,
+				A3AC7E6112417E0D94442294E90892D7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -668,6 +727,15 @@
 			name = OAuth;
 			sourceTree = "<group>";
 		};
+		A3AC7E6112417E0D94442294E90892D7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				63BFE4048C49A1926CE562BE65FC22A7 /* Pods-LitePay2 */,
+				B893CA67676EF91859F20183FE3F19D7 /* Pods-LitePay2Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		ABFCA8568ED1FA0DD51EF7AFBE1F6511 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,34 +759,22 @@
 			path = "coinbase-official";
 			sourceTree = "<group>";
 		};
-		B69526D417BBE66E1C66E9CEA772812D /* Products */ = {
+		B893CA67676EF91859F20183FE3F19D7 /* Pods-LitePay2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F89F04595367CC5F06C66B165E070578 /* Alamofire.framework */,
-				9D981DF7755C73722E98531193009008 /* CBCertificates.bundle */,
-				3994B859FD9D4C5DEECE55F0960CDB6D /* coinbase_official.framework */,
-				97361C328A69E13DF8A31EC8E37A0DB1 /* CryptoSwift.framework */,
-				6929F0C0620E0A38A6886B58415CD27C /* Pods_LitePay2.framework */,
+				DED7CFFBC9E27A128251D3F43CF062BA /* Info.plist */,
+				6A1E3C365679AB184936602CDBA3FA5D /* Pods-LitePay2Tests.modulemap */,
+				62606FB8412ADE8A700A5C86C38B9D01 /* Pods-LitePay2Tests-acknowledgements.markdown */,
+				4C0A5B89B88F1AC9C969E8D110E71EE8 /* Pods-LitePay2Tests-acknowledgements.plist */,
+				95DA88F497E2AE3EE88BD2A7778B44F2 /* Pods-LitePay2Tests-dummy.m */,
+				D23F32AA6838B443C71247680FB7C66F /* Pods-LitePay2Tests-frameworks.sh */,
+				268D765324A4BA163065C334BD360ECA /* Pods-LitePay2Tests-resources.sh */,
+				8D287885B3D59FA1BC66875C7CE33977 /* Pods-LitePay2Tests-umbrella.h */,
+				6A70FE2E607776FAA1342FF5FDC2CE6C /* Pods-LitePay2Tests.debug.xcconfig */,
+				7F0F059B51FB78DA76A181E58DF725DA /* Pods-LitePay2Tests.release.xcconfig */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C58DD9DE23626BD3F1CD32F264B8EC0B /* Pods-LitePay2 */ = {
-			isa = PBXGroup;
-			children = (
-				1E310349F7988768EF67FF72C793A39B /* Info.plist */,
-				625A8191F92CBC3D58D391D48AC8D5CA /* Pods-LitePay2.modulemap */,
-				9496DCB69A20CF37DB131F4D3B4C6CF2 /* Pods-LitePay2-acknowledgements.markdown */,
-				D2EBEAB801B97DFA6AE8C18FCDEAA9FF /* Pods-LitePay2-acknowledgements.plist */,
-				DC932E354FA811F6FE82820246D7383A /* Pods-LitePay2-dummy.m */,
-				B81FC6B889481E770FB16D7EA3C47016 /* Pods-LitePay2-frameworks.sh */,
-				4A95E5D1F2090D9CA1357AFC28D1E070 /* Pods-LitePay2-resources.sh */,
-				739034D3E827452F75D6C5C046B5D459 /* Pods-LitePay2-umbrella.h */,
-				3F01AA539C6420CB836EF8D58BBBF525 /* Pods-LitePay2.debug.xcconfig */,
-				E5DE1F62EB7BEF54E42C344CEE88F419 /* Pods-LitePay2.release.xcconfig */,
-			);
-			name = "Pods-LitePay2";
-			path = "Target Support Files/Pods-LitePay2";
+			name = "Pods-LitePay2Tests";
+			path = "Target Support Files/Pods-LitePay2Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -774,6 +830,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1B256C78A106FD8842ADBB860E69AF5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79FAFE0412CD643608C82ABC81C5A772 /* Pods-LitePay2Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4002B6E97835FDCCAA5963EFE09A3E0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -801,7 +865,7 @@
 			);
 			name = "coinbase-official";
 			productName = "coinbase-official";
-			productReference = 3994B859FD9D4C5DEECE55F0960CDB6D /* coinbase_official.framework */;
+			productReference = 2FB56F22BC2EB3A12174F70F67226427 /* coinbase_official.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1468F9B82158E3980A58D97749B41BFB /* coinbase-official-CBCertificates */ = {
@@ -818,8 +882,27 @@
 			);
 			name = "coinbase-official-CBCertificates";
 			productName = "coinbase-official-CBCertificates";
-			productReference = 9D981DF7755C73722E98531193009008 /* CBCertificates.bundle */;
+			productReference = 8189DB5AA46CEF2559F8CEC31AD0CEE5 /* CBCertificates.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		669D88BB5A5EDBA3308B30B69C75E8C9 /* Pods-LitePay2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF0B5A161EA455EB99F2ED5C6C7A56E5 /* Build configuration list for PBXNativeTarget "Pods-LitePay2Tests" */;
+			buildPhases = (
+				D1D42C4DA23182C35C25A8E70A77F238 /* Sources */,
+				882236EDF5EF6A1BFB8353BD067E9218 /* Frameworks */,
+				B1B256C78A106FD8842ADBB860E69AF5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D06CCDEEF8C5FF9C5CB3FC1289549F54 /* PBXTargetDependency */,
+				2EEE8DE390834FDE28FA22BA458CE31F /* PBXTargetDependency */,
+			);
+			name = "Pods-LitePay2Tests";
+			productName = "Pods-LitePay2Tests";
+			productReference = 2346158FB321953ACA55383C31B94325 /* Pods_LitePay2Tests.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
 			isa = PBXNativeTarget;
@@ -835,7 +918,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = F89F04595367CC5F06C66B165E070578 /* Alamofire.framework */;
+			productReference = E7B7DDF437D7172523410674DF68600A /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9328236FC98CFFC738CD07EC41EB7E74 /* Pods-LitePay2 */ = {
@@ -855,7 +938,7 @@
 			);
 			name = "Pods-LitePay2";
 			productName = "Pods-LitePay2";
-			productReference = 6929F0C0620E0A38A6886B58415CD27C /* Pods_LitePay2.framework */;
+			productReference = 2A807BE78136434D7F86CBE2DC3C9A8D /* Pods_LitePay2.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DE16D66575B4E29D54F3F5DB5CD606FB /* CryptoSwift */ = {
@@ -872,7 +955,7 @@
 			);
 			name = CryptoSwift;
 			productName = CryptoSwift;
-			productReference = 97361C328A69E13DF8A31EC8E37A0DB1 /* CryptoSwift.framework */;
+			productReference = A9264FE4BDF5FAE11E7C7C313D789352 /* CryptoSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -892,7 +975,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B69526D417BBE66E1C66E9CEA772812D /* Products */;
+			productRefGroup = 2F6FB35E74F3BA81DA677A9EA50E4633 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -901,6 +984,7 @@
 				1468F9B82158E3980A58D97749B41BFB /* coinbase-official-CBCertificates */,
 				DE16D66575B4E29D54F3F5DB5CD606FB /* CryptoSwift */,
 				9328236FC98CFFC738CD07EC41EB7E74 /* Pods-LitePay2 */,
+				669D88BB5A5EDBA3308B30B69C75E8C9 /* Pods-LitePay2Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -1000,6 +1084,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1D42C4DA23182C35C25A8E70A77F238 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0970C812635458EE12356BD962B36D /* Pods-LitePay2Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3781A86E789739B2F1EE90C420EAA11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1081,6 +1173,12 @@
 			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
 			targetProxy = 0A79E507E563C689FA07DF180276420B /* PBXContainerItemProxy */;
 		};
+		2EEE8DE390834FDE28FA22BA458CE31F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "coinbase-official";
+			target = 08D33982608988966225C37BF4F467DF /* coinbase-official */;
+			targetProxy = ABACA500DBD5045B47A32780F29E3420 /* PBXContainerItemProxy */;
+		};
 		6A7B8962561F67EB7EA08D7BFC83EB89 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "coinbase-official-CBCertificates";
@@ -1092,6 +1190,12 @@
 			name = CryptoSwift;
 			target = DE16D66575B4E29D54F3F5DB5CD606FB /* CryptoSwift */;
 			targetProxy = C41F027F2A9362D849E6DE45D06A96EF /* PBXContainerItemProxy */;
+		};
+		D06CCDEEF8C5FF9C5CB3FC1289549F54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
+			targetProxy = F1B9ABBFFA022FE0CD6C1BCE54A7CCCB /* PBXContainerItemProxy */;
 		};
 		DF572815CF60458DE93D7B7410964328 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1332,6 +1436,41 @@
 			};
 			name = Debug;
 		};
+		6C97DD3B2B3DC5397B042B973418973B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F0F059B51FB78DA76A181E58DF725DA /* Pods-LitePay2Tests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LitePay2Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LitePay2Tests/Pods-LitePay2Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LitePay2Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		A8AFD558CA78B853AF06C2B436767841 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02BE1FB5BAD45BFF22866E0F1035AB03 /* coinbase-official.xcconfig */;
@@ -1411,9 +1550,44 @@
 			};
 			name = Release;
 		};
+		BB197DDE113171B9DF62058B2A1BEC1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A70FE2E607776FAA1342FF5FDC2CE6C /* Pods-LitePay2Tests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LitePay2Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LitePay2Tests/Pods-LitePay2Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LitePay2Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		CFC7FF4505BF958976D19F7C85B3524D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F01AA539C6420CB836EF8D58BBBF525 /* Pods-LitePay2.debug.xcconfig */;
+			baseConfigurationReference = 12758FA4C404FCF2A1483D8A30D44065 /* Pods-LitePay2.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1448,7 +1622,7 @@
 		};
 		D919C28AB5F7DE20D303FE4B0C429921 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5DE1F62EB7BEF54E42C344CEE88F419 /* Pods-LitePay2.release.xcconfig */;
+			baseConfigurationReference = 47BFE8F1986F818B3B80264DF56A1292 /* Pods-LitePay2.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1565,6 +1739,15 @@
 			buildConfigurations = (
 				2F5B60060E5DD67F9C86ABBFC30AC0F1 /* Debug */,
 				EF5944254D2170BC24B41939D5EB58B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF0B5A161EA455EB99F2ED5C6C7A56E5 /* Build configuration list for PBXNativeTarget "Pods-LitePay2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB197DDE113171B9DF62058B2A1BEC1F /* Debug */,
+				6C97DD3B2B3DC5397B042B973418973B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,7 +12,6 @@
 		6335EC322068FD63000AA244 /* SelectAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC312068FD63000AA244 /* SelectAccountViewController.swift */; };
 		6335EC3420690E9E000AA244 /* AccountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC3320690E9E000AA244 /* AccountsCell.swift */; };
 		6335EC36206A2527000AA244 /* HeaderCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */; };
-		633A51932085475000E95C8F /* sendTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 633A51922085475000E95C8F /* sendTransaction.json */; };
 		63644AD42074F3AF00C89823 /* CurrencyRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */; };
 		63718B452058012C00E3C33E /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63718B442058012C00E3C33E /* Permissions.swift */; };
 		6387C3852076466E000048F4 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387C3842076466E000048F4 /* CurrencyRate.swift */; };
@@ -35,6 +34,7 @@
 		63F17B6620473E6F00538D2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F17B6520473E6F00538D2E /* SettingsViewController.swift */; };
 		63F9B1FC204D8EA100BDC6D6 /* coinbase_official.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F9B1FD204D8EA100BDC6D6 /* coinbase_official.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		63F9B200204D8FE000BDC6D6 /* CoinbaseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9B1FF204D8FE000BDC6D6 /* CoinbaseAPIService.swift */; };
+		B85D84AA8FD21D7FC1398C1A /* Pods_LitePay2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF30180EFB6B1EE9E7A9A6E2 /* Pods_LitePay2Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36B91C1FE192C61CB3B9BF34 /* Pods-LitePay2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2Tests/Pods-LitePay2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D688C7C2A8C913AC8461DF4 /* Pods-LitePay2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2.release.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2.release.xcconfig"; sourceTree = "<group>"; };
 		5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LitePay2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63125F952085F05D002CB768 /* LitePay2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LitePay2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +57,6 @@
 		6335EC312068FD63000AA244 /* SelectAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountViewController.swift; sourceTree = "<group>"; };
 		6335EC3320690E9E000AA244 /* AccountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCell.swift; sourceTree = "<group>"; };
 		6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCurrencyCell.swift; sourceTree = "<group>"; };
-		633A51922085475000E95C8F /* sendTransaction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sendTransaction.json; sourceTree = "<group>"; };
 		63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewController.swift; sourceTree = "<group>"; };
 		63718B442058012C00E3C33E /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		6387C3842076466E000048F4 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		63F9B1FD204D8EA100BDC6D6 /* coinbase_official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = coinbase_official.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F9B1FF204D8FE000BDC6D6 /* CoinbaseAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseAPIService.swift; sourceTree = "<group>"; };
 		D270DE2929C893B65858B5F3 /* Pods-LitePay2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2/Pods-LitePay2.debug.xcconfig"; sourceTree = "<group>"; };
+		DF30180EFB6B1EE9E7A9A6E2 /* Pods_LitePay2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LitePay2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5B64800F5D01B4B85B1BF16 /* Pods-LitePay2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LitePay2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LitePay2Tests/Pods-LitePay2Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85D84AA8FD21D7FC1398C1A /* Pods_LitePay2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,14 +114,6 @@
 				63125F9F2085F0ED002CB768 /* CurrencyRateTests.swift */,
 			);
 			path = LitePay2Tests;
-			sourceTree = "<group>";
-		};
-		633A51912085464700E95C8F /* json files */ = {
-			isa = PBXGroup;
-			children = (
-				633A51922085475000E95C8F /* sendTransaction.json */,
-			);
-			path = "json files";
 			sourceTree = "<group>";
 		};
 		63F17B342046B41400538D2E = {
@@ -147,7 +142,6 @@
 				63F17B402046B41400538D2E /* AppDelegate.swift */,
 				63B9BCBB207B7E33006EBA6E /* Assets.xcassets */,
 				63F17B4C2046B41400538D2E /* Info.plist */,
-				633A51912085464700E95C8F /* json files */,
 				63F17B492046B41400538D2E /* LaunchScreen.storyboard */,
 				63F17B442046B41400538D2E /* Main.storyboard */,
 				63F17B522046BC7C00538D2E /* Model */,
@@ -211,6 +205,7 @@
 			children = (
 				63F9B1FD204D8EA100BDC6D6 /* coinbase_official.framework */,
 				5C69E4CB41F2AAEFCF78117E /* Pods_LitePay2.framework */,
+				DF30180EFB6B1EE9E7A9A6E2 /* Pods_LitePay2Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,6 +215,8 @@
 			children = (
 				D270DE2929C893B65858B5F3 /* Pods-LitePay2.debug.xcconfig */,
 				3D688C7C2A8C913AC8461DF4 /* Pods-LitePay2.release.xcconfig */,
+				36B91C1FE192C61CB3B9BF34 /* Pods-LitePay2Tests.debug.xcconfig */,
+				F5B64800F5D01B4B85B1BF16 /* Pods-LitePay2Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -231,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63125F9C2085F05D002CB768 /* Build configuration list for PBXNativeTarget "LitePay2Tests" */;
 			buildPhases = (
+				C9DAB99737BB361F51EDCD4E /* [CP] Check Pods Manifest.lock */,
 				63125F912085F05D002CB768 /* Sources */,
 				63125F922085F05D002CB768 /* Frameworks */,
 				63125F932085F05D002CB768 /* Resources */,
+				C4AB08E7277FC087DE6B7DD5 /* [CP] Embed Pods Frameworks */,
+				A48DD1AE6D9F20765BDD02C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,7 +318,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633A51932085475000E95C8F /* sendTransaction.json in Resources */,
 				63F17B4B2046B41400538D2E /* LaunchScreen.storyboard in Resources */,
 				63B9BCBC207B7E34006EBA6E /* Assets.xcassets in Resources */,
 				63F17B462046B41400538D2E /* Main.storyboard in Resources */,
@@ -340,6 +339,59 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-LitePay2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A48DD1AE6D9F20765BDD02C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LitePay2Tests/Pods-LitePay2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4AB08E7277FC087DE6B7DD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LitePay2Tests/Pods-LitePay2Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/coinbase-official/coinbase_official.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/coinbase_official.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LitePay2Tests/Pods-LitePay2Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DAB99737BB361F51EDCD4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LitePay2Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -454,6 +506,7 @@
 /* Begin XCBuildConfiguration section */
 		63125F9D2085F05D002CB768 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36B91C1FE192C61CB3B9BF34 /* Pods-LitePay2Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -472,6 +525,7 @@
 		};
 		63125F9E2085F05D002CB768 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5B64800F5D01B4B85B1BF16 /* Pods-LitePay2Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;

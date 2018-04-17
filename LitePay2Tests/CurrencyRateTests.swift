@@ -1,44 +1,72 @@
 import XCTest
-//@testable import LitePay2
-//import Alamofire
-//import coinbase_official
+
+@testable import LitePay2
 
 class CurrencyRateTests: XCTestCase {
     
+    var currRate : CurrencyRate?
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-//    func converseToLTC(amountEuro: NSDecimalNumber, currencyRate: NSDecimalNumber) -> NSDecimalNumber {
-//
-//        let amountLTC = (amountEuro as Decimal) * (currencyRate as Decimal) as NSDecimalNumber
-//        return amountLTC
-//    }
-//
-//    func converseToEuro(amountLTC: NSDecimalNumber, spotPrice: NSDecimalNumber) -> NSDecimalNumber {
-//
-//        let amountEuro = (amountLTC as Decimal) * (spotPrice as Decimal) as NSDecimalNumber
-//        return amountEuro
-//    }
-    //          Testen
-    //    1. amountEuro of currencyRate is 0
-    //    2. amountEuro of currencyRate is negatief
-    //    3. amountLtc of currencyRate is negatief
-    //    4. amount of currrencyRate is geen getal
-    
-    func testCurrencyRateIsZero(amountEuro: NSDecimalNumber, currencyRate: NSDecimalNumber) {
+    func testCurrencyRateIsZero() {
         
-//        let cur : CurrencyRate  // = CurrencyRate()
-////        curr.
-//        let currency : Currency
-//        XCTAssert(<#T##expression: Bool##Bool#>, <#T##message: String##String#>)
+        let decimalEuro = NSDecimalNumber(decimal: 1.0000000000)
+        currRate = CurrencyRate()
+        
+        XCTAssertEqual(0, currRate?.converseToLTC(amountEuro: decimalEuro, currencyRate: 0), "Result should be 0 (multiplied with 0) ")
+    }
+    
+    func testEuroAmountIsZero() {
+        
+        let currencyRate = NSDecimalNumber(decimal: 1.0000000000)
+        currRate = CurrencyRate()
+        
+        XCTAssertEqual(0, currRate?.converseToLTC(amountEuro: 0.000000000, currencyRate: currencyRate), "Result should be 0 (multiplied with 0) ")
+    }
+    
+    func testLtcAmountIsZero(){
+        
+        let spotPrice = NSDecimalNumber(decimal: 1.0000000000)
+        
+        currRate = CurrencyRate()
+        XCTAssertEqual(0, currRate?.converseToEuro(amountLTC: 0.000000000, spotPrice: spotPrice), "Result should be 0 (multiplied with 0)")
+    }
+    
+    func testSpotPriceIsZero() {
+        
+        let decimalLTC = NSDecimalNumber(decimal: 1.0000000000)
+        currRate = CurrencyRate()
+        
+        XCTAssertEqual(0, currRate?.converseToEuro(amountLTC: decimalLTC, spotPrice: 0.000000000), "Result should be 0 (multiplied with 0) ")
+    }
+    
+    func testNormalParametersConvertToEURO(){
+        
+        let amountLTC = NSDecimalNumber(decimal: 1.0000000000)
+        let spotPrice = NSDecimalNumber(decimal: 97.186514)
+        
+//        result = amountLTC * spotPrice
+        let result = NSDecimalNumber(decimal: 97.186514)
+        currRate = CurrencyRate()
+        
+        XCTAssertEqual(result, currRate?.converseToEuro(amountLTC: amountLTC, spotPrice: spotPrice), "Result should be \(result) ")
+    }
+    
+    func testNormalParametersConvertToOtherCurrency(){
+        
+        let amountEuro = NSDecimalNumber(decimal: 15.0000000000)
+        let currencyRate = NSDecimalNumber(decimal: 0.010296)
+        let result = NSDecimalNumber(decimal: 0.15444)
+        currRate = CurrencyRate()
+        
+        XCTAssertEqual(result, currRate?.converseToLTC(amountEuro: amountEuro, currencyRate: currencyRate), "Result should be  \(result)")
+    }
+    
+    func testSpotPriceIsNegative(){
+        
     }
     
 }
+
+//          Testen
+//    1. amountEuro of currencyRate is 0
+//    2. amountEuro of currencyRate is negatief
+//    3. amountLtc of currencyRate is negatief
