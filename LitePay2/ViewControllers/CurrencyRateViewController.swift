@@ -4,7 +4,7 @@ import UIKit
 class CurrencyRateViewController : UIViewController {
     
     @IBOutlet weak var currencyRateTableView: UITableView!
-    
+    var timer = Timer()
     var currencyRates : [String: String]? {
 //        This is a property observer.
 //        The willSet and didSet observers provide a way to observe (and to respond appropriately) when the value of a variable          or property is being set.
@@ -27,7 +27,7 @@ class CurrencyRateViewController : UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
     }
     
-    func getCurrencyRates(){
+    @objc func getCurrencyRates(){
         
         print("Currency rate view controller line 32, got here")
         CoinbaseAPIService.getExchangeRates(completion: ({ response in
@@ -37,6 +37,12 @@ class CurrencyRateViewController : UIViewController {
             self.currencyRates = response!
             print("Currency rate view controller line 38, self.currencyRates: \(String(describing: self.currencyRates))")
         }))
+    }
+    
+//    Repeat getCurrencyRates every 30 seconds (to get new data, currencyRates could have changed from 30 seconds ago
+    func scheduledTimerInterval(){
+
+        timer = Timer.scheduledTimer(timeInterval: 5000, target: self, selector: #selector(self.getCurrencyRates), userInfo: nil, repeats: true)
     }
 }
 
