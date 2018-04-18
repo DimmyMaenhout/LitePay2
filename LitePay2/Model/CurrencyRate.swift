@@ -3,20 +3,36 @@ import Foundation
  class CurrencyRate {
 
     
-    public func converseToLTC(amountEuro: NSDecimalNumber, currencyRate: NSDecimalNumber) -> NSDecimalNumber {
+    public func converseToLTC(amountEuro: NSDecimalNumber, currencyRate: NSDecimalNumber) throws -> NSDecimalNumber {
         
-        let amountLTC = (amountEuro as Decimal) * (currencyRate as Decimal) as NSDecimalNumber
-        return amountLTC
+        if amountEuro.decimalValue < NSDecimalNumber(decimal: 0.00000000000) as Decimal{
+            
+            throw CurrencyRateError.negativeAmount
+        }
+        else {
+            
+            let amountLTC = (amountEuro.decimalValue  * currencyRate.decimalValue) as NSDecimalNumber
+            return amountLTC
+        }
+        
     }
     
-    public func converseToEuro(amountLTC: NSDecimalNumber, spotPrice: NSDecimalNumber) -> NSDecimalNumber {
+    public func converseToEuro(amountLTC: NSDecimalNumber, spotPrice: NSDecimalNumber) throws -> NSDecimalNumber {
         
-        let amountEuro = (amountLTC as Decimal) * (spotPrice as Decimal) as NSDecimalNumber
-        return amountEuro
+        if amountLTC.decimalValue < NSDecimalNumber(decimal: 0.00000000000) as Decimal {
+            
+            throw CurrencyRateError.negativeAmount
+        }
+        else {
+            
+            let amountEuro = (amountLTC.decimalValue * spotPrice.decimalValue ) as NSDecimalNumber
+            return amountEuro
+        }
+        
     }
-//          Testen
-//    1. amountEuro of currencyRate is 0
-//    2. amountEuro of currencyRate is negatief
-//    3. amountLtc of currencyRate is negatief
-//    4. amount of currrencyRate is geen getal
+}
+
+enum CurrencyRateError : Error {
+    
+    case negativeAmount
 }
