@@ -11,8 +11,8 @@ class CurrencyRateViewController : UIViewController {
 //        Observers aren't called when the or property is first initialized, they are only called when the value is set outside of an initialization context
 //        didSet is called immediatly after the new value is set
         didSet {
-            
-            print("Currency rates view controller line 15, var currencyRate didSet: \(String(describing: currencyRates))")
+            scheduledTimerInterval()
+            print("\n\nCurrency rates view controller line 15, var currencyRate didSet: \(String(describing: currencyRates))\n\n")
             currencyRateTableView.reloadData()
         }
     }
@@ -32,17 +32,18 @@ class CurrencyRateViewController : UIViewController {
         print("Currency rate view controller line 32, got here")
         CoinbaseAPIService.getExchangeRates(completion: ({ response in
             
-            print("Currency rate view controller line 35, response: \(response!)")
+//            print("Currency rate view controller line 35, response: \(response!)")
             
             self.currencyRates = response!
-            print("Currency rate view controller line 38, self.currencyRates: \(String(describing: self.currencyRates))")
+//            print("Currency rate view controller line 38, self.currencyRates: \(String(describing: self.currencyRates))")
         }))
     }
     
 //    Repeat getCurrencyRates every 30 seconds (to get new data, currencyRates could have changed from 30 seconds ago
     func scheduledTimerInterval(){
 
-        timer = Timer.scheduledTimer(timeInterval: 5000, target: self, selector: #selector(self.getCurrencyRates), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.getCurrencyRates), userInfo: nil, repeats: true)
+        currencyRateTableView.reloadData()
     }
 }
 
