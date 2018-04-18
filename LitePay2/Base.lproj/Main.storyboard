@@ -669,7 +669,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="PZ4-LI-gNk" id="UmA-lD-qZM"/>
                                                 </connections>
@@ -678,7 +678,7 @@
                                                 <rect key="frame" x="60" y="0.0" width="35" height="35"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="PZ4-LI-gNk" id="4zD-jl-6uK"/>
                                                 </connections>
@@ -687,7 +687,7 @@
                                                 <rect key="frame" x="120" y="0.0" width="35" height="35"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="PZ4-LI-gNk" id="cOr-da-Egk"/>
                                                 </connections>
@@ -696,7 +696,7 @@
                                                 <rect key="frame" x="180" y="0.0" width="35" height="35"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="PZ4-LI-gNk" id="pd3-lJ-pMU"/>
                                                 </connections>

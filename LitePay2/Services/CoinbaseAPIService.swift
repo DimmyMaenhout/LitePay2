@@ -85,7 +85,7 @@ public enum CoinbaseAPIService {
         
 //        necessary to get access when making the call
         let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
-        
+        print("Coinbase Api Service line 88, Alamofire request opnieuw aan het doen")
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON
             {
@@ -115,7 +115,7 @@ public enum CoinbaseAPIService {
 //                    print("Coinbase Api Service line 115, data: \(data)")
                     
                     rates = data["rates"] as! [String: String]
-                    print("Coinbase Api Service line 118, rates: \(rates)")
+//                    print("Coinbase Api Service line 118, rates: \(rates)")
                 }
                 completion(rates)
         }
@@ -133,7 +133,7 @@ public enum CoinbaseAPIService {
         
 //        necessary to get access when making the call
         let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate]
-        
+        print("Coinbase Api Service line 136, Alamofire request opnieuw aan het doen")
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON
             {

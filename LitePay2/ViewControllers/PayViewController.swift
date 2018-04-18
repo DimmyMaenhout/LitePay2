@@ -88,12 +88,25 @@ class PayViewController : UIViewController {
         print("Pay view controller line 88, euro textfield: \(String(describing: euroTxtField.text))")
         let input = NSDecimalNumber(string: euroTxtField.text)
         let cur = CurrencyRate()
-        cur.converseToLTC(amountEuro: input, currencyRate: rate! as NSDecimalNumber)
-        print()
-        checkFieldEmpty()
-        calculate()
-        checkSufficientBalance()
-        print("Pay view controller line 96, button is: \(ScanQRBtn.isEnabled)")
+        
+        do {
+            try cur.converseToLTC(amountEuro: input, currencyRate: rate! as NSDecimalNumber)
+            checkFieldEmpty()
+            calculate()
+            checkSufficientBalance()
+            print("Pay view controller line 96, button is: \(ScanQRBtn.isEnabled)")
+        }
+        catch CurrencyRateError.negativeAmount {
+            
+            let alert = UIAlertController(title: "", message: "Het ingegeven bedrag moet groter zijn dan 0", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            print("Payview controller line 101, entered amount is < 0 error thrown and alert displayed")
+        }
+        catch {
+            print("Payview controller line 107, error occured: entered amount is < 0 error thrown and alert displayed")
+        }
+        
     }
 
     @IBAction func scanQrButtonPressed(_ sender: Any) {
@@ -218,7 +231,21 @@ class PayViewController : UIViewController {
 //            euro to other currency (euro is the top textfield)
             if i % 2 == 0 {
                 
-                amountInWalletCurrency = cur.converseToLTC(amountEuro: amount, currencyRate: rate! as NSDecimalNumber)
+                do {
+                    
+                    try amountInWalletCurrency = cur.converseToLTC(amountEuro: amount, currencyRate: rate! as NSDecimalNumber)
+                }
+                catch CurrencyRateError.negativeAmount {
+                    
+                    let alert = UIAlertController(title: "", message: "Het ingegeven bedrag moet groter zijn dan 0", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    print("Payview controller line 101, entered amount is < 0 error thrown and alert displayed")
+                }
+                catch {
+                    print("Payview controller line 246, error occured: entered amount is < 0 error thrown and alert displayed")
+                }
+                
             }
 //            other currency to euro (other currency the top field)
             else {
@@ -229,7 +256,20 @@ class PayViewController : UIViewController {
                     return
                 }
                 
-                amountInWalletCurrency = cur.converseToEuro(amountLTC: amount, spotPrice: spotP as NSDecimalNumber)
+                do {
+                    
+                    try amountInWalletCurrency = cur.converseToEuro(amountLTC: amount, spotPrice: spotP as NSDecimalNumber)
+                }
+                catch CurrencyRateError.negativeAmount {
+                    
+                    let alert = UIAlertController(title: "", message: "Het ingegeven bedrag moet groter zijn dan 0", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    print("Payview controller line 262, entered amount is < 0 error thrown and alert displayed")
+                }
+                catch {
+                    print("Payview controller line 265, error occured: entered amount is < 0 error thrown and alert displayed")
+                }
             }
 
             if amountInWalletCurrency.decimalValue > balance.decimalValue {

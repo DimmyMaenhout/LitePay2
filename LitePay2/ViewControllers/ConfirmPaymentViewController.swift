@@ -35,7 +35,7 @@ class ConfirmPaymentViewController : UIViewController {
         thirdNr.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         
         fourthNr.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
-//        CoinbaseAPIService.doTransaction(from: accountPassed.accountID)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,19 +77,30 @@ class ConfirmPaymentViewController : UIViewController {
         
         print("Confirm payment view controller line 76, in func checkPin and perform Transaction")
         if checkPinCode() == true {
-//            changeButtonIsEnabled()
+
             guard var amount = amountPassed else {
                 
                 print("Confirm payment view controller line 83, amount is nil")
                 return
             }
             
-            var stringAmount = NSDecimalString(&amount, Locale.current)
+            let stringAmount = NSDecimalString(&amount, Locale.current)
             CoinbaseAPIService.doTransaction(from: accountPassed.accountID, to: addressPassed, amount: stringAmount, account: accountPassed)
             
-            let alert = UIAlertController(title: "", message: "Transactie: van:\(accountPassed.accountID)\nnaar: \(addressPassed)\nmet bedrag: \(amount) is gebeurd", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alert = UIAlertController(title: "", message: "Transactie met bedrag: \(amount) is gebeurd", preferredStyle: .alert)
+
             self.present(alert, animated: true)
+//            send user back to home screen if transaction succeeded
+            let vc = storyboard?.instantiateViewController(withIdentifier: "tabBarControllerID") as! UITabBarController
+            
+            
+            if presentedViewController == nil {
+                self.present(vc, animated: true, completion: nil)
+            } else{
+                self.dismiss(animated: false) { () -> Void in
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }
             
         } else {
             
@@ -124,7 +135,7 @@ class ConfirmPaymentViewController : UIViewController {
     }
     func changeButtonIsEnabledAndColor() {
         
-        if checkNoTextFieldEmpty() == false /*|| checkPinCode() == false */{
+        if checkNoTextFieldEmpty() == false {
         
             confirmBtn.isEnabled = false
             confirmBtn.backgroundColor = UIColor(red: 0.722, green: 0.722, blue: 0.722, alpha: 0.45)

@@ -237,7 +237,7 @@ extension ChangePincodeViewController : UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-//        "lift" our scrollview 100
+//        "lift" our scrollview 125
         scrollView.setContentOffset(CGPoint(x: 0, y: 125), animated: true)
     }
     

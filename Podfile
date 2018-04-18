@@ -10,3 +10,9 @@ target 'LitePay2' do
   pod 'Alamofire', '~> 4.7’   
   pod 'CryptoSwift'
 end
+
+target 'LitePay2Tests' do
+    use_frameworks!
+    pod 'Alamofire', '~> 4.7'
+    pod 'coinbase-official', '~> 3.3'
+end
