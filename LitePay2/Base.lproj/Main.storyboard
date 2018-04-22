@@ -838,7 +838,7 @@
         <scene sceneID="FuW-BX-lYi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rqc-li-Ue9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="QuR-qh-OTk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeresized" id="QuR-qh-OTk"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I0j-Pv-zze">
@@ -861,7 +861,7 @@
         <scene sceneID="XHV-If-U27">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EtT-vV-KUs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Koers" id="PcH-Mi-6tn"/>
+                    <tabBarItem key="tabBarItem" title="Koers" image="rate_icon" id="PcH-Mi-6tn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Bg-Pq-hVX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -880,7 +880,7 @@
         <scene sceneID="ad1-6m-C78">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ksV-8x-vc7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Instellingen" id="uxg-wg-o99"/>
+                    <tabBarItem key="tabBarItem" title="Instellingen" image="settings.svg" id="uxg-wg-o99"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yFu-ll-JMP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -898,6 +898,9 @@
     </scenes>
     <resources>
         <image name="Litecoin_logo" width="225" height="225"/>
+        <image name="homeresized" width="25" height="25"/>
+        <image name="rate_icon" width="25" height="22"/>
+        <image name="settings.svg" width="25" height="25"/>
         <image name="switch-vertical-orientation-arrows" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
