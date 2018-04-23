@@ -4,6 +4,7 @@ import UIKit
 class CurrencyRateViewController : UIViewController {
     
     @IBOutlet weak var currencyRateTableView: UITableView!
+    var sv = UIView()
     var timer = Timer()
     var currencyRates : [String: String]? {
 //        This is a property observer.
@@ -25,13 +26,15 @@ class CurrencyRateViewController : UIViewController {
         
 //        removes the unwanted space between the navbar and first cell
         self.automaticallyAdjustsScrollViewInsets = false
+//        Stores the view that is created
+        sv = UIViewController.displaySpinner(onView: self.view)
     }
     
     @objc func getCurrencyRates(){
         
         print("Currency rate view controller line 32, got here")
         CoinbaseAPIService.getExchangeRates(completion: ({ response in
-            
+            UIViewController.removeSpinner(spinner: self.sv)
 //            print("Currency rate view controller line 35, response: \(response!)")
             
             self.currencyRates = response!
@@ -68,5 +71,27 @@ extension CurrencyRateViewController : UITableViewDataSource {
         cell.codeCurrencyLbl.text = Array(currencyRates!.keys)[indexPath.row]
         cell.valueCurrencyLabel.text = Array(currencyRates!.values)[indexPath.row]
         return cell
+    }
+}
+
+extension UIViewController {
+    
+    class func displaySpinner(onView: UIView) -> UIView {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        return spinnerView
+    }
+    class func removeSpinner(spinner: UIView) {
+        DispatchQueue.main.async {
+            spinner.removeFromSuperview()
+        }
     }
 }
