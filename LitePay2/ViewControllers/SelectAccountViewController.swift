@@ -14,6 +14,7 @@ class SelectAccountViewController : UIViewController {
 //    there can be multiple accounts with the same currency, so we use an array
     var currencyAccountIDs : [Int: [CoinbaseAccount]] = [:]
     var btnPressedPreviousVc : String = ""
+    var sv = UIView()
     
     override func viewDidLoad() {
         
@@ -22,6 +23,7 @@ class SelectAccountViewController : UIViewController {
         
         getAccounts()
         self.automaticallyAdjustsScrollViewInsets = false
+        sv = UIViewController.displaySpinner(onView: self.view)
     }
     
 //    Gets all of the users accounts (wallets)
@@ -38,6 +40,7 @@ class SelectAccountViewController : UIViewController {
             if let client = client
             {
                 client.getAccountsList({( accounts : [Any]?, pagingHelper : CoinbasePagingHelper?, error : Error?) -> Void in
+                    UIViewController.removeSpinner(spinner: self.sv)
 //                    If there is an error, show alert
                     print("Select Account view controller line 42, got till here")
                     if error != nil{
@@ -253,5 +256,9 @@ extension SelectAccountViewController : UITableViewDataSource {
             
             return indexPath
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
     }
 }
