@@ -280,7 +280,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Litecoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw0-Gj-obI">
-                                                    <rect key="frame" x="23" y="15" width="329" height="22"/>
+                                                    <rect key="frame" x="8" y="15" width="344" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -288,9 +288,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Mw0-Gj-obI" firstAttribute="bottom" secondItem="3Xh-4U-fwU" secondAttribute="bottomMargin" constant="4" id="E3n-Tu-NlB"/>
+                                                <constraint firstItem="Mw0-Gj-obI" firstAttribute="leading" secondItem="3Xh-4U-fwU" secondAttribute="leading" constant="8" id="Fgi-ae-i1Y"/>
                                                 <constraint firstItem="Mw0-Gj-obI" firstAttribute="top" secondItem="3Xh-4U-fwU" secondAttribute="topMargin" constant="4" id="RLj-xz-8Mk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mw0-Gj-obI" secondAttribute="trailing" constant="8" id="miP-EJ-pMW"/>
-                                                <constraint firstItem="Mw0-Gj-obI" firstAttribute="leading" secondItem="3Xh-4U-fwU" secondAttribute="leadingMargin" constant="8" id="rSx-dY-9i8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

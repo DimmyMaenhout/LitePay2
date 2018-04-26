@@ -42,7 +42,7 @@ class PayViewController : UIViewController {
         addDoneButtonOnKeyboard()
         changeButtonColor()
         changeButtonIsEnabled()
-        
+        setOtherCurrencyLabel()
         print("Pay view controller line 46, button is: \(ScanQRBtn.isEnabled)")
     }
     
@@ -113,6 +113,7 @@ class PayViewController : UIViewController {
         
         performSegue(withIdentifier: "QRcodeReaderSegue", sender: self)
     }
+    
     func getValueForCurrency() {
     
         CoinbaseAPIService.getExchangeRateFor(currency: account.balance.currency, completion: { response in
@@ -136,6 +137,12 @@ class PayViewController : UIViewController {
             self.rate = NSDecimalNumber(string: value) as Decimal
             print("Pay view controller line 124, rate: \(String(describing: self.rate))")
         })
+    }
+    
+    func setOtherCurrencyLabel() {
+        ltcIconLbl.text = account.balance.currency
+//        print("Pay view controller line 143, account balancy currency: \(account.balance.currency)")
+        print("Pay view controller line 144, ltcIconLbl.text: \(ltcIconLbl.text)")
     }
     
     func getValueInEuro(){
