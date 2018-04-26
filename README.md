@@ -1,7 +1,7 @@
 # LitePay2
 
 ## How to run the project?
-In the terminal go to the project folder  
-run `pod install`
+1. In the terminal go to the project folder  
+2.run `pod install`
 
-**Open** the xcworkspace
+3. **Open** the xcworkspace
