@@ -26,6 +26,13 @@ class SelectAccountViewController : UIViewController {
         sv = UIViewController.displaySpinner(onView: self.view)
     }
     
+    func showAlertIfPreviousbuttonPay() {
+        var alert = UIAlertController(title: "", message: "U moet dezelfde currency gebruiken als de ontvanger. Indien u dit niet doet resulteert dit in permanent verlies.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 //    Gets all of the users accounts (wallets)
     func getAccounts()  {
         
@@ -75,6 +82,9 @@ class SelectAccountViewController : UIViewController {
 //                    Put data in table
                     self.tableView.reloadData()
                     
+                    if self.btnPressedPreviousVc == "pay" {
+                        self.showAlertIfPreviousbuttonPay()
+                    }
                 })
             }
             else {
