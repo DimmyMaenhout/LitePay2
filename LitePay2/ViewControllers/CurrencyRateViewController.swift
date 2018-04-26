@@ -45,7 +45,7 @@ class CurrencyRateViewController : UIViewController {
 //    Repeat getCurrencyRates every 30 seconds (to get new data, currencyRates could have changed from 30 seconds ago
     func scheduledTimerInterval(){
 
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.getCurrencyRates), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.getCurrencyRates), userInfo: nil, repeats: true)
         currencyRateTableView.reloadData()
     }
 }
