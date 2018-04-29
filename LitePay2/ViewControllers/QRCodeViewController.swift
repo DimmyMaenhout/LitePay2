@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import coinbase_official
 
+// To creat the qr code I used this tutorial: https://www.appcoda.com/qr-code-generator-tutorial/
 class QRCodeViewController : UIViewController {
     
     @IBOutlet weak var QRImageView: UIImageView!

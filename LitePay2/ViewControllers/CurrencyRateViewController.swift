@@ -73,7 +73,7 @@ extension CurrencyRateViewController : UITableViewDataSource {
         return cell
     }
 }
-
+// To show the spinner I used this tutorial: http://brainwashinc.com/2017/07/21/loading-activity-indicator-ios-swift/
 extension UIViewController {
     
     class func displaySpinner(onView: UIView) -> UIView {

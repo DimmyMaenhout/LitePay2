@@ -3,6 +3,8 @@ import UIKit
 import AVFoundation
 import coinbase_official
 
+// To read the qr code I used this tutorial: https://www.appcoda.com/barcode-reader-swift/
+
 //AVCaptureMetadataOutput = het coregedeelte om qr code te lezen
 //AVCaptureMetadataOutputObjectsDelegate =
 class QRCodeReaderViewController : UIViewController {
