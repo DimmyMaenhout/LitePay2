@@ -191,6 +191,7 @@ class ChangePincodeViewController : UIViewController {
         UserDefaults.standard.set(true, forKey: "launchedBefore")
     }
     
+    //    To add the done button I used this tutorial: https://www.youtube.com/watch?v=RuzHai2RVZU
     //    Adds a done button above the keyboard (number pad)
     func addDoneButtonOnKeyboard() {
         
