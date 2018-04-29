@@ -13,10 +13,7 @@
 		6335EC3420690E9E000AA244 /* AccountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC3320690E9E000AA244 /* AccountsCell.swift */; };
 		6335EC36206A2527000AA244 /* HeaderCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */; };
 		63644AD42074F3AF00C89823 /* CurrencyRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */; };
-		63718B452058012C00E3C33E /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63718B442058012C00E3C33E /* Permissions.swift */; };
 		6387C3852076466E000048F4 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387C3842076466E000048F4 /* CurrencyRate.swift */; };
-		63B502B4207E16F3005D6347 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B502B3207E16F2005D6347 /* Authenticate.swift */; };
-		63B502B6207E20B5005D6347 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B502B5207E20B4005D6347 /* KeychainPasswordItem.swift */; };
 		63B9BCBC207B7E34006EBA6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B9BCBB207B7E33006EBA6E /* Assets.xcassets */; };
 		63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C5092047E3EF00A023D5 /* LoginViewController.swift */; };
 		63C6C50C2047E88400A023D5 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */; };
@@ -58,10 +55,7 @@
 		6335EC3320690E9E000AA244 /* AccountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCell.swift; sourceTree = "<group>"; };
 		6335EC35206A2527000AA244 /* HeaderCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCurrencyCell.swift; sourceTree = "<group>"; };
 		63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewController.swift; sourceTree = "<group>"; };
-		63718B442058012C00E3C33E /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		6387C3842076466E000048F4 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
-		63B502B3207E16F2005D6347 /* Authenticate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Authenticate.swift; path = ../../../../../../Downloads/Authenticate.swift; sourceTree = "<group>"; };
-		63B502B5207E20B4005D6347 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		63B9BCBB207B7E33006EBA6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63C6C5092047E3EF00A023D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
@@ -178,8 +172,6 @@
 				63F17B63204738D400538D2E /* ConfirmPaymentViewController.swift */,
 				63644AD32074F3AF00C89823 /* CurrencyRateViewController.swift */,
 				63F17B5D2046F21500538D2E /* HomeViewController.swift */,
-				63B502B5207E20B4005D6347 /* KeychainPasswordItem.swift */,
-				63B502B3207E16F2005D6347 /* Authenticate.swift */,
 				63C6C5092047E3EF00A023D5 /* LoginViewController.swift */,
 				63F17B5F2046F65200538D2E /* PayViewController.swift */,
 				63C6C50B2047E88400A023D5 /* QRCodeViewController.swift */,
@@ -195,7 +187,6 @@
 			children = (
 				63F9B1FF204D8FE000BDC6D6 /* CoinbaseAPIService.swift */,
 				63C7ED3D20517CF9005B5B16 /* LitePayData.swift */,
-				63718B442058012C00E3C33E /* Permissions.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -451,14 +442,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6335EC322068FD63000AA244 /* SelectAccountViewController.swift in Sources */,
-				63718B452058012C00E3C33E /* Permissions.swift in Sources */,
 				63F17B562046BDAD00538D2E /* Currency.swift in Sources */,
 				63F17B62204731DD00538D2E /* ChangePincodeViewController.swift in Sources */,
 				63644AD42074F3AF00C89823 /* CurrencyRateViewController.swift in Sources */,
 				63F17B602046F65200538D2E /* PayViewController.swift in Sources */,
 				63F17B6620473E6F00538D2E /* SettingsViewController.swift in Sources */,
 				63F17B64204738D400538D2E /* ConfirmPaymentViewController.swift in Sources */,
-				63B502B4207E16F3005D6347 /* Authenticate.swift in Sources */,
 				63C6C5102047FB9400A023D5 /* QRCodeReaderViewController.swift in Sources */,
 				63C6C50C2047E88400A023D5 /* QRCodeViewController.swift in Sources */,
 				63F9B200204D8FE000BDC6D6 /* CoinbaseAPIService.swift in Sources */,
@@ -467,7 +456,6 @@
 				6335EC36206A2527000AA244 /* HeaderCurrencyCell.swift in Sources */,
 				63C6C50A2047E3EF00A023D5 /* LoginViewController.swift in Sources */,
 				6335EC3420690E9E000AA244 /* AccountsCell.swift in Sources */,
-				63B502B6207E20B5005D6347 /* KeychainPasswordItem.swift in Sources */,
 				63C7ED3E20517CF9005B5B16 /* LitePayData.swift in Sources */,
 				6387C3852076466E000048F4 /* CurrencyRate.swift in Sources */,
 				63F17B5E2046F21500538D2E /* HomeViewController.swift in Sources */,
