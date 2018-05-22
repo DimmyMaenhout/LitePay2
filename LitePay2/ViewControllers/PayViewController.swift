@@ -35,6 +35,7 @@ class PayViewController : UIViewController {
         getValueInEuro()
         print("Pay view controller line 36, account is: \(account)")
 //        sets the euro textfield as "active" (ready for the user to type when he/she comes on the screen)
+        setCurrencyIcon()
         euroTxtField.becomeFirstResponder()
         ScanQRBtn.layer.cornerRadius = 5
         ltcTxtField.isEnabled = false
@@ -56,11 +57,13 @@ class PayViewController : UIViewController {
         if (i % 2 != 0) {
 //            i is odd
             print("Payview controller line 58, in if statement. i = \(i)")
-            (euroTxtField.frame.origin, ltcTxtField.frame.origin, euroTxtField.placeholder, ltcTxtField.placeholder, euroTxtField.frame.size.width) =
-            (ltcTxtField.frame.origin, euroTxtField.frame.origin, ltcTxtField.placeholder, euroTxtField.placeholder, ltcTxtField.frame.size.width)
             
-            (euroIconLbl.frame.origin, ltcIconLbl.frame.origin, euroIconLbl.text, ltcIconLbl.text) =
-            (ltcIconLbl.frame.origin, euroIconLbl.frame.origin, ltcIconLbl.text, euroIconLbl.text)
+            (euroTxtField.text, ltcTxtField.text, euroTxtField.placeholder, ltcTxtField.placeholder) =
+            (ltcTxtField.text, euroTxtField.text, ltcTxtField.placeholder, euroTxtField.placeholder)
+            
+            (euroIconLbl.text, ltcIconLbl.text) =
+            (ltcIconLbl.text, euroIconLbl.text)
+            
             
             print("Payview controller line 65, euroTextField.isEnabled = \(euroTxtField.isEnabled)")
             print("Payview controller line 66, ltcTextField.isEnabled = \(ltcTxtField.isEnabled)")
@@ -68,11 +71,13 @@ class PayViewController : UIViewController {
         else {
 //            i is even
             print("Payview controller line 70, in else statement. i = \(i)")
-            (ltcTxtField.frame.origin, euroTxtField.frame.origin, ltcTxtField.placeholder, euroTxtField.placeholder, ltcTxtField.frame.size.width) =
-            (euroTxtField.frame.origin, ltcTxtField.frame.origin, euroTxtField.placeholder, ltcTxtField.placeholder, euroTxtField.frame.size.width)
             
-            (ltcIconLbl.frame.origin, euroIconLbl.frame.origin, ltcIconLbl.text, euroIconLbl.text) =
-            (euroIconLbl.frame.origin, ltcIconLbl.frame.origin, euroIconLbl.text, ltcIconLbl.text)
+            (ltcTxtField.text, euroTxtField.text, ltcTxtField.placeholder, euroTxtField.placeholder) =
+            (euroTxtField.text, ltcTxtField.text, euroTxtField.placeholder, ltcTxtField.placeholder)
+            
+            (ltcIconLbl.text, euroIconLbl.text) =
+            (euroIconLbl.text, ltcIconLbl.text)
+            
             
             print("Payview controller line 77, ltcTextField.isEnabled = \(ltcTxtField.isEnabled)")
             print("Payview controller line 78, euroTextField.isEnabled = \(euroTxtField.isEnabled)")
@@ -145,6 +150,16 @@ class PayViewController : UIViewController {
         print("Pay view controller line 144, ltcIconLbl.text: \(ltcIconLbl.text)")
     }
     
+    func setCurrencyIcon(){
+        switch account.balance.currency {
+        case "\(CurrencyCode.LTC)": LtcIcon.image = #imageLiteral(resourceName: "ltc_icon")
+        case "\(CurrencyCode.BCH)": LtcIcon.image = #imageLiteral(resourceName: "bch_icon")
+        case "\(CurrencyCode.BTC)": LtcIcon.image = #imageLiteral(resourceName: "btc_icon")
+        case "\(CurrencyCode.ETH)": LtcIcon.image = #imageLiteral(resourceName: "eth_icon")
+        case "\(CurrencyCode.EUR)": LtcIcon.image = #imageLiteral(resourceName: "eur_icon")
+        default: LtcIcon.image = #imageLiteral(resourceName: "ltc_icon")
+        }
+    }
     func getValueInEuro(){
         
         CoinbaseAPIService.getSpotPrice(currencyAccount: account.balance.currency, completion: {response in
@@ -160,7 +175,7 @@ class PayViewController : UIViewController {
             print("Pay view controller line 140, spotPriceEuro: \(String(describing: self.spotPriceEuro))")
         })
     }
-    
+//    calculates the value for the currency which isn't editable
     func calculate() {
         
         print("Pay view controller line 146, in func calculate")
