@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qZq-Lf-auR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Shf-Xg-MEC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Koers-->
         <scene sceneID="z7g-pP-FNB">
@@ -129,6 +134,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
                                                         <connections>
+                                                            <action selector="moveFocusToCurrentPin:" destination="ukc-XZ-0h7" eventType="editingDidEndOnExit" id="iah-vh-Fun"/>
                                                             <action selector="moveFocusToNewPin:" destination="ukc-XZ-0h7" eventType="editingDidEndOnExit" id="6xk-Qg-ktH"/>
                                                             <outlet property="delegate" destination="ukc-XZ-0h7" id="mbG-P8-uYM"/>
                                                         </connections>
@@ -216,7 +222,7 @@
         <!--Instellingen-->
         <scene sceneID="huS-I0-EdV">
             <objects>
-                <tableViewController id="SKb-8i-l0N" customClass="SettingsViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settingsViewController" id="SKb-8i-l0N" customClass="SettingsViewController" customModule="LitePay2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AkX-3n-D0n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,6 +287,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Litecoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw0-Gj-obI">
                                                     <rect key="frame" x="8" y="15" width="344" height="22"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -293,6 +300,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mw0-Gj-obI" secondAttribute="trailing" constant="8" id="miP-EJ-pMW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="currencyLabel" destination="Mw0-Gj-obI" id="PXt-y0-Zgl"/>
                                         </connections>
@@ -517,14 +525,17 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zi5-Pl-ygc">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krq-qb-cYF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="krq-qb-cYF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="34" id="hzO-QO-Nl2"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="W32-xa-ony">
-                                                                <rect key="frame" x="37" y="0.0" width="291" height="30"/>
+                                                                <rect key="frame" x="38" y="0.0" width="290" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
@@ -553,9 +564,12 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NjQ-Kj-LBd">
                                                         <rect key="frame" x="0.0" y="97" width="328" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LTC " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sz-Rl-VHZ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LTC " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="5sz-Rl-VHZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="34" id="AdW-Ms-Or2"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
