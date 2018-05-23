@@ -50,23 +50,23 @@ class ChangePincodeViewController : UIViewController {
         
         
 //        ingeven waarde (huidige pincode)
-        var enteredCurrentPinValue = "\(currentPin.text!)\(Hash.salty)"
+        var enteredCurrentPinValue = "\(currentPin.text!)\(Salt.salty)"
         enteredCurrentPinValue = enteredCurrentPinValue.sha256()
         print("Change pincode view controller line 54, entered pin: \(enteredCurrentPinValue)")
 
-        let saveSuccessful: Bool = KeychainWrapper.standard.set(enteredCurrentPinValue, forKey: "enteredCurrentPincode")
-//        get value from keychain for key
-        guard let retrieveEnteredCurrentPinValue: String = KeychainWrapper.standard.string(forKey: "enteredCurrentPincode") else {
-            print("Change pincode view controller line 59, retrieveEnteredCurrentPinValue is nil")
-            return
-        }
-        
-        print("ChangePincodeViewController line 63, pincode entered: \([retrieveEnteredCurrentPinValue])")
+//        let saveSuccessful: Bool = KeychainWrapper.standard.set(enteredCurrentPinValue, forKey: "enteredCurrentPincode")
+////        get value from keychain for key
+//        guard let retrieveEnteredCurrentPinValue: String = KeychainWrapper.standard.string(forKey: "enteredCurrentPincode") else {
+//            print("Change pincode view controller line 59, retrieveEnteredCurrentPinValue is nil")
+//            return
+//        }
+        print("Change pincode view controller line 63, pincode entered: \([enteredCurrentPinValue])")
+//        print("ChangePincodeViewController line 63, pincode entered: \([retrieveEnteredCurrentPinValue])")
         print("ChangePincodeViewController line 64, pincode in keychain: \([retrievePin])")
 
-        if retrieveEnteredCurrentPinValue == retrievePin {
-            
-            print("Change pincode view controller line 68, retrieveEnteredCurrentPin (\(retrieveEnteredCurrentPinValue)) en retrievePin (\(retrievePin)) zijn hetzelfde")
+//        if retrieveEnteredCurrentPinValue == retrievePin {
+        if enteredCurrentPinValue == retrievePin {
+            print("Change pincode view controller line 68, retrieveEnteredCurrentPin (\(enteredCurrentPinValue)) en retrievePin (\(retrievePin)) zijn hetzelfde")
             print("ChangePincodeViewController line 68, pincode keychain: \(retrievePin)")
             moveFocusToNewPin()
         }
@@ -192,7 +192,7 @@ class ChangePincodeViewController : UIViewController {
             checkInputLengthRepeatNewPin()
 
             let newPinRepeat = repeatNewPin.text!
-            let newPincode = "\(newPinRepeat)\(Hash.salty)".sha256()
+            let newPincode = "\(newPinRepeat)\(Salt.salty)".sha256()
 //            let newPincode = newPinRepeat.sha256()
             newPincode.trimmingCharacters(in: .whitespacesAndNewlines)
             print("Change pincode view controller line 197, newPinRepeat (pin without sha256): \(newPinRepeat) \tnewPincode (sha256) \(newPincode)")

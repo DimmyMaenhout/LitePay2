@@ -754,9 +754,11 @@
                         <outlet property="fourthNr" destination="wbT-9f-cpy" id="4Aa-fx-Kx9"/>
                         <outlet property="secondNr" destination="wvh-2o-ZYA" id="7kW-Hh-df2"/>
                         <outlet property="thirdNr" destination="e8f-Xo-kNW" id="B4m-x7-Mgr"/>
+                        <segue destination="2iA-A8-MVK" kind="unwind" identifier="backToHomeScreenSegue" unwindAction="goBackToHomescreen:" id="g0R-KE-6gP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-kz-QiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2iA-A8-MVK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5588" y="-1343.4782608695652"/>
         </scene>
