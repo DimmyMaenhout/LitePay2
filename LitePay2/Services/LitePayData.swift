@@ -18,7 +18,7 @@ struct LitePayData {
     static let contentType = "Content-Type"
     static let contentTypeValue = "application/json"
 }
-
+//for url
 enum calls : String {
     
     case baseUrl = "https://api.coinbase.com/v2/"
