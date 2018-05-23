@@ -136,7 +136,7 @@ extension QRCodeReaderViewController : AVCaptureMetadataOutputObjectsDelegate {
         //If the data type is QR go in statement
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
             
-            //if the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+            //if the found metadata is equal to the QR code metadata then set the bounds
             let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barcodeObject!.bounds
             print("Qr code view controller line 140, trying to go to next view controller and giving address with it")

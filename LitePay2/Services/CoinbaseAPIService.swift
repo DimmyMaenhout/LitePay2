@@ -282,33 +282,33 @@ public enum CoinbaseAPIService {
             let headers : HTTPHeaders = [LitePayData.cbversion: LitePayData.cbVersionDate, LitePayData.authorization: "\(LitePayData.bearer) \(String(describing: accessToken))", LitePayData.contentType: LitePayData.contentTypeValue, "CB-2FA-Token": "\(String(describing: accessToken))"]
 //
 //
-            Alamofire.request(url, method: .post, parameters: ["type" : "send", "to" : "\(receiveAccount)", "amount" : "\(amount)", "currency" : "\(account.balance.currency)"], encoding: JSONEncoding.default, headers: headers)
+//            Alamofire.request(url, method: .post, parameters: ["type" : "send", "to" : "\(receiveAccount)", "amount" : "\(amount)", "currency" : "\(account.balance.currency)"], encoding: JSONEncoding.default, headers: headers)
 //                .responseJSON
 //                {
 //                    response in
-//                    print("Coinbase API Service line 285, response: \(response)")
+//                    print("Coinbase API Service line 289, response: \(response)")
 //
 //                    if let status = response.response?.statusCode {
 //
 //                        switch(status) {
 //
-//                        case 200: print("Coinbase api service line 291, status = success")
-//                        default: print("Coinbase Api Service line 292, error with response status: \(status)")
+//                        case 200: print("Coinbase api service line 295, status = success")
+//                        default: print("Coinbase Api Service line 296, error with response status: \(status)")
 //                        }
 //                    }
 //
 //                    if let result = response.result.value {
 //
 //                        let json = result as! [String: Any]
-//                        //                    print("Coinbase Api Service line 299, json: \(json)")
+//                        //                    print("Coinbase Api Service line 303, json: \(json)")
 //
 //                        //                    if json["data"] = nil go in else statement
 //                        guard let data = json["data"] as? [String: Any] else {
 //
-//                            print("Coinbase Api Service line 304, data is nil")
+//                            print("Coinbase Api Service line 308, data is nil")
 //                            return
 //                        }
-//                        print("Coinbase Api Service line 307, data: \(data)")
+//                        print("Coinbase Api Service line 311, data: \(data)")
 //
 //                        //                    amountEuro = data["amount"] as! String //as! [String: String]
 //                        //                    print("Coinbase Api Service line 310, rates: \(amountEuro)")
@@ -335,9 +335,9 @@ public enum CoinbaseAPIService {
                             }
         
                             if let result = response.result.value {
-        
+                                print("Coinbase api service line 338, result: \(result)")
                                 let json = result as! [String: Any]
-                                //                    print("Coinbase Api Service line 299, json: \(json)")
+                                                    print("Coinbase Api Service line 340, json: \(json)")
         
                                 //                    if json["data"] = nil go in else statement
                                 guard let data = json["data"] as? [String: Any] else {
@@ -350,6 +350,5 @@ public enum CoinbaseAPIService {
                             }
                             //                completion(amountEuro)
                     }
-        
     }
 }

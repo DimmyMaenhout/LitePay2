@@ -1,6 +1,8 @@
 import Foundation
 import UIKit
 import coinbase_official
+import SwiftKeychainWrapper
+import CryptoSwift
 
 class ConfirmPaymentViewController : UIViewController {
     
@@ -35,20 +37,21 @@ class ConfirmPaymentViewController : UIViewController {
         thirdNr.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         
         fourthNr.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        
+        confirmBtn.layer.cornerRadius = 5
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        
+//        super.viewWillAppear(animated)
+//    }
     
     @objc func textFieldDidChange(textField : UITextField) {
         
         let text = textField.text
         
-        if text?.utf16.count == 1 {
-            
+        if text?.count == 1 {
             switch textField {
             case firstNr:
                 
@@ -88,20 +91,12 @@ class ConfirmPaymentViewController : UIViewController {
             CoinbaseAPIService.doTransaction(from: accountPassed.accountID, to: addressPassed, amount: stringAmount, account: accountPassed)
             
             let alert = UIAlertController(title: "", message: "Transactie met bedrag: \(amount) is gebeurd", preferredStyle: .alert)
-
-            self.present(alert, animated: true)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
 //            send user back to home screen if transaction succeeded
-            let vc = storyboard?.instantiateViewController(withIdentifier: "tabBarControllerID") as! UITabBarController
-            
-            
-            if presentedViewController == nil {
-                self.present(vc, animated: true, completion: nil)
-            } else{
-                self.dismiss(animated: false) { () -> Void in
-                    self.present(vc, animated: true, completion: nil)
-                }
-            }
-            
+                self.returnToHomescreen()
+            }))
+            self.present(alert, animated: true)
+
         } else {
             
             changeButtonIsEnabledAndColor()
@@ -112,6 +107,10 @@ class ConfirmPaymentViewController : UIViewController {
 
             clearTextFields()
         }
+    }
+    
+    func returnToHomescreen(){
+        performSegue(withIdentifier: "backToHomeScreenSegue", sender: self)
     }
     
     func clearTextFields(){
@@ -148,18 +147,22 @@ class ConfirmPaymentViewController : UIViewController {
     }
     
     func checkPinCode() -> Bool{
-       
+        guard let storedPin: String = KeychainWrapper.standard.string(forKey: "pincode") else {
+            print("ConfirmPaymentController line 154, storedPin is nil")
+            return false //dit nog veranderen naar error (throw)
+        }
+        print("Confirm payment view controller line 158, stored pincode: \(storedPin)")
         var pincode = ""
         pincode.append(firstNr.text!)
         pincode.append(secondNr.text!)
         pincode.append(thirdNr.text!)
         pincode.append(fourthNr.text!)
-        
+        pincode = "\(pincode)\(Salt.salty)".sha256()
         changeButtonIsEnabledAndColor()
         
         print("Confirm payment view controller line 131, pincode: \(pincode)")
-        if pincode == UserDefaults.standard.string(forKey: "pinCode") {
-            
+//      compare pin with storedPin
+        if pincode == storedPin {
             return true
         }
         else {

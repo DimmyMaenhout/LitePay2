@@ -9,6 +9,7 @@ target 'LitePay2' do
   pod 'coinbase-official', '~> 3.3'
   pod 'Alamofire', '~> 4.7’   
   pod 'CryptoSwift'
+  pod 'SwiftKeychainWrapper', '~> 3.0'
 end
 
 target 'LitePay2Tests' do
