@@ -1,5 +1,5 @@
 //
-//  Hash.swift
+//  Salt.swift
 //  LitePay2
 //
 //  Created by Dimmy Maenhout on 23/05/2018.
@@ -7,6 +7,6 @@
 //
 
 import Foundation
-struct Hash {
-    public static let salty = "g48Fa4faQaRfeVNFjliwTdsw§{0;fsaQAEPFRdP"
+struct Salt {
+    public static let salty = "g48Fa4faQaRfpANFjliqTdsw§{0;fsaQAEPFRdP"
 }
