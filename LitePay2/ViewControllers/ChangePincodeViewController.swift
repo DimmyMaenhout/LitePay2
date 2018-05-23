@@ -50,7 +50,8 @@ class ChangePincodeViewController : UIViewController {
         
         
 //        ingeven waarde (huidige pincode)
-        var enteredCurrentPinValue = currentPin.text!.sha256()
+        var enteredCurrentPinValue = "\(currentPin.text!)\(Hash.salty)"
+        enteredCurrentPinValue = enteredCurrentPinValue.sha256()
         print("Change pincode view controller line 54, entered pin: \(enteredCurrentPinValue)")
 
         let saveSuccessful: Bool = KeychainWrapper.standard.set(enteredCurrentPinValue, forKey: "enteredCurrentPincode")
@@ -191,8 +192,8 @@ class ChangePincodeViewController : UIViewController {
             checkInputLengthRepeatNewPin()
 
             let newPinRepeat = repeatNewPin.text!
-            //        let newPincode = "\(newPinRepeat).\(Hash.salty)".sha256()
-            let newPincode = newPinRepeat.sha256()
+            let newPincode = "\(newPinRepeat)\(Hash.salty)".sha256()
+//            let newPincode = newPinRepeat.sha256()
             newPincode.trimmingCharacters(in: .whitespacesAndNewlines)
             print("Change pincode view controller line 197, newPinRepeat (pin without sha256): \(newPinRepeat) \tnewPincode (sha256) \(newPincode)")
             print("Change pincode view controller line 198, saving new pincode: \(newPinRepeat)")

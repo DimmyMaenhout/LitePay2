@@ -1,6 +1,8 @@
 import Foundation
 import UIKit
 import coinbase_official
+import SwiftKeychainWrapper
+import CryptoSwift
 
 class ConfirmPaymentViewController : UIViewController {
     
@@ -35,13 +37,15 @@ class ConfirmPaymentViewController : UIViewController {
         thirdNr.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         
         fourthNr.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        
+        confirmBtn.layer.cornerRadius = 5
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        
+//        super.viewWillAppear(animated)
+//    }
     
     @objc func textFieldDidChange(textField : UITextField) {
         
@@ -88,19 +92,20 @@ class ConfirmPaymentViewController : UIViewController {
             CoinbaseAPIService.doTransaction(from: accountPassed.accountID, to: addressPassed, amount: stringAmount, account: accountPassed)
             
             let alert = UIAlertController(title: "", message: "Transactie met bedrag: \(amount) is gebeurd", preferredStyle: .alert)
-
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarControllerID") as! UITabBarController
+                
+                
+                if self.presentedViewController == nil {
+                    self.present(vc, animated: true, completion: nil)
+                } else{
+                    self.dismiss(animated: false) { () -> Void in
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }}))
             self.present(alert, animated: true)
 //            send user back to home screen if transaction succeeded
-            let vc = storyboard?.instantiateViewController(withIdentifier: "tabBarControllerID") as! UITabBarController
             
-            
-            if presentedViewController == nil {
-                self.present(vc, animated: true, completion: nil)
-            } else{
-                self.dismiss(animated: false) { () -> Void in
-                    self.present(vc, animated: true, completion: nil)
-                }
-            }
             
         } else {
             
@@ -148,18 +153,23 @@ class ConfirmPaymentViewController : UIViewController {
     }
     
     func checkPinCode() -> Bool{
-       
+        guard let storedPin: String = KeychainWrapper.standard.string(forKey: "pincode") else {
+            print("ConfirmPaymentController line 154, storedPin is nil")
+            return false //dit nog veranderen naar error (throw)
+        }
+        print("Confirm payment view controller line 158, stored pincode: \(storedPin)")
         var pincode = ""
         pincode.append(firstNr.text!)
         pincode.append(secondNr.text!)
         pincode.append(thirdNr.text!)
         pincode.append(fourthNr.text!)
-        
+        pincode = "\(pincode)\(Hash.salty)".sha256()
         changeButtonIsEnabledAndColor()
         
         print("Confirm payment view controller line 131, pincode: \(pincode)")
-        if pincode == UserDefaults.standard.string(forKey: "pinCode") {
-            
+//        if pincode == UserDefaults.standard.string(forKey: "pinCode") {
+//        if "\(pincode).\(Hash.salty)".sha256() == storedPin {
+        if pincode == storedPin {
             return true
         }
         else {
