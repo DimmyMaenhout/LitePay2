@@ -257,7 +257,7 @@ extension SelectAccountViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         print("Select Account view controller line 246, indexPath.section: \(indexPath.section)")
-        if indexPath.section != 0 {
+        if indexPath.section > 1   {
             
             selectedUnsuportedPaymentCurrency()
             return nil

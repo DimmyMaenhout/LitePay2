@@ -53,27 +53,22 @@ class ChangePincodeViewController : UIViewController {
         var enteredCurrentPinValue = "\(currentPin.text!)\(Salt.salty)"
         enteredCurrentPinValue = enteredCurrentPinValue.sha256()
         print("Change pincode view controller line 54, entered pin: \(enteredCurrentPinValue)")
-
-//        let saveSuccessful: Bool = KeychainWrapper.standard.set(enteredCurrentPinValue, forKey: "enteredCurrentPincode")
-////        get value from keychain for key
-//        guard let retrieveEnteredCurrentPinValue: String = KeychainWrapper.standard.string(forKey: "enteredCurrentPincode") else {
-//            print("Change pincode view controller line 59, retrieveEnteredCurrentPinValue is nil")
-//            return
-//        }
-        print("Change pincode view controller line 63, pincode entered: \([enteredCurrentPinValue])")
-//        print("ChangePincodeViewController line 63, pincode entered: \([retrieveEnteredCurrentPinValue])")
-        print("ChangePincodeViewController line 64, pincode in keychain: \([retrievePin])")
+        print("Change pincode view controller line 56, pincode entered: \([enteredCurrentPinValue])")
+//        print("ChangePincodeViewController line 75, pincode entered: \([retrieveEnteredCurrentPinValue])")
+        print("ChangePincodeViewController line 58, pincode in keychain: \([retrievePin])")
 
 //        if retrieveEnteredCurrentPinValue == retrievePin {
         if enteredCurrentPinValue == retrievePin {
-            print("Change pincode view controller line 68, retrieveEnteredCurrentPin (\(enteredCurrentPinValue)) en retrievePin (\(retrievePin)) zijn hetzelfde")
-            print("ChangePincodeViewController line 68, pincode keychain: \(retrievePin)")
+            print("Change pincode view controller line 62, retrieveEnteredCurrentPin (\(enteredCurrentPinValue)) en retrievePin (\(retrievePin)) zijn hetzelfde")
+            print("ChangePincodeViewController line 63, pincode keychain: \(retrievePin)")
             moveFocusToNewPin()
         }
         else {
 
             let alert = UIAlertController(title: "", message: "De huidige pincode is incorrect", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                self.clearFields()
+            }))
             self.present(alert, animated: true)
         }
     }
@@ -94,7 +89,7 @@ class ChangePincodeViewController : UIViewController {
     }
     
     @IBAction func checkRepeatNewPinMatches(_ sender: Any) {
-        print("Change pincode view controller line 96, got here")
+        print("Change pincode view controller line 91, got here")
         checkRepeatPin()
     }
     
@@ -120,7 +115,7 @@ class ChangePincodeViewController : UIViewController {
         }
         
         if repeatNewPin.text == newPin.text {
-            print("Change pincode view controller line 122, in checkrepeatPin() if statement")
+            print("Change pincode view controller line 118, in checkrepeatPin() if statement")
             savePin()
         }
         else {
@@ -180,7 +175,7 @@ class ChangePincodeViewController : UIViewController {
     }
     
     @IBAction func savePin() {
-        print("Change pincode view controller line 182, got here")
+        print("Change pincode view controller line 178, got here")
         
         if UserDefaults.standard.bool(forKey: "launchedBefore") == true {
             checkCurrentPincode()
@@ -195,20 +190,20 @@ class ChangePincodeViewController : UIViewController {
             let newPincode = "\(newPinRepeat)\(Salt.salty)".sha256()
 //            let newPincode = newPinRepeat.sha256()
             newPincode.trimmingCharacters(in: .whitespacesAndNewlines)
-            print("Change pincode view controller line 197, newPinRepeat (pin without sha256): \(newPinRepeat) \tnewPincode (sha256) \(newPincode)")
-            print("Change pincode view controller line 198, saving new pincode: \(newPinRepeat)")
+            print("Change pincode view controller line 193, newPinRepeat (pin without sha256): \(newPinRepeat) \tnewPincode (sha256) \(newPincode)")
+            print("Change pincode view controller line 194, saving new pincode: \(newPinRepeat)")
             let saveSuccessful: Bool = KeychainWrapper.standard.set(newPincode, forKey: "pincode")
-            print("ChangePincodeController line 200, new pin saved successfull: \(saveSuccessful)")
+            print("ChangePincodeController line 196, new pin saved successfull: \(saveSuccessful)")
             
             guard let retrieveCurrentPinValue: String = KeychainWrapper.standard.string(forKey: "pincode") else {
-                print("Change pincode view controller line 203, retrieveEnteredCurrentPinValue is nil")
+                print("Change pincode view controller line 199, retrieveEnteredCurrentPinValue is nil")
                 return
             }
-            print("Change pincode view controller line 206, pin from keychain: \(retrieveCurrentPinValue)")
+            print("Change pincode view controller line 202, pin from keychain: \(retrieveCurrentPinValue)")
         }
 
         
-        let alert = UIAlertController(title: "", message: UserDefaults.standard.bool(forKey: "launchedBefore") == true ? "Pin succesvol opgeslaan":"Pin succesvol veranderd", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: UserDefaults.standard.bool(forKey: "launchedBefore") == true ? "Pin succesvol veranderd":"Pin succesvol opgeslaan", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
 
             
@@ -225,7 +220,7 @@ class ChangePincodeViewController : UIViewController {
             }
             
             self.setLaunchedBeforeToTrue()
-            print("Change pincode view controller line 227, launchedBefore = \(UserDefaults.standard.bool(forKey: "launchedBefore"))")
+            print("Change pincode view controller line 223, launchedBefore = \(UserDefaults.standard.bool(forKey: "launchedBefore"))")
         }))
         self.present(alert, animated: true)
     }
@@ -260,7 +255,7 @@ class ChangePincodeViewController : UIViewController {
     @IBAction func moveFocusToNewPin() {
         if checkInputLengthCurrentPin() == true {
             //        if checkInputLength() == true {
-            print("Change pincode view controller line 262, moving focus to newPin")
+            print("Change pincode view controller line 258, moving focus to newPin")
             currentPin.resignFirstResponder()
             newPin.becomeFirstResponder()
         }
@@ -269,7 +264,7 @@ class ChangePincodeViewController : UIViewController {
     @IBAction func moveFocusToRepeatPin() {
         if checkInputLengthNewPin() == true {
             //        if checkInputLength() == true {
-            print("Change pincode view controller line 271, moving focus to repeatNewPin")
+            print("Change pincode view controller line 267, moving focus to repeatNewPin")
             newPin.resignFirstResponder()
             repeatNewPin.becomeFirstResponder()
         }

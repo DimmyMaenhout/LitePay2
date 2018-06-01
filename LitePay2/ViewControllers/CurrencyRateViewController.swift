@@ -42,11 +42,11 @@ class CurrencyRateViewController : UIViewController {
         }))
     }
     
-//    Repeat getCurrencyRates every 30 seconds (to get new data, currencyRates could have changed from 30 seconds ago
+//    Repeat getCurrencyRates every 900 seconds (15 min) (to get new data, currencyRates could have changed from 120 seconds ago
     func scheduledTimerInterval(){
 
-        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.getCurrencyRates), userInfo: nil, repeats: true)
-        currencyRateTableView.reloadData()
+        timer = Timer.scheduledTimer(timeInterval: 900, target: self, selector: #selector(self.getCurrencyRates), userInfo: nil, repeats: true)
+//        currencyRateTableView.reloadData()
     }
 }
 
@@ -69,6 +69,7 @@ extension CurrencyRateViewController : UITableViewDataSource {
         
 //        show the key and value at indexPath.row, to show every key and value we use Array(key/value)[ at this position ]
         cell.codeCurrencyLbl.text = Array(currencyRates!.keys)[indexPath.row]
+        print("Currency rates view controller line 72, currencyRates.keys[indexpath.row]: \(Array(currencyRates!.keys)[indexPath.row])")
         cell.valueCurrencyLabel.text = Array(currencyRates!.values)[indexPath.row]
         return cell
     }
